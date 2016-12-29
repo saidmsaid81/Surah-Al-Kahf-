@@ -1,0 +1,9 @@
+﻿Update on Surah Al Kahf
+1. Add Tamil(done)
+2. Test notifications
+3. Reduce tabs(Done)
+4. Prompt on last page to remind a friend and rate app(done)
+5. Implement swipe between pages and translations (buggy)
+6. Minor improvements
+7. Improve News and updates
+8. Ability to share the stories(done)
