@@ -78,7 +78,7 @@
 <a href="#nav-panel" data-icon="bars" data-role="button" data-inline="true" data-theme="e"   >Menu</a>
 
 <h3><strong>Surah Al Kahf </strong></h3>
-          <button onclick="window.plugins.socialsharing.share('Have a look at Surah Al Kahf App', null, null, 'http://play.google.com/store/apps/details?id=com.ihyausunnah.surahalkahf')">Share App</button>
+          <button onclick="window.plugins.socialsharing.share('Have a look at Surah Al Kahf App', null, null, 'goo.gl/LAhqoF')">Share App</button>
 </div>
 <div data-role="main" class="ui-content">
 <h3>Surah Al-Kahf</h3>
@@ -90,10 +90,18 @@
 <a href="one.html#sixty"  data-role="button" data-theme="e" data-ajax="false">Stories,Virtues and Lessons from Surah Al Kahf</a>
 <a href="one.html#twentyeight"  data-role="button" data-theme="e" data-ajax="false">Need Help</a>
 <a href="one.html#seventy"  data-role="button" data-theme="e" data-ajax="false">Join Our Whatsapp Daawah list</a>
-<button onclick="window.plugins.socialsharing.share('I am reminding you to read Surah Al Kahf its the Sunnah of our beloved Prophet Muhammad (SAW).\n\nIt was narrated from Abu Sa’eed al-Khduri that the Prophet (peace and blessings of Allaah be upon him) said: \n\n“Whoever reads Soorat al-Kahf on Friday, he will be illuminated with light between the two Fridays.” \n\nNarrated by al-Haakim; classed as saheeh by al-Albaani in Saheeh al-Targheeb, 836 ;Sent from Surah Al Kahf android App', null, null, 'http://play.google.com/store/apps/details?id=com.ihyausunnah.surahalkahf')" data-theme="e">Remind A friend</button>
+<button onclick="window.plugins.socialsharing.share('I am reminding you to read Surah Al Kahf its the Sunnah of our beloved Prophet Muhammad (SAW).\n\nIt was narrated from Abu Sa’eed al-Khduri that the Prophet (peace and blessings of Allaah be upon him) said: \n\n“Whoever reads Soorat al-Kahf on Friday, he will be illuminated with light between the two Fridays.” \n\nNarrated by al-Haakim; classed as saheeh by al-Albaani in Saheeh al-Targheeb, 836 ;Sent from Surah Al Kahf android App Link to app', null, null, 'goo.gl/LAhqoF')" data-theme="e">Remind A friend</button>
 <h5><strong>Hint Use this button to remind a friend to recite Surah Al Kahf <a href="#popupInfo" data-rel="popup" data-role="button" class="ui-icon-alt" data-inline="true" data-transition="pop" data-icon="info" data-theme="e" data-iconpos="notext">Why Remind</a> </strong></h5>
 <div data-role="popup" id="popupInfo" class="ui-content" data-theme="e" style="max-width:350px;">
   <h3>Why Remind</h3><p><strong>Abu Mas'ud Al-Ansari (r.a.) narrated that Allah’s Messenger (s.a.w.s.) said, “…One who guides to something good has a reward similar to that of its doer.” (Muslim, Vol. 4, Hadeeth 4665) </strong></p>
+  
+</div>
+
+<div data-role="popup" id="popupInfot" class="ui-content" data-theme="d" style="max-width:400px;">
+  <button  data-theme="e" onclick="window.plugins.socialsharing.shareViaWhatsAppToReceiver(+254780787950, 'Message via WhatsApp', null /* img */, null /* url */, function() {console.log('share ok')})">Contact us via Whatsapp(Get a faster response) </button>
+  <a href="mailto:thesunnahrevival.tsr@gmail.com?Subject=Surah%20Al%20Kahf%20App" target="_top" data-role="button" data-theme="e" data-ajax="false">Contact Us via E-mail</a>
+  
+  
 </div>
 
 
@@ -105,11 +113,11 @@
 		<li><a href="index.html" data-ajax="false">Home</a></li>
             <li><a href="one.html#fifty" data-ajax="false">About</a></li>
             <li><a href="one.html#twentyseven" data-ajax="false">About the Sunnah Revival</a></li>
-            <li><a href="mailto:thesunnahrevival.tsr@gmail.com?Subject=Surah%20Al%20Kahf%20App" target="_top">Send feedback</a></li>
+            <li><a href="#popupInfot" data-rel="popup" data-transition="pop" >Contact Us</a></li>
              <li><a href="one.html#twentyeight" data-ajax="false">Need Help</a></li>
 			 <li><a href="one.html#seventy" data-ajax="false">Join our Whatsapp Daawah list</a></li>
 <li><a href="twitter.html" data-ajax="false">News and Updates</a></li>
-            <li><button onclick="window.open('market://details?id=com.ihyausunnah.surahalkahf')" data-ajax="false">Rate this App</a></li>
+            <a href="market://details?id=com.ihyausunnah.surahalkahf" data-role="button"  data-ajax="false" >Rate this App</a>
 <li><button onclick="window.open('one.html#fiftythree')">More Apps</button>
         </ul>
 </div>
