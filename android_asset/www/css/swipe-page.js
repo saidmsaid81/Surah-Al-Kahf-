@@ -1,11 +1,4 @@
-
-
 $( document ).on( "pageinit", "[data-role='page'].demo-page", function() {
-	$.event.special.swipe.scrollSupressionThreshold = 10; // More than this horizontal displacement, and we will suppress scrolling.
-$.event.special.swipe.horizontalDistanceThreshold = 30; // Swipe horizontal displacement must be more than this.
-$.event.special.swipe.durationThreshold = 500;  // More time than this, and it isn't a swipe.
-$.event.special.swipe.verticalDistanceThreshold = 75; // Swipe vertical displacement must be less than this.
-	
 	var page = "#" + $( this ).attr( "id" ),
 		// Get the filename of the next page that we stored in the data-next attribute
 		next = $( this ).jqmData( "next" ),
@@ -42,4 +35,3 @@ $.event.special.swipe.verticalDistanceThreshold = 75; // Swipe vertical displace
 		$( ".control .prev", page ).addClass( "ui-disabled" );
 	}
 });
-

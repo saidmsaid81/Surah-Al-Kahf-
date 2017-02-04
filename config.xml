@@ -3,23 +3,22 @@
 <!-- config.xml reference: https://build.phonegap.com/docs/config-xml -->
 <widget xmlns     = "http://www.w3.org/ns/widgets"
         xmlns:gap = "http://phonegap.com/ns/1.0"
-        id        = "com.ihyausunnah.surahalkahfbeta"
-        version   = "1.0.8">
-	versionCode="34" 
+        id        = "com.ihyausunnah.surahalmulk"
+        version   = "1.0.3">
+	versionCode="24" 
 
-    <name>Surah Al Kahf beta </name>
+    <name>Surah Al Mulk and Al Sajdah </name>
 
     <description>
-      Surah Al Kahf beta
+      Surah Al Mulk and Al- Sajdah
     </description>
 
     <author href="http://thesunnahrevival.wordpress.com" email="ihyausunnah@yahoo.com">
         PhoneGap Team
     </author>
-	
 
     <!-- Customize your app and platform with the preference element. -->
-    <preference name="phonegap-version"           value="cli-6.3.0" />          <!-- all: current version of PhoneGap -->
+    <preference name="phonegap-version"           value="3.6.3" />          <!-- all: current version of PhoneGap -->
     <preference name="orientation"                value="default" />        <!-- all: default means both landscape and portrait are enabled -->
     <preference name="target-device"              value="universal" />      <!-- all: possible values handset, tablet, or universal -->
     <preference name="fullscreen"                 value="true" />           <!-- all: hides the status bar at the top of the screen -->
@@ -41,19 +40,23 @@
 	
 <feature name="http://api.phonegap.com/1.0/network"/>
 	
-<plugin name="cordova-plugin-inappbrowser" spec="~1.6.1" />
-		<plugin name="cordova-plugin-network-information" spec="~1.3.1" />
-		<plugin name="cordova-plugin-splashscreen" spec="~4.0.1" />
-		
+<gap:plugin name="org.apache.cordova.inappbrowser"  />
+	
+<gap:plugin name="org.apache.cordova.network-information"  />
+	
+<gap:plugin name="org.apache.cordova.splashscreen"  />
+
+<preference name="stay-in-webview" value="false" />
+<gap:plugin name="org.apache.cordova.inappbrowser" />
 
     <!-- Third party plugins -->
     <!-- A list of available plugins are available at https://build.phonegap.com/plugins -->
     <!--
         <gap:plugin name="com.phonegap.plugins.barcodescanner" />
     -->
-<gap:plugin name="cordova-plugin-x-socialsharing" source="npm" />
-		<plugin name="cordova-plugin-insomnia" version="4.1.0" source="npm" />
-		<gap:plugin name="cordova-plugin-whitelist" source="npm" />
+<gap:plugin name="nl.x-services.plugins.socialsharing" version="4.3.8" />
+
+<plugin name="nl.x-services.plugins.insomnia" spec="4.0.1" source="pgb" />
     <!-- Define app icon for each platform. -->
     <icon src="icon.png" />
     
@@ -72,11 +75,6 @@
     -->
     <access origin="*"/>
 <access origin="http://facebook.com" />
-<allow-navigation href="http://*/*" />
-<allow-intent href="https://*/*" />
-<!-- Allow all unrecognized URLs to open installed apps
-     *NOT RECOMMENDED* -->
-<allow-intent href="*" />
     <!--
         <access origin="http://phonegap.com" />                    - allow any secure requests to http://phonegap.com/
         <access origin="http://phonegap.com" subdomains="true" />  - same as above, but including subdomains, such as http://build.phonegap.com/
