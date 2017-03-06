@@ -62,66 +62,49 @@ var morning =new Date()
 
         listeningElement.setAttribute('style', 'display:none;');
         receivedElement.setAttribute('style', 'display:block;');
-	initAd() ;
-	showBannerFunc();
-	showInterstitialFunc();
+	
         console.log('Received Event: ' + id);
     }
 };
-//initialize the goodies 
-function initAd(){
-        if ( window.plugins && window.plugins.AdMob ) {
-            var ad_units = {
-                ios : {
-                    banner: 'ca-app-pub-6981212130280607/8129501976',		//PUT ADMOB ADCODE HERE 
-                    interstitial: ''	//PUT ADMOB ADCODE HERE 
-                },
-                android : {
-                    banner: 'ca-app-pub-6981212130280607/8129501976',		//PUT ADMOB ADCODE HERE 
-                    interstitial: ''	//PUT ADMOB ADCODE HERE 
-                }
-            };
-            var admobid = ( /(android)/i.test(navigator.userAgent) ) ? ad_units.android : ad_units.ios;
- 
-            window.plugins.AdMob.setOptions( {
-                publisherId: admobid.banner,
-                interstitialAdId: admobid.interstitial,
-                adSize: window.plugins.AdMob.AD_SIZE.BANNER,	//use SMART_BANNER, BANNER, LARGE_BANNER, IAB_MRECT, IAB_BANNER, IAB_LEADERBOARD 
-                bannerAtTop: false, // set to true, to put banner at top 
-                overlap: true, // banner will overlap webview  
-                offsetTopBar: false, // set to true to avoid ios7 status bar overlap 
-                isTesting: false, // receiving test ad 
-                autoShow: true // auto show interstitial ad when loaded 
-            });
- 
-            registerAdEvents();
-            window.plugins.AdMob.createInterstitialView();	//get the interstitials ready to be shown 
-            window.plugins.AdMob.requestInterstitialAd();
- 
-        } else {
-            //alert( 'admob plugin not ready' ); 
-        }
+var admobid = {};
+
+// TODO: replace the following ad units with your own
+if( /(android)/i.test(navigator.userAgent) ) { 
+  admobid = { // for Android
+    banner: 'ca-app-pub-6981212130280607/8129501976',
+    interstitial: ''
+  };
+} else if(/(ipod|iphone|ipad)/i.test(navigator.userAgent)) {
+  admobid = { // for iOS
+    banner: 'ca-app-pub-6981212130280607/8129501976',
+    interstitial: ''
+  };
+} else {
+  admobid = { // for Windows Phone
+    banner: 'ca-app-pub-6869992474017983/8878394753',
+    interstitial: ''
+  };
 }
-//functions to allow you to know when ads are shown, etc. 
-function registerAdEvents() {
-        document.addEventListener('onReceiveAd', function(){});
-        document.addEventListener('onFailedToReceiveAd', function(data){});
-        document.addEventListener('onPresentAd', function(){});
-        document.addEventListener('onDismissAd', function(){ });
-        document.addEventListener('onLeaveToAd', function(){ });
-        document.addEventListener('onReceiveInterstitialAd', function(){ });
-        document.addEventListener('onPresentInterstitialAd', function(){ });
-        document.addEventListener('onDismissInterstitialAd', function(){
-        	window.plugins.AdMob.createInterstitialView();			//REMOVE THESE 2 LINES IF USING AUTOSHOW 
-            window.plugins.AdMob.requestInterstitialAd();			//get the next one ready only after the current one is closed 
-        });
-    }//display the banner 
-function showBannerFunc(){
-    window.plugins.AdMob.createBannerView();
+
+function initApp() {
+  if (! AdMob ) { alert( 'admob plugin not ready' ); return; }
+
+  // this will create a banner on startup
+  AdMob.createBanner( {
+    adId: admobid.banner,
+    position: AdMob.AD_POSITION.BOTTOM_CENTER,
+    isTesting: true, // TODO: remove this line when release
+    overlap: true,
+    offsetTopBar: false,
+    bgColor: 'black'
+  } );
+
+  // this will load a full screen ad on startup
+  AdMob.prepareInterstitial({
+    adId: admobid.interstitial,
+    isTesting: true, // TODO: remove this line when release
+    autoShow: true
+  });
 }
-//display the interstitial 
-function showInterstitialFunc(){
-    window.plugins.AdMob.showInterstitialAd();
-};
 
 app.initialize();
