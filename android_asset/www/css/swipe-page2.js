@@ -1,8 +1,4 @@
-
-
 $( document ).on( "pageinit", "[data-role='page'].demo-page", function() {
-	
-	
 	var page = "#" + $( this ).attr( "id" ),
 		// Get the filename of the next page that we stored in the data-next attribute
 		next = $( this ).jqmData( "next" ),
@@ -12,14 +8,14 @@ $( document ).on( "pageinit", "[data-role='page'].demo-page", function() {
 	// Check if we did set the data-next attribute
 	if ( next ) {
 		// Prefetch the next page
-		$.mobile.loadPage( "one.html"+ next );
+		$.mobile.loadPage( "trans.html"+ next );
 		// Navigate to next page on swipe left
 		$( document ).on( "swipeleft", page, function() {
-			$.mobile.changePage( "one.html"+ prev, { ajax: "false" });
+			$.mobile.changePage( "trans.html"+ prev, { ajax: "false" });
 		});
 		// Navigate to next page when the "next" button is clicked
 		$( ".control .next", page ).on( "click", function() {
-			$.mobile.changePage( "one.html"+ prev, { ajax: "false" } );
+			$.mobile.changePage( "trans.html"+ prev, { ajax: "false" } );
 		});
 	}
 	// Disable the "next" button if there is no next page
@@ -29,14 +25,13 @@ $( document ).on( "pageinit", "[data-role='page'].demo-page", function() {
 	// The same for the previous page (we set data-dom-cache="true" so there is no need to prefetch)
 	if ( prev ) {
 		$( document ).on( "swiperight", page, function() {
-			$.mobile.changePage( "one.html"+next  , { ajax: "false", reverse: true } );
+			$.mobile.changePage( "trans.html"+next  , { ajax: "false", reverse: true } );
 		});
 		$( ".control .prev", page ).on( "click", function() {
-			$.mobile.changePage( "one.html" + next, { ajax: "false", reverse: true } );
+			$.mobile.changePage( "trans.html" + next, { ajax: "false", reverse: true } );
 		});
 	}
 	else {
 		$( ".control .prev", page ).addClass( "ui-disabled" );
 	}
 });
-
