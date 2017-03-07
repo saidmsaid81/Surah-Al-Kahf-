@@ -62,11 +62,10 @@ var morning =new Date()
 
         listeningElement.setAttribute('style', 'display:none;');
         receivedElement.setAttribute('style', 'display:block;');
-	initAd() ;
-	showBannerFunc();
-	showInterstitialFunc();
+	
         console.log('Received Event: ' + id);
     }
 };
+
 
 app.initialize();
