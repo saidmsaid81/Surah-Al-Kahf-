@@ -34,7 +34,6 @@ var app = {
     // function, we must explicitly call 'app.receivedEvent(...);'
     onDeviceReady: function() {
         app.receivedEvent('deviceready');
-        $scope.addNotification = function (){
 	var friday = new Date();
 		friday.setDate(friday.getDate() + (1 + 4 - friday.getDay()) % 7);
 var morning =new Date()
@@ -55,15 +54,6 @@ var morning =new Date()
 		});	
 		
     },
-    //this should only be registered once    
-$scope.$on('$cordovaLocalNotification:schedule',function(notification) {
-    alert("scheduled: " + notification.id);
-});
-
-//this should only be registered once    
-$scope.$on('$cordovaLocalNotification:trigger',function(notification) {
-    alert("triggered: " + notification.id);
-});
     // Update DOM on a Received Event
     receivedEvent: function(id) {
         var parentElement = document.getElementById(id);
