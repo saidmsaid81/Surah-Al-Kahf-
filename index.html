@@ -1,4 +1,4 @@
-!DOCTYPE html>
+<!DOCTYPE html>
 
 <html>
 
@@ -10,20 +10,24 @@
 
 <title>Surah Al Kahf</title>
 	
-<link rel="stylesheet"  href="android_asset/www/css/jquery.mobile-1.3.0.css">
+<link rel="stylesheet"  href="css/jquery.mobile-1.3.0.css">
 	
-<link rel="stylesheet" href="android_asset/www/css/jqm-demos.css">
-	
+<link rel="stylesheet" href="css/jqm-demos.css">
+<link rel="stylesheet" href="css/material-design-iconic-font
+.css">
+<link rel="stylesheet" href="css/font-awesome
+.css">
 
 	
 <link rel="shortcut icon" href="../../favicon.ico">
 	
-<script src="android_asset/www/css/jquery-1.7.1.min.js"></script>
+<script src="css/jquery-1.7.1.min.js"></script>
 	
 	
-<script src="android_asset/www/css/jquery.mobile-1.3.0.js"></script>
+<script src="css/jquery.mobile-1.3.0.js"></script>
 
-
+  
+ <script type="text/javascript" src="js/time.js"></script>
 
 
 
@@ -68,17 +72,10 @@
     </style>
 
 
-
 </head>
 	
 <body>
-<div class="app">
-            <h1></h1>
-            <div id="deviceready" class="blink">
-                <p class="event listening"></p>
-                <p class="event received"></p>
-            </div>
-        </div>
+
 
 <div data-role="page" id="one" class="demo-page" data-theme="a" data-next="#two">
 
@@ -87,12 +84,14 @@
 <div data-theme="c" data-role="header" data-position="fixed">
 <a href="#nav-panel" data-icon="bars" data-role="button" data-inline="true" data-theme="e"   >Menu</a>
 
-<h3><strong>Surah Al Kahf(V2.0.0)</strong></h3>
-          <button onclick="window.plugins.socialsharing.share('Have a look at Surah Al Kahf App', null, null, 'goo.gl/LAhqoF')">Share App</button>
+<h3><strong>Surah Al Kahf</strong></h3>
+          <a href="#popupMenu3" data-rel="popup" data-role="button" data-theme="e" ><i class='zmdi zmdi-notifications '></i></a>
 </div>
 <div data-role="main" class="ui-content">
-Tap here <a data-role="button" href="mailto:thesunnahrevival.tsr@gmail.com?&subject=Surah%20Al%20Kahf%20App&body=Please%20Write%20Your%20feedback%20here%20Sent%20from%20Version%202.0.0%20" target="_top"  class="ui-icon-alt"  data-icon="alert" data-inline="true" data-theme="e" data-iconpos="notext" >Contact Us</a>to report a problem 
-<a href="pages.html#one" data-role="button" id='btn_hide' data-theme="e" data-ajax="false" >Read Surah Al-Kahf</a>
+
+
+
+<a href="pages.html#one" data-role="button" id='btn_hide' data-theme="e" data-ajax="false" onclick="window.plugins.insomnia.keepAwake();window.plugins.toast.showLongBottom('Swipe to navigate between pages', function(a){console.log('toast success: ' + a)}, function(b){alert('toast error: ' + b)})" >Read Surah Al-Kahf</a>
 <a href="#popupvideo" data-role="button" data-rel="popup" data-theme="e" >Listen and read Surah Al-Kahf(video)</a>
 
 
@@ -100,7 +99,7 @@ Tap here <a data-role="button" href="mailto:thesunnahrevival.tsr@gmail.com?&subj
 <a href="one.html#sixty"  data-role="button" data-theme="e" data-ajax="false">Stories,Virtues and Lessons from Surah Al Kahf</a>
 <a href="one.html#twentyeight"  data-role="button" data-theme="e" data-ajax="false">Need Help</a>
 <a href="one.html#seventy"  data-role="button" data-theme="e" data-ajax="false">Join Our Whatsapp Daawah list</a>
-<a href="#popupMenu3" data-rel="popup" data-role="button" data-theme="e">Join our Social Pages</a>
+
 <button onclick="window.plugins.socialsharing.share('I am reminding you to read Surah Al Kahf its the Sunnah of our beloved Prophet Muhammad (SAW).\n\nIt was narrated from Abu Sa’eed al-Khduri that the Prophet (peace and blessings of Allaah be upon him) said: \n\n“Whoever reads Soorat al-Kahf on Friday, he will be illuminated with light between the two Fridays.” \n\nNarrated by al-Haakim; classed as saheeh by al-Albaani in Saheeh al-Targheeb, 836 ;Sent from Surah Al Kahf android App Link to app', null, null, 'goo.gl/LAhqoF')" data-theme="e">Remind A friend</button>
 <h5><strong>Hint Use this button to remind a friend to recite Surah Al Kahf <a href="#popupInfo" data-rel="popup" data-role="button" class="ui-icon-alt" data-inline="true" data-transition="pop" data-icon="info" data-theme="e" data-iconpos="notext">Why Remind</a> </strong></h5>
 
@@ -109,6 +108,11 @@ Tap here <a data-role="button" href="mailto:thesunnahrevival.tsr@gmail.com?&subj
   <h3>Why Remind</h3><p><strong>Abu Mas'ud Al-Ansari (r.a.) narrated that Allah’s Messenger (s.a.w.s.) said, “…One who guides to something good has a reward similar to that of its doer.” (Muslim, Vol. 4, Hadeeth 4665) </strong></p>
   
 </div>
+Join our Social Pages
+<a href="http://m.facebook.com/TSRapps"  onclick="window.open(this.href,'_system'); return false;"  data-ajax="false"><i class='fa fa-facebook fa-lg'></i></a>&nbsp;&nbsp;&nbsp;
+<a href="http://twitter.com/TSRapps" onclick="window.open(this.href,'_system'); return false;" data-ajax="false"><i class='fa fa-twitter fa-lg'></i></a>&nbsp;&nbsp;&nbsp;
+<a href="http://telegram.me/TSRapps" onclick="window.open(this.href,'_system'); return false;"  data-ajax="false"><i class='fa fa-telegram fa-lg'></i></a>&nbsp;&nbsp;&nbsp;
+<a href="http://instagram.com/tsrapps" onclick="window.open(this.href,'_system'); return false;"  data-ajax="false"><i class='fa fa-instagram fa-lg'></i></a>
 
 
 
@@ -120,12 +124,12 @@ Tap here <a data-role="button" href="mailto:thesunnahrevival.tsr@gmail.com?&subj
         <ul data-role="listview" data-theme="d" class="nav-search">
 		<li><a href="index.html" data-ajax="false">Home</a></li>
             <li><a href="one.html#fifty" id='btn_prepare'  data-ajax="false">About</a></li>
-            <li><a href="one.html#twentyseven" data-ajax="false">About the Sunnah Revival</a></li>
+            
             <li><a href="mailto:thesunnahrevival.tsr@gmail.com?&subject=Surah%20Al%20Kahf%20App&body=Please%20Write%20Your%20feedback%20here%20Sent%20from%20Version%202.0.0%20" target="_top"  >Contact Us</a></li>
              <li><a href="one.html#twentyeight" data-ajax="false">Need Help</a></li>
 			 <li><a href="one.html#seventy" data-ajax="false">Join our Whatsapp Daawah list</a></li>
-<li><a href="twitter.html" data-ajax="false" >News and Updates</a></li>
-            <a href="market://details?id=com.ihyausunnah.surahalkahf" data-role="button"  data-ajax="false" >Rate this App</a>
+
+            <li><a href="market://details?id=com.ihyausunnah.surahalkahf"   data-ajax="false" >Rate this App</a></li>
 <li><button onclick="window.open('one.html#fiftythree')">More Apps</button>
         </ul>
 </div>
@@ -138,17 +142,78 @@ Tap here <a data-role="button" href="mailto:thesunnahrevival.tsr@gmail.com?&subj
 
 </div>
 
-<div data-role="popup" id="popupMenu3" data-theme="d">
-        <ul data-role="listview" data-inset="true" style="min-width:210px;" data-theme="d">
-            <h6><strong>We are social Join us on:</strong></h6>
-<li><a data-role="button"  href="http://m.facebook.com/thesunnahrevival"data-theme="e"  onclick="window.open(this.href,'_system'); return false;" data-inline="true">Facebook</a></li>
-<li><a data-role="button"  href="http://twitter.com/thesunahrevival"data-theme="e"  onclick="window.open(this.href,'_system'); return false;" data-inline="true">Twitter</a></li>
-<li><a data-role="button"  href="http://telegram.me/thesunnahrevival"data-theme="e"  onclick="window.open(this.href,'_system'); return false;" data-inline="true">Telegram</a></li>
-<li><a data-role="button"  href="http://instagram.com/thesunnahrevival"data-theme="e"  onclick="window.open(this.href,'_system'); return false;" data-inline="true">Instagram</a></li>
-</ul>
+<div data-role="popup" id="popupMenu3" data-theme="c">
+       
+            <h4><strong>Enable/Disable Notifications:</strong></h4>
+            Tick to enable untick to disable
+            <div id="checkbox-container">
+<form>
+<fieldset data-role="controlgroup">
+
+    <label>
+        <input type="checkbox" name="checkbox-0 " id="checkboxi" data-theme="d">Suratul Kahf reminder on Friday
+    </label>
+    <label>
+    <input type="checkbox" name="checkbox-v-2b" data-theme="d" id="checkboxii">Suratul Kahf reminder on Thursday Night
+        </label>
+        </fieldset>
+</form>
 </div>
 </div>
 </div>
+</div>
+
+<script type="text/javascript">
+  $("#checkboxi").change(function() {
+  if ($(this).is(":checked")){
+    cordova.plugins.notification.local.schedule({
+    id: 1,
+    title: 'Reminder to recite Suratul Kahf',
+    text: 'Tap here to read now',
+      firstAt: friday_in_morning,
+    every: 10080 // 
+    });window.plugins.toast.showLongTop('Successfully enabled', function(a){console.log('toast success: ' + a)}, function(b){alert('toast error: ' + b)})
+  }
+  else 
+   cordova.plugins.notification.local.cancel(1, function() {
+   window.plugins.toast.showLongTop('Successfully Disabled', function(a){console.log('toast success: ' + a)}, function(b){alert('toast error: ' + b)})
+});
+});
+  $("#checkboxii").change(function() {
+  if ($(this).is(":checked")){
+    cordova.plugins.notification.local.schedule({
+    id: 2,
+    title: 'Reminder to recite Suratul Kahf',
+    text: 'Tap here to read now',
+      firstAt: thursday_in_night,
+    every: 10080 // 
+    });window.plugins.toast.showLongTop('Successfully enabled', function(a){console.log('toast success: ' + a)}, function(b){alert('toast error: ' + b)})
+  }
+  else 
+   cordova.plugins.notification.local.cancel(2, function() {
+   window.plugins.toast.showLongTop('Successfully Disabled', function(a){console.log('toast success: ' + a)}, function(b){alert('toast error: ' + b)})
+});
+});
+
+</script>
+<script type="text/javascript">
+  $("#checkbox-container :checkbox").on("change", function(){
+  
+});
+var checkboxValues = JSON.parse(localStorage.getItem('checkboxValues')) || {};
+var $checkboxes = $("#checkbox-container :checkbox");
+
+$checkboxes.on("change", function(){
+  $checkboxes.each(function(){
+    checkboxValues[this.id] = this.checked;
+  });
+  localStorage.setItem("checkboxValues", JSON.stringify(checkboxValues));
+});
+$.each(checkboxValues, function(key, value) {
+  $("#" + key).prop('checked', value);
+});
+
+</script>
 <script>
   // place our admob ad unit id here
   var admobid = {};
@@ -205,11 +270,7 @@ Tap here <a data-role="button" href="mailto:thesunnahrevival.tsr@gmail.com?&subj
       // when jquery used, it will hijack the event, so we have to get data from original event
       if(typeof e.originalEvent !== 'undefined') e = e.originalEvent;
       var data = e.detail || e.data || e;
-      alert('error: ' + data.error +
-          ', reason: ' + data.reason +
-          ', adNetwork:' + data.adNetwork +
-          ', adType:' + data.adType +
-          ', adEvent:' + data.adEvent); // adType: 'banner', 'interstitial', etc.
+     // adType: 'banner', 'interstitial', etc.
     });
     $(document).on('onAdLoaded', function(e){
     });
@@ -259,7 +320,7 @@ Tap here <a data-role="button" href="mailto:thesunnahrevival.tsr@gmail.com?&subj
     }
   });
 </script>
-<script type="text/javascript" src="android_asset/www/css/buttons.js"></script>
+<script type="text/javascript" src="css/buttons.js"></script>
 <script type="text/javascript" src="cordova.js"></script>
         <script type="text/javascript" src="js/index.js"></script>
         <script type="text/javascript">
