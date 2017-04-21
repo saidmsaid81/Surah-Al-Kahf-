@@ -4,7 +4,7 @@ document.addEventListener('deviceready', this.onDeviceReady, false);
          AppRate.preferences.storeAppURL.android = 'market://details?id=com.ihyausunnah.surahalkahf';
         AppRate.preferences.openStoreInApp = true;
         AppRate.preferences.displayAppName = 'Surah Al Kahf App';
-        AppRate.preferences.usesUntilPrompt = 7;
+        AppRate.preferences.usesUntilPrompt = 2;
          AppRate.preferences.promptAgainForEachNewVersion = false;
          AppRate.promptForRating(false);
 

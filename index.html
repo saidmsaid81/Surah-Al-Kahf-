@@ -9,14 +9,17 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 
 <title>Surah Al Kahf</title>
-	
+	<link rel="stylesheet" href="css/jquery-ui.css">
 <link rel="stylesheet"  href="css/jquery.mobile-1.3.0.css">
 	
-<link rel="stylesheet" href="css/jqm-demos.css">
+
 <link rel="stylesheet" href="css/material-design-iconic-font
 .css">
 <link rel="stylesheet" href="css/font-awesome
 .css">
+ 
+  
+  
 
 	
 <link rel="shortcut icon" href="../../favicon.ico">
@@ -28,10 +31,26 @@
 
   
  <script type="text/javascript" src="js/time.js"></script>
+<script src="css/jquery.js"></script>
+<script src="css/jquery-ui.js"></script>
 
-
-
-
+<script>
+  $(function() {
+    if( ! localStorage.getItem( "runOnce" ) ) {
+        $( "#dialog" ).dialog({
+            modal: true,
+            resizable: false,
+            
+            buttons: {
+                Ok: function() {
+                    $( this ).dialog( "close" );
+                    localStorage.setItem( "runOnce", true );
+                }
+            }
+        });
+    }
+});
+  </script>
 
 
 <style>
@@ -69,6 +88,12 @@
 			margin-top: 1.4em;
 			border-top: 1px solid rgba(0,0,0,.1);
 		}
+    .ui-dialog-titlebar-close {
+    visibility: hidden;
+}
+
+
+
     </style>
 
 
@@ -90,23 +115,26 @@
 <div data-role="main" class="ui-content">
 
 
-
+<div id="dialog" title="New!"  style="display: none">
+  <h4>Tap the <i class='zmdi zmdi-notifications '></i> above to visit the notifications centre and enable or disable the Suratul Kahf notifications on Friday</h4>
+</div>
 <a href="pages.html#one" data-role="button" id='btn_hide' data-theme="e" data-ajax="false" onclick="window.plugins.insomnia.keepAwake();window.plugins.toast.showLongBottom('Swipe to navigate between pages', function(a){console.log('toast success: ' + a)}, function(b){alert('toast error: ' + b)})" >Read Surah Al-Kahf</a>
 <a href="#popupvideo" data-role="button" data-rel="popup" data-theme="e" >Listen and read Surah Al-Kahf(video)</a>
 
 
-<a href="one.html#fiftyone"  data-role="button" data-theme="e" data-ajax="false">Commentary videos of Surah Al-Kahf</a>
+
 <a href="one.html#sixty"  data-role="button" data-theme="e" data-ajax="false">Stories,Virtues and Lessons from Surah Al Kahf</a>
 <a href="one.html#twentyeight"  data-role="button" data-theme="e" data-ajax="false">Need Help</a>
 <a href="one.html#seventy"  data-role="button" data-theme="e" data-ajax="false">Join Our Whatsapp Daawah list</a>
+<a href="#popupInfo" data-rel="popup" data-role="button"   data-transition="pop"  data-theme="e" >Remind Others to read Suratul Kahf</a> 
+<a href="market://details?id=com.ihyausunnah.thesunnahrevival"  data-role="button" data-theme="e" data-ajax="false">Download The Sunnah Revival App</a>
 
-<button onclick="window.plugins.socialsharing.share('I am reminding you to read Surah Al Kahf its the Sunnah of our beloved Prophet Muhammad (SAW).\n\nIt was narrated from Abu Sa’eed al-Khduri that the Prophet (peace and blessings of Allaah be upon him) said: \n\n“Whoever reads Soorat al-Kahf on Friday, he will be illuminated with light between the two Fridays.” \n\nNarrated by al-Haakim; classed as saheeh by al-Albaani in Saheeh al-Targheeb, 836 ;Sent from Surah Al Kahf android App Link to app', null, null, 'goo.gl/LAhqoF')" data-theme="e">Remind A friend</button>
-<h5><strong>Hint Use this button to remind a friend to recite Surah Al Kahf <a href="#popupInfo" data-rel="popup" data-role="button" class="ui-icon-alt" data-inline="true" data-transition="pop" data-icon="info" data-theme="e" data-iconpos="notext">Why Remind</a> </strong></h5>
 
 
-<div data-role="popup" id="popupInfo" class="ui-content" data-theme="e" style="max-width:350px;">
+<div data-role="popup" id="popupInfo" class="ui-content" data-theme="a" style="max-width:350px;">
   <h3>Why Remind</h3><p><strong>Abu Mas'ud Al-Ansari (r.a.) narrated that Allah’s Messenger (s.a.w.s.) said, “…One who guides to something good has a reward similar to that of its doer.” (Muslim, Vol. 4, Hadeeth 4665) </strong></p>
-  
+  <button data-inline="true" onclick="window.plugins.socialsharing.share('I am reminding you to read Surah Al Kahf its the Sunnah of our beloved Prophet Muhammad (SAW).\n\nIt was narrated from Abu Sa’eed al-Khduri that the Prophet (peace and blessings of Allaah be upon him) said: \n\n“Whoever reads Soorat al-Kahf on Friday, he will be illuminated with light between the two Fridays.” \n\nNarrated by al-Haakim; classed as saheeh by al-Albaani in Saheeh al-Targheeb, 836 ;Sent from Surah Al Kahf android App Link to app', null, null, 'goo.gl/LAhqoF')" data-theme="e">Remind Others</button>
+  <a href="#" data-rel="back" data-role="button" data-inline="true"    data-theme="e" >No thanks</a> 
 </div>
 Join our Social Pages
 <a href="http://m.facebook.com/TSRapps"  onclick="window.open(this.href,'_system'); return false;"  data-ajax="false"><i class='fa fa-facebook fa-lg'></i></a>&nbsp;&nbsp;&nbsp;
@@ -123,7 +151,7 @@ Join our Social Pages
 
         <ul data-role="listview" data-theme="d" class="nav-search">
 		<li><a href="index.html" data-ajax="false">Home</a></li>
-            <li><a href="one.html#fifty" id='btn_prepare'  data-ajax="false">About</a></li>
+            <li><a href="one.html#fifty"   data-ajax="false">About</a></li>
             
             <li><a href="mailto:thesunnahrevival.tsr@gmail.com?&subject=Surah%20Al%20Kahf%20App&body=Please%20Write%20Your%20feedback%20here%20Sent%20from%20Version%202.0.0%20" target="_top"  >Contact Us</a></li>
              <li><a href="one.html#twentyeight" data-ajax="false">Need Help</a></li>
@@ -214,8 +242,13 @@ $.each(checkboxValues, function(key, value) {
 });
 
 </script>
-<script>
-  // place our admob ad unit id here
+
+
+<script type="text/javascript" src="cordova.js"></script>
+        <script type="text/javascript" src="js/index.js"></script>
+
+<script type="text/javascript">
+ // place our admob ad unit id here
   var admobid = {};
   if( /(android)/i.test(navigator.userAgent) ) {
     admobid = { // for Android
@@ -260,8 +293,8 @@ $.each(checkboxValues, function(key, value) {
     AdMob.setOptions({
       // adSize: 'SMART_BANNER',
       position: AdMob.AD_POSITION.BOTTOM_CENTER,
-      isTesting: false, // set to true, to receiving test ad for testing purpose
-      bgColor: 'black', // color name, or '#RRGGBB'
+      isTesting: false , // set to true, to receiving test ad for testing purpose
+      bgColor: 'white', // color name, or '#RRGGBB'
       // autoShow: true // auto show interstitial ad when loaded, set to false if prepare/show
       // offsetTopBar: false, // avoid overlapped by status bar, for iOS7+
     });
@@ -286,6 +319,12 @@ $.each(checkboxValues, function(key, value) {
     });
     $('#btn_show').click(showBannerAtPosition);
     $('#btn_hide').click(function(){
+      AdMob.hideBanner();
+    });
+    $('#btn_hidee').click(function(){
+      AdMob.hideBanner();
+    });
+    $('#btn_hideee').click(function(){
       AdMob.hideBanner();
     });
     // test interstitial ad
@@ -319,13 +358,11 @@ $.each(checkboxValues, function(key, value) {
       onDeviceReady();
     }
   });
-</script>
-<script type="text/javascript" src="css/buttons.js"></script>
-<script type="text/javascript" src="cordova.js"></script>
-        <script type="text/javascript" src="js/index.js"></script>
+  </script>
         <script type="text/javascript">
             app.initialize();
         </script>
+
 </body>
 </html>
 
