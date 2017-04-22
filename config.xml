@@ -63,6 +63,7 @@
         <plugin name="cordova-plugin-apprate" source="npm"/>
         <gap:plugin name="cordova-plugin-admobpro"  source="npm"/>
         <gap:plugin name="cordova-plugin-x-toast" source="npm" />
+         <gap:plugin name="cordova-plugin-media" source="npm" />
     <!-- Define app icon for each platform. -->
     <icon src="icon.png" />
     
