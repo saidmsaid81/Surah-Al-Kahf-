@@ -80,7 +80,14 @@
             <p><img class="center fit" src="android_asset/www/293.jpg" >
 </p>
 
-</div></div><div data-role="page" class="nd2-no-menu-swipe" id="two" data-theme="b" data-next="#three" data-prev="#one">
+</div>
+
+ <div data-role="footer" data-position="fixed"  >
+ <input type="url" size="60" value="http://surahkahf.github.io/018.mp3" id="vidUrl" style="display: none" />
+ <button onclick='playAudio(document.getElementById("vidUrl").value);'></button>
+</div></div>
+
+<div data-role="page" class="nd2-no-menu-swipe" id="two" data-theme="b" data-next="#three" data-prev="#one">
 
 
 <div data-role="main" class="ui-content">
@@ -364,6 +371,24 @@
     }
 });
   </script>
+  <script>
+  document.addEventListener('deviceready', this.onDeviceReady, false);
+     function onDeviceReady() {
+          function playAudio(videoUrl) {
+              // Play a video with callbacks
+              var options = {
+                mustWatch: true,
+                successCallback: function() {
+                  console.log("Video was closed without error.");
+                },
+                errorCallback: function(errMsg) {
+                  console.log("Error! " + errMsg);
+                }
+              };
+              window.plugins.streamingMedia.playAudio(videoUrl, options);
+          
+          }}
+        </script>
 <script src="css/jquery.js"></script>
 <script src="css/jquery.min.js"></script>
 
