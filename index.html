@@ -97,7 +97,7 @@
 
 <a href="pages.html#one" data-role="button" id='btn_hide' data-theme="e" data-ajax="false" onclick="window.plugins.insomnia.keepAwake();window.plugins.toast.showLongBottom('Swipe to navigate between pages', function(a){console.log('toast success: ' + a)}, function(b){alert('toast error: ' + b)})" >Read Surah Al-Kahf</a>
 <input type="url" size="60" value="https://s3-ap-southeast-2.amazonaws.com/newnrg.d.video.ap-southeast-2-health2/virtual-sleep-welcome-video-1_424.mp4" id="vidUrl" style="display: none" />
-<a href="#" onclick="checkIfFileExists('www/pages.html'); return false" data-role="button" data-rel="popup" data-theme="e" >Listen and read Surah Al-Kahf(video)</a>
+<a href="#" onclick='checkIfFileExists("path/to/my/file.txt");;playVideo(document.getElementById("vidUrl").value); return false' data-role="button" data-rel="popup" data-theme="e" >Listen and read Surah Al-Kahf(video)</a>
 
 
 
