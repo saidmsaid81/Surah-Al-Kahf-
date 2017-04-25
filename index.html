@@ -238,7 +238,7 @@ $.each(checkboxValues, function(key, value) {
     <script type="text/javascript">
        function doesitexist() {
        $.ajax({
-url:'file///sdcard/myfile.txt',
+url:'file:///storage/emulated/0/Download/test.mp4',
 type:'HEAD',
 error: function()
 {
@@ -250,7 +250,7 @@ success: function()
     //file exists
 alert('the file is here');
 }
-});}
+});
     </script>
    
 <script src="css/ads.js"></script>
@@ -275,7 +275,7 @@ alert('the file is here');
         </script>
         <script type="text/javascript">
           $.ajax({
-url:'file:///storage/emulated/0/Download/test.mp4',
+url:'file///sdcard/myfile.txt',
 type:'HEAD',
 error: function()
 {
