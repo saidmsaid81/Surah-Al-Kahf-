@@ -95,8 +95,10 @@
 
 
 <a href="pages.html#one" data-role="button" id='btn_hide' data-theme="e" data-ajax="false" onclick="window.plugins.insomnia.keepAwake();window.plugins.toast.showLongBottom('Swipe to navigate between pages', function(a){console.log('toast success: ' + a)}, function(b){alert('toast error: ' + b)})" >Read Surah Al-Kahf</a>
-<input type="url" size="60" value="file:///storage/emulated/0/Download/test.mp4" id="vidUrl" style="display: none" />
-<a href="#" onclick='doesitexist();playVideo(document.getElementById("vidUrl").value); return false' data-role="button" data-rel="popup" data-theme="e" >Listen and read Surah Al-Kahf(video)</a>
+<input type="url" size="60" value="file:///storage/emulated/0/Download/Is_there_any_prescribed_fasting_in_the_month_of_ra.3gp" id="vidUrl" style="display: none" />
+<a href="#popupvideo" data-role="button" data-rel="popup" data-theme="e" >Listen and read Surah Al-Kahf(video)</a>
+
+
 
 
 
@@ -142,8 +144,13 @@ Join our Social Pages
 
 <div data-role="popup" id="popupvideo" data-overlay-theme="a" data-theme="d" data-tolerance="15,15" class="ui-content">
 
-    <iframe src="https://player.vimeo.com/video/64552532" width="200" height="298" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
-<p><a href="https://vimeo.com/64552532">Surah Al-Kahf</a> from <a href="https://vimeo.com/user17555859">Al-Qur&aacute;n</a> on <a href="https://vimeo.com">Vimeo</a>.</p>
+    <ul data-role="listview" data-inset="true" style="min-width:210px;" data-theme="d">
+            <h6><strong>Select Reciter: </strong></h6>
+<li><a data-role="button"  href="#" data-theme="e"  onclick="doesitexist(); return false;" data-inline="true">Abdurrahman As-Sudais </a></li>
+<li><a data-role="button"  href="http://twitter.com/thesunahrevival"data-theme="e"  onclick="window.open(this.href,'_system'); return false;" data-inline="true">Twitter</a></li>
+<li><a data-role="button"  href="http://telegram.me/thesunnahrevival"data-theme="e"  onclick="window.open(this.href,'_system'); return false;" data-inline="true">Telegram</a></li>
+<li><a data-role="button"  href="http://instagram.com/thesunnahrevival"data-theme="e"  onclick="window.open(this.href,'_system'); return false;" data-inline="true">Instagram</a></li>
+</ul>
 
 </div>
 
@@ -238,17 +245,33 @@ $.each(checkboxValues, function(key, value) {
     <script type="text/javascript">
        function doesitexist() {
        $.ajax({
-url:'file:///storage/emulated/0/Download/test.mp4',
+url:'file:///storage/emulated/0/Download/Is_there_any_prescribed_fasting_in_the_month_of_ra.3gp',
 type:'HEAD',
 error: function()
 {
     //file not exists
-alert('file does not exist');
+function onConfirm(buttonIndex) {
+  if (buttonIndex==1) {
+
+    window.open('https://www.dropbox.com/s/54a9gnw4zy3mq7l/Is_there_any_prescribed_fasting_in_the_month_of_ra.3gp?dl=0')
+
+  } else {
+
+  }
+    alert('You selected button ' + buttonIndex);
+}
+
+navigator.notification.confirm(
+    'Would you like to download the file so as its available offline next time or Just play without downloading?', // message
+     onConfirm,            // callback to invoke with index of button pressed
+    'Download/Play(Experimental Feature)',           // title
+    ['Download','just play without downloading']     // buttonLabels
+);
 },
 success: function()
 {
     //file exists
-alert('the file is here');
+playVideo(document.getElementById("vidUrl").value);
 }
 });}
     </script>
