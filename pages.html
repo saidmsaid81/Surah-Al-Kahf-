@@ -82,10 +82,7 @@
 
 </div>
 
- <div data-role="footer" data-position="fixed"  >
- <input type="url" size="60" value="http://surahkahf.github.io/018.mp3" id="vidUrl" style="display: none" />
- <button onclick='playAudio(document.getElementById("vidUrl").value);'>Play audio</button>
-</div></div>
+ </div>
 
 <div data-role="page" class="nd2-no-menu-swipe" id="two" data-theme="b" data-next="#three" data-prev="#one">
 
@@ -371,24 +368,7 @@
     }
 });
   </script>
-  <script>
-  document.addEventListener('deviceready', this.onDeviceReady, false);
-     function onDeviceReady() {
-          function playAudio(audioUrl) {
-              // Play a video with callbacks
-              var options = {
-                mustWatch: true,
-                successCallback: function() {
-                  console.log("Video was closed without error.");
-                },
-                errorCallback: function(errMsg) {
-                  console.log("Error! " + errMsg);
-                }
-              };
-              window.plugins.streamingMedia.playAudio(audioUrl, options);
-          
-          }}
-        </script>
+  
 <script src="css/jquery.js"></script>
 <script src="css/jquery.min.js"></script>
 
