@@ -256,14 +256,14 @@ function onConfirm(buttonIndex) {
     window.open('https://www.dropbox.com/s/54a9gnw4zy3mq7l/Is_there_any_prescribed_fasting_in_the_month_of_ra.3gp?dl=1','_system')
 
   } 
-  if (buttonIndex==2) {
+ else if (buttonIndex==2) {
     playVideo(document.getElementById("vidUrlonline").value);
   }
 
 navigator.notification.confirm(
     'Would you like to download the file so as its available offline next time or Just play without downloading?', // message
      onConfirm,            // callback to invoke with index of button pressed
-    'Download/Play(Experimental Feature)',           // title
+    'Download/Play?',           // title
     ['Download','just play without downloading']     // buttonLabels
 );
 },
