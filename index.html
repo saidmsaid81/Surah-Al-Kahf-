@@ -96,18 +96,8 @@
 
 <a href="pages.html#one" data-role="button" id='btn_hide' data-theme="e" data-ajax="false" onclick="window.plugins.insomnia.keepAwake();window.plugins.toast.showLongBottom('Swipe to navigate between pages', function(a){console.log('toast success: ' + a)}, function(b){alert('toast error: ' + b)})" >Read Surah Al-Kahf</a>
 <input type="url" size="60" value="file:///storage/emulated/0/Download/test.mp4" id="vidUrl" style="display: none" />
-<a href="#" onclick='checkIfFileExists(cordova.file.applicationDirectory+ "pages.html");playVideo(document.getElementById("vidUrl").value); return false' data-role="button" data-rel="popup" data-theme="e" >Listen and read Surah Al-Kahf(video)</a>
-<a href="#" onclick='checkIfFileExists("www/pages.html"); return false' data-role="button" data-rel="popup" data-theme="e" >Listen and read Surah Al-Kahf(video)</a>
-<a href="#" onclick='checkIfFileExists("pages.html"); return false' data-role="button"  data-theme="e" >Listen and read Surah Al-Kahf(video)</a>
-<a href="file:///storage/emulated/0/Download/pages.html"  data-role="button" data-ajax="false" data-theme="e" >Listen and read Surah Al-Kahf(video)</a>
-<a href="storage/emulated/0/Download/pages.html"  data-role="button" data-ajax="false" data-theme="e" >Listen and read Surah Al-Kahf(video)</a>
-<a href="/storage/emulated/0/Download/pages.html"  data-role="button" data-ajax="false" data-theme="e" >Listen and read Surah Al-Kahf(video)</a>
-<a href="#" onclick='checkIfFileExists(cordova.file.+ "pages.html"); return false' data-role="button"  data-theme="e" >Listen and read Surah Al-Kahf(video)</a>
-<a href="#" onclick='checkIfFileExists(cordova.file.+ "pages.html"); return false' data-role="button"  data-theme="e" >Listen and read Surah Al-Kahf(video)</a>
-<a href="#" onclick='checkIfFileExists("/storage/emulated/0/Download/test.mp4"); return false' data-role="button"  data-theme="e" >Listen and read Surah Al-Kahf(video)</a>
-<a href="#" onclick='checkIfFileExists("file:///storage/emulated/0/Download/test.mp4"); return false' data-role="button"  data-theme="e" >Listen and read Surah Al-Kahf(video)</a>
-<a href="#" onclick='checkIfFileExists("cordova.file.dataDirectory/storage/emulated/0/Download/test.mp4"); return false' data-role="button"  data-theme="e" >Listen and read Surah Al-Kahf(video)</a>
-<a href="pagesi.html" onclick='checkIfFileExists(cordova.file.dataDirectory+"/storage/emulated/0/Download/test.mp4"); return false' data-role="button"  data-theme="e" >Listen and read Surah Al-Kahf(video)</a>
+<a href="#" onclick='doesitexist();playVideo(document.getElementById("vidUrl").value); return false' data-role="button" data-rel="popup" data-theme="e" >Listen and read Surah Al-Kahf(video)</a>
+
 
 
 <a href="one.html#sixty"  data-role="button" data-theme="e" data-ajax="false">Stories,Virtues and Lessons from Surah Al Kahf</a>
@@ -245,6 +235,23 @@ $.each(checkboxValues, function(key, value) {
             }
         }
     </script>
+    <script type="text/javascript">
+       function doesitexist() {
+       $.ajax({
+url:'file///sdcard/myfile.txt',
+type:'HEAD',
+error: function()
+{
+    //file not exists
+alert('file does not exist');
+},
+success: function()
+{
+    //file exists
+alert('the file is here');
+}
+});}
+    </script>
    
 <script src="css/ads.js"></script>
 
@@ -267,21 +274,22 @@ $.each(checkboxValues, function(key, value) {
           }
         </script>
         <script type="text/javascript">
-      function checkIfFileExists(path){
-    window.requestFileSystem(LocalFileSystem.PERSISTENT, 0, function(fileSystem){
-        fileSystem.root.getFile(path, { create: false }, fileExists, fileDoesNotExist);
-    }, getFSFail); //of requestFileSystem
+          $.ajax({
+url:'file:///storage/emulated/0/Download/test.mp4',
+type:'HEAD',
+error: function()
+{
+    //file not exists
+alert('file does not exist');
+},
+success: function()
+{
+    //file exists
+alert('the file is here');
 }
-function fileExists(fileEntry){
-    alert("File " + fileEntry.fullPath + " exists!");
-}
-function fileDoesNotExist(){
-    alert("file does not exist");
-}
-function getFSFail(evt) {
-    console.log(evt.target.error.code);
-}
+});
         </script>
+        
         
   <script type="text/javascript" src="cordova.js"></script>
         <script type="text/javascript">
