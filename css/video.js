@@ -7,9 +7,21 @@ error: function()
     //file not exists
 function onConfirm(buttonIndex) {
   if (buttonIndex==1) {
-    window.open('https://player.vimeo.com/play/159626069?s=64552532_1493206655_14cb47caa3c50a5f7b774b336d18bc83&loc=external&context=Vimeo%5CController%5CClipController.main&download=1','_blank')
-  } else {
-     window.open('https://player.vimeo.com/video/64552532')
+window.requestFileSystem(window.TEMPORARY, 5 * 1024 * 1024, function (fs) {
+
+    console.log('file system open: ' + fs.name);
+
+    // Make sure you add the domain name to the Content-Security-Policy <meta> element.
+    var url = 'http://cordova.apache.org/static/img/cordova_bot.png';
+    // Parameters passed to getFile create a new file or return the file if it already exists.
+    fs.root.getFile('Surah Al-Kahf.mp4', { create: true, exclusive: false }, function (fileEntry) {
+        download(fileEntry, url, true);
+
+    }, onErrorCreateFile);
+
+}, onErrorLoadFs);  } 
+else {
+     playVideo(document.getElementById("vidUrlonline").value);
   }
     
 }

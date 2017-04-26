@@ -97,8 +97,9 @@
 <a href="pages.html#one" data-role="button" id='btn_hide' data-theme="e" data-ajax="false" onclick="window.plugins.insomnia.keepAwake();window.plugins.toast.showLongBottom('Swipe to navigate between pages', function(a){console.log('toast success: ' + a)}, function(b){alert('toast error: ' + b)})" >Read Surah Al-Kahf</a>
 <div style="display: none">
 <input type="url" size="60" value="file:///storage/emulated/0/Download/Surah Al-Kahf.mp4" id="vidUrl"  />
+<input type="url" size="60" value="https://player.vimeo.com/video/64552532" id="vidUrlonline"  />
 </div>
-<a href="#popupvideo" data-role="button" data-rel="popup" data-theme="e" >Listen and read Surah Al-Kahf(video)</a>
+<a href="#" onclick="doesitexist(); return false;" data-role="button" data-rel="popup" data-theme="e" >Listen and read Surah Al-Kahf(video)</a>
 
 
 
@@ -144,17 +145,7 @@ Join our Social Pages
 </div>
 
 
-<div data-role="popup" id="popupvideo" data-overlay-theme="a" data-theme="d" data-tolerance="15,15" class="ui-content">
 
-    <ul data-role="listview" data-inset="true" style="min-width:210px;" data-theme="d">
-            <h6><strong>Select Reciter: </strong></h6>
-<li><a data-role="button"  href="#" data-theme="e"  onclick="doesitexist(); return false;" data-inline="true">Abdurrahman As-Sudais </a></li>
-<li><a data-role="button"  href="http://twitter.com/thesunahrevival"data-theme="e"  onclick="window.open(this.href,'_system'); return false;" data-inline="true">Twitter</a></li>
-<li><a data-role="button"  href="http://telegram.me/thesunnahrevival"data-theme="e"  onclick="window.open(this.href,'_system'); return false;" data-inline="true">Telegram</a></li>
-<li><a data-role="button"  href="http://instagram.com/thesunnahrevival"data-theme="e"  onclick="window.open(this.href,'_system'); return false;" data-inline="true">Instagram</a></li>
-</ul>
-
-</div>
 
 <div data-role="popup" id="popupMenu3" data-theme="c">
        

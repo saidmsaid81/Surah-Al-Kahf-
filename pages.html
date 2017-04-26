@@ -75,15 +75,13 @@
   </h4>
  
 </div>
-             <input type="url" size="60" value="file:///storage/emulated/0/Download/1.mp3" id="audUrl"  />
+           
 
             <p><img class="center fit" src="android_asset/www/293.jpg" >
 </p>
 
 </div>
-<div data-role="footer" data-position="fixed">
-<button onclick="playaudio(document.getElementById('audUrl').value);">Play Audio</button>
-</div>
+
  </div>
 
 <div data-role="page" class="nd2-no-menu-swipe" id="two" data-theme="b" data-next="#three" data-prev="#one">
@@ -370,25 +368,7 @@
     }
 });
   </script>
-  <script>
-          function playaudio(audioUrl) {
-              // Play a video with callbacks
-              var options = {
-    bgColor: "#FFFFFF",
-   
-    bgImageScale: "fit", // other valid values: "stretch"
-    initFullscreen: false, // true(default)/false iOS only
-    successCallback: function() {
-      console.log("Player closed without error.");
-    },
-    errorCallback: function(errMsg) {
-      console.log("Error! " + errMsg);
-    }
-  };
-  window.plugins.streamingMedia.playAudio(audioUrl, options);
-
-        </script>
-  
+ 
 <script src="css/jquery.js"></script>
 <script src="css/jquery.min.js"></script>
 
