@@ -66,7 +66,7 @@
         <gap:plugin name="cordova-plugin-x-toast" source="npm" />
         <gap:plugin name="cordova-plugin-streaming-media" source="npm" />
         <gap:plugin name="cordova-plugin-file" source="npm" />
-        <gap:plugin name="cordova-plugin-file-transfer" source="npm" />
+       
 
     <!-- Define app icon for each platform. -->
     <icon src="icon.png" />
