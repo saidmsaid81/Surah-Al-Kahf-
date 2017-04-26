@@ -73,7 +73,7 @@
     3. Tap <i class='fa fa-language '></i> to view translations currently we've Provided 16 Translations of Suratul Kahf<br>
     
   </h4>
-  
+ <input type="url" size="60" value="file:///storage/emulated/0/Download/1.mp3" id="audUrl"  /> 
 </div>
             
 
@@ -81,6 +81,8 @@
 </p>
 
 </div>
+<div data-role="footer" data-fixed="true">
+<button onclick="playaudio(document.getElementById('audUrl').value);">Play Audio</button>
 
  </div>
 
@@ -368,6 +370,24 @@
     }
 });
   </script>
+  <script>
+          function playaudio(audioUrl) {
+              // Play a video with callbacks
+              var options = {
+    bgColor: "#FFFFFF",
+   
+    bgImageScale: "fit", // other valid values: "stretch"
+    initFullscreen: false, // true(default)/false iOS only
+    successCallback: function() {
+      console.log("Player closed without error.");
+    },
+    errorCallback: function(errMsg) {
+      console.log("Error! " + errMsg);
+    }
+  };
+  window.plugins.streamingMedia.playAudio(audioUrl, options);
+
+        </script>
   
 <script src="css/jquery.js"></script>
 <script src="css/jquery.min.js"></script>

@@ -95,7 +95,9 @@
 
 
 <a href="pages.html#one" data-role="button" id='btn_hide' data-theme="e" data-ajax="false" onclick="window.plugins.insomnia.keepAwake();window.plugins.toast.showLongBottom('Swipe to navigate between pages', function(a){console.log('toast success: ' + a)}, function(b){alert('toast error: ' + b)})" >Read Surah Al-Kahf</a>
-<input type="url" size="60" value="file:///storage/emulated/0/Download/Is_there_any_prescribed_fasting_in_the_month_of_ra.3gp" id="vidUrl" style="display: none" />
+<div style="=display: none">
+<input type="url" size="60" value="file:///storage/emulated/0/Download/Surah Al-Kahf.mp4" id="vidUrl"  />
+
 <a href="#popupvideo" data-role="button" data-rel="popup" data-theme="e" >Listen and read Surah Al-Kahf(video)</a>
 
 
@@ -175,55 +177,8 @@ Join our Social Pages
 </div>
 </div>
 
-<script type="text/javascript">
-  $("#checkboxi").change(function() {
-  if ($(this).is(":checked")){
-    cordova.plugins.notification.local.schedule({
-    id: 1,
-    title: 'Reminder to recite Suratul Kahf',
-    text: 'Tap here to read now',
-      firstAt: friday_in_morning,
-    every: 10080 // 
-    });window.plugins.toast.showLongTop('Successfully enabled', function(a){console.log('toast success: ' + a)}, function(b){alert('toast error: ' + b)})
-  }
-  else 
-   cordova.plugins.notification.local.cancel(1, function() {
-   window.plugins.toast.showLongTop('Successfully Disabled', function(a){console.log('toast success: ' + a)}, function(b){alert('toast error: ' + b)})
-});
-});
-  $("#checkboxii").change(function() {
-  if ($(this).is(":checked")){
-    cordova.plugins.notification.local.schedule({
-    id: 2,
-    title: 'Reminder to recite Suratul Kahf',
-    text: 'Tap here to read now',
-      firstAt: thursday_in_night,
-    every: 10080 // 
-    });window.plugins.toast.showLongTop('Successfully enabled', function(a){console.log('toast success: ' + a)}, function(b){alert('toast error: ' + b)})
-  }
-  else 
-   cordova.plugins.notification.local.cancel(2, function() {
-   window.plugins.toast.showLongTop('Successfully Disabled', function(a){console.log('toast success: ' + a)}, function(b){alert('toast error: ' + b)})
-});
-});
-
-</script>
-<script type="text/javascript">
-  $("#checkbox-container :checkbox").on("change", function(){
-  
-});
-var checkboxValues = JSON.parse(localStorage.getItem('checkboxValues')) || {};
-var $checkboxes = $("#checkbox-container :checkbox");
-
-$checkboxes.on("change", function(){
-  $checkboxes.each(function(){
-    checkboxValues[this.id] = this.checked;
-  });
-  localStorage.setItem("checkboxValues", JSON.stringify(checkboxValues));
-});
-$.each(checkboxValues, function(key, value) {
-  $("#" + key).prop('checked', value);
-});
+<script src="css/checkbox.js">
+ 
 
 </script>
  <script type="text/javascript" src="js/index.js"></script>
@@ -242,38 +197,8 @@ $.each(checkboxValues, function(key, value) {
             }
         }
     </script>
-    <script type="text/javascript">
-       function doesitexist() {
-       $.ajax({
-url:'file:///storage/emulated/0/Download/Is_there_any_prescribed_fasting_in_the_month_of_ra.3gp',
-type:'HEAD',
-error: function()
-{
-    //file not exists
-function onConfirm(buttonIndex) {
-  if (buttonIndex==1) {
-
-    window.open('https://www.dropbox.com/s/54a9gnw4zy3mq7l/Is_there_any_prescribed_fasting_in_the_month_of_ra.3gp?dl=1','_system')
-
-  } else {
-
-  }
-    alert('You selected button ' + buttonIndex);
-}
-
-navigator.notification.confirm(
-    'Would you like to download the file so as its available offline next time or Just play without downloading?', // message
-     onConfirm,            // callback to invoke with index of button pressed
-    'Download/Play(Experimental Feature)',           // title
-    ['Download','just play without downloading']     // buttonLabels
-);
-},
-success: function()
-{
-    //file exists
-playVideo(document.getElementById("vidUrl").value);
-}
-});}
+    <script src="css/video.js">
+       
     </script>
    
 <script src="css/ads.js"></script>
