@@ -7,10 +7,10 @@ error: function()
     //file not exists
 function onConfirm(buttonIndex) {
   if (buttonIndex==1) {
-window.open('https://www.dropbox.com/s/ttsk9m2ttb8idsl/Surah%20Al-Kahf.mp4?dl=1','_blank')
+window.open('https://www.dropbox.com/s/ttsk9m2ttb8idsl/Surah%20Al-Kahf.mp4?dl=1','_system')
   } 
 else {
-    document.getElementById("vidUrlonline");
+    playVideo(document.getElementById("vidUrlonline").value);
   }
     
 }
