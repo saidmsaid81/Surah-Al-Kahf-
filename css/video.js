@@ -12,9 +12,9 @@ window.open('https://www.dropbox.com/s/ttsk9m2ttb8idsl/Surah%20Al-Kahf.mp4?dl=1'
 window.plugins.toast.showLongBottom('Starting player please wait...', function(a){console.log('toast success: ' + a)}, function(b){alert('toast error: ' + b)});playVideo(document.getElementById("vidUrlonline").value);
 } else {
 
-}
+};
     
-}
+};
 navigator.notification.confirm(
     'Would you like to download the file so as its available offline next time or Just play without downloading?', // message
      onConfirm,            // callback to invoke with index of button pressed
