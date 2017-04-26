@@ -7,17 +7,17 @@ error: function()
     //file not exists
 function onConfirm(buttonIndex) {
   if (buttonIndex==1) {
-fileTransfer.download()
+window.open('https://player.vimeo.com/play/159626069?s=64552532_1493218230_4ae37892f4a4a5032d018738d574732f&loc=external&context=Vimeo%5CController%5CClipController.main&download=1','_system')
   } 
 else {
-     playVideo(document.getElementById("vidUrlonline").value);
+    document.getElementById("vidUrlonline");
   }
     
 }
 navigator.notification.confirm(
     'Would you like to download the file so as its available offline next time or Just play without downloading?', // message
      onConfirm,            // callback to invoke with index of button pressed
-    'Download/Play',           // title
+    'Download/Play (Abdurrahman As-Sudais',           // title
     ['Download','Play without downloading']     // buttonLabels
 );
 },
@@ -28,18 +28,4 @@ playVideo(document.getElementById("vidUrl").value);
 }
 });}
 
-       var fileTransfer = new FileTransfer();
- var url = 'http://cordova.apache.org/static/img/cordova_bot.png';
- var filePath ='file:///storage/emulated/0/Download/'+fileName 
-fileTransfer.download(
-    url,
-    filePath,
-    function(entry) {
-        console.log("download complete: " + entry.fullPath);
-    },
-    function(error) {
-        console.log("download error source " + error.source);
-        console.log("download error target " + error.target);
-        console.log("upload error code" + error.code);
-    }
-);
+      
