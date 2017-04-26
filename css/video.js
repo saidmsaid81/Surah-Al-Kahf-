@@ -9,8 +9,7 @@ function onConfirm(buttonIndex) {
   if (buttonIndex==1) {
 window.open('https://www.dropbox.com/s/ttsk9m2ttb8idsl/Surah%20Al-Kahf.mp4?dl=1','_system')
 } else if (buttonIndex==2) {
-var win = window.open();
-win.document.write('<iframe name="theFrame" src="https://player.vimeo.com/video/64552532" width="200" height="298" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>')
+ $("#popupvideo").popup("open");
 } else {
 
 };
