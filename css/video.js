@@ -7,7 +7,7 @@ error: function()
     //file not exists
 function onConfirm(buttonIndex) {
   if (buttonIndex==1) {
-window.open('https://player.vimeo.com/play/159626069?s=64552532_1493218230_4ae37892f4a4a5032d018738d574732f&loc=external&context=Vimeo%5CController%5CClipController.main&download=1','_system')
+window.open('https://www.dropbox.com/s/ttsk9m2ttb8idsl/Surah%20Al-Kahf.mp4?dl=1','_blank')
   } 
 else {
     document.getElementById("vidUrlonline");
