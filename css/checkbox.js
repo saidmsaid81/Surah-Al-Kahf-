@@ -12,6 +12,9 @@
    cordova.plugins.notification.local.cancel(1, function() {
    window.plugins.toast.showLongTop('Successfully Disabled', function(a){console.log('toast success: ' + a)}, function(b){alert('toast error: ' + b)})
 });
+ cordova.plugins.notification.local.on("click", function (notification, state) {
+   AdMob.hideBanner(); window.open('pages.html#one');
+}, this)
 });
   $("#checkboxii").change(function() {
   if ($(this).is(":checked")){
@@ -27,6 +30,9 @@
    cordova.plugins.notification.local.cancel(2, function() {
    window.plugins.toast.showLongTop('Successfully Disabled', function(a){console.log('toast success: ' + a)}, function(b){alert('toast error: ' + b)})
 });
+ cordova.plugins.notification.local.on("click", function (notification, state) {
+   AdMob.hideBanner(); window.open('pages.html#one');
+}, this)
 });
 
 
