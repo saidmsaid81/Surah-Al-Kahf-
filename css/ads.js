@@ -22,12 +22,10 @@ AdMob.setOptions({
   bannerAtTop: false,  // set to true, to put banner at top 
   overlap: true,  // set to true, to allow banner overlap webview 
   offsetTopBar: false,  // set to true to avoid ios7 status bar overlap 
-  isTesting: true,  // receiving test ad 
+  isTesting: false,  // receiving test ad 
   autoShow: false,  // auto show interstitial ad when loaded 
 });
 
-AdMob.createBannerView();
-AdMob.showAd(true);
 
 
 
