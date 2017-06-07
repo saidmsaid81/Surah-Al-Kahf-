@@ -62,7 +62,7 @@
         <gap:plugin name="de.appplant.cordova.plugin.local-notification"  source="npm"/>
         <gap:plugin name="cordova-plugin-whitelist" source="npm" />
         <plugin name="cordova-plugin-apprate" source="npm"/>
-        <gap:plugin name="cordova-plugin-admobpro"  source="npm"/>
+        <gap:plugin name="cordova-plugin-admob-free"  source="npm"/>
         <gap:plugin name="cordova-plugin-x-toast" source="npm" />
         <gap:plugin name="cordova-plugin-streaming-media" source="npm" />
         <gap:plugin name="cordova-plugin-file" source="npm" />
