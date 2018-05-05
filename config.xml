@@ -4,8 +4,8 @@
 <widget xmlns     = "http://www.w3.org/ns/widgets"
         xmlns:gap = "http://phonegap.com/ns/1.0"
         id        = "com.ihyausunnah.surahalkahf"
-        version   = "2.0.3">
-	versionCode="47" 
+        version   = "2.0.3-beta-1.0">
+	 
 
     <name>Surah Al Kahf  </name>
 
@@ -14,7 +14,7 @@
     </description>
 
     <author href="http://thesunnahrevival.wordpress.com" email="ihyausunnah@yahoo.com">
-        PhoneGap Team
+        TSR Apps
     </author>
 	
 
