@@ -45,13 +45,13 @@
         <a href="pages.html#one" class="ui-btn ui-btn-inline ui-btn-fab" data-ajax="false"><i class='zmdi zmdi-home'></i></a>
 
         <h1 class="wow fadeIn" id = "heading" data-wow-delay='0.4s'>Translation</h1>
-        <a href="#settings"  data-rel="popup" id="settings-button" class="ui-btn ui-btn-inline ui-btn-fab" ><i class='zmdi zmdi-settings'></i></a>
+        
         
 
 </div>
 
       <div role="main" class="ui-content wow fadeIn" data-inset="false" data-wow-delay="0.2s">
-<a href="#nav-panel1" data-icon="bars" class="ui-btn clr-btn-blue" >View in another Language</a><br>
+<a href="#settings" data-rel="popup" class="ui-btn clr-btn-blue" >View in another Language</a><br>
 <br>
 
 
@@ -66,50 +66,17 @@
 
 
 </div>
-<div data-role="panel"  data-theme="b" id="nav-panel1" data-position="left" data-position-fixed="true" data-display="overlay">
-
-    <ul data-role="listview" data-theme="e" class="nav-search">
-           
-            <li><a href="#" onclick = "loadContent('Trans/en.sahih.xml');document.getElementById('heading').innerHTML='English(Sahih International)';" data-ajax="false">English(Sahih International)</a></li>
-            <li><a href="#" onclick = "loadContent('Trans/en.hilali.xml');document.getElementById('heading').innerHTML='English(Muhsin Khan)';" data-ajax="false">English(Muhsin Khan)</a></li>
-            <li><a href="#" onclick = "loadContent('Trans/ar.muyassar.xml');document.getElementById('heading').innerHTML='Arabic(Muyassar)';" data-ajax="false" >Arabic Muyassar</a></li>
-      <li><a href="#" onclick = "loadContent('Trans/fr.hamidullah.xml');document.getElementById('heading').innerHTML='French(Muhammad Hamidullah)';" data-ajax="false">French</a></li>
-            <li><a href="#" onclick = "loadContent('Trans/id.indonesian.xml');document.getElementById('heading').innerHTML='Indonesian(Bahasa)';" data-ajax="false" >Indonesian</a></li>
-      <li><a href="#" onclick = "loadContent('Trans/ms.basmeih.xml');document.getElementById('heading').innerHTML='Malay(Basmeih)';" data-ajax="false" >Malay</a></li>
-      <li><a href="#" onclick = "loadContent('Trans/no.berg.xml');document.getElementById('heading').innerHTML='Norwegian';" data-ajax="false" >Norwegian</a></li>
-           <li><a href="#" onclick = "loadContent('Trans/sw.barwani.xml');document.getElementById('heading').innerHTML='Swahili(Ali Muhsin Al Barwani)';" data-ajax="false" >Swahili</a></li>
-           <li><a href="#" onclick = "loadContent('Trans/so.abduh.xml');document.getElementById('heading').innerHTML='Somali(Mahmud Abduh)';" data-ajax="false" >Somali</a></li>
-    <li><a href="#" onclick = "loadContent('Trans/es.garcia.xml');document.getElementById('heading').innerHTML='Spanish(Muhammad Garcia)';" data-ajax="false" >Spanish</a></li>
-    <li><a href="#" onclick = "loadContent('Trans/de.bubenheim.xml');document.getElementById('heading').innerHTML='German(Bubenheim & Elyas)';" data-ajax="false" >German</a></li>
-  <li><a href="#" onclick = "loadContent('Trans/ru.kuliev.xml');document.getElementById('heading').innerHTML='Russian(Elmir Kuliev)';" data-ajax="false" >Russian</a></li> <li><a href="#" onclick = "loadContent('Trans/ta.tamil.xml');document.getElementById('heading').innerHTML='Tamil';" data-ajax="false">Tamil</a></li> 
-  <li><a href="#nav-panel2"   >+ 4 More</a></li>
-
-
-</ul>
-
-  </div><!-- /panel -->
-  <div data-role="panel"  data-theme="b" id="nav-panel2" data-position="left" data-display="overlay">
-
-    <ul data-role="listview" data-theme="e" class="nav-search">
-           
-            <li><a href="#" onclick = "loadContent('Trans/ha.gumi.xml');document.getElementById('heading').innerHTML='Hausa(Abubakar Gumi)';" data-ajax="false" >Hausa</a></li>
-            <li><a href="#" onclick = "loadContent('Trans/ur.junagarhi.xml');document.getElementById('heading').innerHTML='Urdu(Muhammad Junagarhi';" data-ajax="false">Urdu</a></li>
-            <li><a href="#" onclick = "loadContent('Trans/hi.hindi.xml');document.getElementById('heading').innerHTML='Hindi(Suheil Faruq)';" data-ajax="false" >Hindi</a></li>
-            <li><a href="#" onclick = "loadContent('Trans/ml.abdulhameed.xml');document.getElementById('heading').innerHTML='Malayalam(Abdul Hameed)';" data-ajax="false" >Malayalam</a></li>
-      
-    <li><a href="#nav-panel1"   >Back</a></li></ul>
-  </div>
 
   <div data-role="popup"  id="settings">
   <div data-role="header" data-theme="b">
-    <h1 class='nd-title'>Select the default translation</h1>
+    <h1 class='nd-title'>Select another language</h1>
   </div>
 
   <div data-role="content" data-theme="b">
     <div id="radio-container">
       <form>
       <fieldset data-role="controlgroup">
-    <legend>Select the default translation</legend>
+    <legend>Select another language</legend>
     <input type="radio" name="radio-choice-1" id="en-sahih" value="choice-1"  checked="checked">
     <label for="en-sahih">English(Sahih International)</label>
     <input type="radio" name="radio-choice-1" id="en-khan" value="choice-2">
@@ -151,10 +118,6 @@
 </div>
 </div>
 
-<div data-role="popup" id="info" data-position-to="#settings-button" data-arrow="t" class="ui-content" data-theme="b"  style="max-width:350px;" style="display:none">
-                Tap here to set your default translation
-            </div>
-</div>
 
 <script src="css/jquery.min.js"></script>
   <script src="css/trans.js"></script>

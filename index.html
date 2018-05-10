@@ -135,9 +135,39 @@
 					<label>
 				        <input type="checkbox" name="checkbox-0 " id="checkboxi" data-theme="d">Suratul Kahf reminder on Friday
 				    </label>
+				    <div id="friday-time" style="display: none;">
+				    	<form>
+						    <label for="time-1">Select the time to be notified on Friday</label>
+						    <input type="time" data-clear-btn="false" name="time-1" id="time-1" value="">
+						    <p id ="friday-time-set"></p>
+						     <a href="#" data-role="button" onclick="
+						     var timeSet = $('#time-1').val();
+						     var hour = timeSet.substring(0, 2);
+						     localStorage.setItem('hourVal', parseInt(hour));
+						     var minute = timeSet.substring(3,5);
+						     localStorage.setItem('minuteVal', parseInt(minute));
+						     document.getElementById('friday-time-set').innerHTML = 'Currently set to Friday at ' + timeSet;" data-theme="b">Save</a>
+						
+						 </form>
+				    </div>
 				    <label>
 				    	<input type="checkbox" name="checkbox-v-2b" data-theme="d" id="checkboxii">Suratul Kahf reminder on Thursday Night
 				     </label>
+				     <div id="thurs-time" style="display: none;">
+				    	<form>
+						    <label for="time-2">Select the time to be notified on Friday</label>
+						    <input type="time" data-clear-btn="false" name="time-2" id="time-2" value="">
+						    <p id ="thurs-time-set"></p>
+						     <a href="#" data-role="button" onclick="
+						     var thursTimeSet = $('#time-2').val();
+						     var thursHour = thursTimeSet.substring(0, 2);
+						     localStorage.setItem('thursHourVal', parseInt(thursHour));
+						     var thursMinute = thursTimeSet.substring(3,5);
+						     localStorage.setItem('thursMinuteVal', parseInt(thursMinute));
+						     document.getElementById('thurs-time-set').innerHTML = 'Currently set to Thursday at ' + thursTimeSet;" data-theme="b">Save</a>
+						
+						 </form>
+				    </div>
         		</fieldset>
 			</form>
 			</div>
@@ -237,6 +267,13 @@
       localStorage.setItem('lang', 'Trans/en.sahih.xml');
     }
   });
+  </script>
+  <script type="text/javascript">
+  	function showhide(id) {
+       	var e = document.getElementById(id);
+       	e.style.display = (e.style.display == 'block') ? 'none' : 'block';
+     }
+						    
   </script>
 <script type="text/javascript" src="cordova.js"></script>
 <script type="text/javascript">
