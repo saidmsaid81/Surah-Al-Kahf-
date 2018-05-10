@@ -146,7 +146,9 @@
 						     localStorage.setItem('hourVal', parseInt(hour));
 						     var minute = timeSet.substring(3,5);
 						     localStorage.setItem('minuteVal', parseInt(minute));
-						     document.getElementById('friday-time-set').innerHTML = 'Currently set to Friday at ' + timeSet;" data-theme="b">Save</a>
+						     document.getElementById('friday-time-set').innerHTML = 'Currently set to Friday at ' + timeSet;
+						     setNotificationFriday();
+						     " data-theme="b">Save</a>
 						
 						 </form>
 				    </div>
@@ -164,7 +166,8 @@
 						     localStorage.setItem('thursHourVal', parseInt(thursHour));
 						     var thursMinute = thursTimeSet.substring(3,5);
 						     localStorage.setItem('thursMinuteVal', parseInt(thursMinute));
-						     document.getElementById('thurs-time-set').innerHTML = 'Currently set to Thursday at ' + thursTimeSet;" data-theme="b">Save</a>
+						     document.getElementById('thurs-time-set').innerHTML = 'Currently set to Thursday at ' + thursTimeSet;
+						     setNotificationFriday();" data-theme="b">Save</a>
 						
 						 </form>
 				    </div>
