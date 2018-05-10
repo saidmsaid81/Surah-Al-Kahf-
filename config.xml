@@ -4,7 +4,9 @@
 <widget xmlns     = "http://www.w3.org/ns/widgets"
         xmlns:gap = "http://phonegap.com/ns/1.0"
         id        = "com.ihyausunnah.surahalkahf"
-        version   = "2.0.3-beta-2.0">
+        version   = "2.0.3-beta-2.0"
+        xmlns:android="http://schemas.android.com/apk/res/android">
+        <!--Delete the above line during production-->
 	 
 
     <name>Surah Al Kahf  </name>
@@ -40,7 +42,11 @@
     <!-- Plugins -->
 
     <gap:platform name="android" />
-	
+    <!-- Make the app debuggable start-->
+    <gap:config-file platform="android" parent="/manifest">
+     <application android:debuggable="true" />
+</gap:config-file>
+	<!--end-->
 <feature name="http://api.phonegap.com/1.0/network"/>
 	
 <plugin name="cordova-plugin-inappbrowser" spec="~1.7.0" />

@@ -231,6 +231,13 @@
           
           }
  </script>
+ <script type="text/javascript">
+    $(function() {
+    if( ! localStorage.getItem( "lang" ) ) {
+      localStorage.setItem('lang', 'Trans/en.sahih.xml');
+    }
+  });
+  </script>
 <script type="text/javascript" src="cordova.js"></script>
 <script type="text/javascript">
     app.initialize();
