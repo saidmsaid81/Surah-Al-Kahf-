@@ -23,3 +23,24 @@ function myFunction(xml) {
     
     }
 };
+
+ if( ! localStorage.getItem( "transRanOnce" ) ) {
+   $(document).ready(function(){
+   setTimeout(function(){
+     $('#info').popup();
+    $('#info').popup('open');
+   },500);
+
+   setTimeout(function(){
+     closepopup()
+   },5000); // 5000 to load it after 5 seconds from page load
+});
+    
+function closepopup() {
+    $('#info').popup('close');
+    localStorage.setItem( "transRanOnce", true );
+    
+}
+};
+
+

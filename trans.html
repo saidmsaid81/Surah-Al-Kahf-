@@ -45,7 +45,7 @@
         <a href="pages.html#one" class="ui-btn ui-btn-inline ui-btn-fab" data-ajax="false"><i class='zmdi zmdi-home'></i></a>
 
         <h1 class="wow fadeIn" id = "heading" data-wow-delay='0.4s'>Translation</h1>
-        <a href="#settings" data-rel="popup" class="ui-btn ui-btn-inline ui-btn-fab" ><i class='zmdi zmdi-settings'></i></a>
+        <a href="#settings"  data-rel="popup" id="settings-button" class="ui-btn ui-btn-inline ui-btn-fab" ><i class='zmdi zmdi-settings'></i></a>
         
 
 </div>
@@ -151,6 +151,9 @@
 </div>
 </div>
 
+<div data-role="popup" id="info" data-position-to="#settings-button" data-arrow="t" class="ui-content" data-theme="b"  style="max-width:350px;" style="display:none">
+                Tap here to set your default translation
+            </div>
 </div>
 
 <script src="css/jquery.min.js"></script>
@@ -159,13 +162,6 @@
   <script src="css/jquery-ui.min.js"></script>
     <script src="css/jquery.mobile.min.js"></script>
     <script type="text/javascript">
-    $(function() {
-    if( ! localStorage.getItem( "lang" ) ) {
-      localStorage.setItem('lang', 'Trans/en.sahih.xml');
-    }
-  });
-  </script>
-  <script type="text/javascript">
     loadContent (localStorage.getItem('lang'));
   </script>
     <script src="css/nativedroid2.js"></script>
