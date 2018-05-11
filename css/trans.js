@@ -6,19 +6,20 @@ xhttp.onreadystatechange = function() {
         myFunction(this);
     }
 };
-xhttp.open("GET", trans , true);
+xhttp.open("GET", trans , true); //Open the xml file
 xhttp.send();
 
 function myFunction(xml) {
     var x, i, xmlDoc, txt;
     xmlDoc = xml.responseXML;
     txt = "";
-    x = xmlDoc.getElementsByTagName('aya');
+    x = xmlDoc.getElementsByTagName('aya'); //Get all 'aya' tags in xml file
+    //Loop through the tags and store them in var txt
     for (i = 1 ; i <x.length; i++) {
         txt += "<img class='center fit' src='images/18_" + i + ".png'/><br><strong>["+ x[i].getAttribute('index') + "] " + x[i].getAttribute('text') + "<br></strong>";
     }
-    
-    document.getElementById("demo").innerHTML = txt;
+    //Display the content of var txt in <div id="trans-container"/>
+    document.getElementById("trans-container").innerHTML = txt;
 
     
     }

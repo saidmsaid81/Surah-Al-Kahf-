@@ -9,7 +9,7 @@ else
    window.plugins.toast.showLongTop('Successfully Disabled', function(a){console.log('toast success: ' + a)}, function(b){alert('toast error: ' + b)})
 });
  cordova.plugins.notification.local.on("click", function (notification, state) {
-   AdMob.hideBanner(); window.open('pages.html#one');
+   admob.banner.hide(); window.open('pages.html');
 }, this)
 
 });
@@ -22,7 +22,7 @@ else
    window.plugins.toast.showLongTop('Successfully Disabled', function(a){console.log('toast success: ' + a)}, function(b){alert('toast error: ' + b)})
 });
  cordova.plugins.notification.local.on("click", function (notification, state) {
-   AdMob.hideBanner(); window.open('pages.html#one');
+   AdMob.hideBanner(); window.open('pages.html');
 }, this)
 });
 
@@ -49,8 +49,12 @@ function setNotificationFriday() {
     title: 'Reminder to recite Suratul Kahf',
     text: 'Tap here to read now',
     firstAt: localStorage.getItem("friNotiftime"),
+    actions: [
+        { id: 'friReadNow', title: 'Read Now' },
+        { id: 'friRemind',  title: 'Remind others' }
+    ],
     every: 10080 // 
-    });window.plugins.toast.showLongBottom("Successfully Enabled");
+    });window.plugins.toast.showLongTop("Successfully Enabled");
   
 }
 
@@ -60,7 +64,14 @@ function setNotificationThurs() {
     title: 'Reminder to recite Suratul Kahf',
     text: 'Tap here to read now',
     firstAt: localStorage.getItem("thursNotiftime"),
+    actions: [
+        { id: 'readNow', title: 'Read Now' },
+        { id: 'remind',  title: 'Remind others' }
+    ],
     every: 10080 // 
-    });window.plugins.toast.showLongBottom("Successfully Enabled");
+    });window.plugins.toast.showLongTop("Successfully Enabled");
   
 }
+
+cordova.plugins.notification.local.on('readNow', function (notification, eopts) { AdMob.hideBanner(); window.open('pages.html'); });
+cordova.plugins.notification.local.on('remind', function (notification, eopts) { window.plugins.socialsharing.share('test', null, null, 'goo.gl/LAhqoF'); });
