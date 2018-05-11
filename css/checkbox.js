@@ -23,7 +23,9 @@ else
 });
  cordova.plugins.notification.local.on("click", function (notification, state) {
    AdMob.hideBanner(); window.open('pages.html');
-}, this)
+}, this);
+cordova.plugins.notification.local.on('readNow', function (notification, eopts) { AdMob.hideBanner(); window.open('pages.html') });
+cordova.plugins.notification.local.on('remind', function (notification, eopts) { window.plugins.socialsharing.share('test', null, null, 'goo.gl/LAhqoF'); });
 });
 
 
@@ -73,5 +75,3 @@ function setNotificationThurs() {
   
 }
 
-cordova.plugins.notification.local.on('readNow', function (notification, eopts) { AdMob.hideBanner(); window.open('pages.html'), this });
-cordova.plugins.notification.local.on('remind', function (notification, eopts) { window.plugins.socialsharing.share('test', null, null, 'goo.gl/LAhqoF'), this});
