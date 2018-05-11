@@ -1,4 +1,7 @@
- var admobid = {};
+ var admobid = {
+  banner: 'ca-app-pub-6981212130280607/8129501976',
+    interstitial: 'ca-app-pub-6981212130280607/9606235175',
+ };
 if ( /(android)/i.test(navigator.userAgent) ) {  // for android & amazon-fireos 
   admobid = {
     banner: 'ca-app-pub-6981212130280607/8129501976',
