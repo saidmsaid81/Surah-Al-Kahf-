@@ -73,5 +73,5 @@ function setNotificationThurs() {
   
 }
 
-cordova.plugins.notification.local.on('readNow', function (notification, eopts) { AdMob.hideBanner(); window.open('pages.html'); });
-cordova.plugins.notification.local.on('remind', function (notification, eopts) { window.plugins.socialsharing.share('test', null, null, 'goo.gl/LAhqoF'); });
+cordova.plugins.notification.local.on('readNow', function (notification, eopts) { AdMob.hideBanner(); window.open('pages.html'), this });
+cordova.plugins.notification.local.on('remind', function (notification, eopts) { window.plugins.socialsharing.share('test', null, null, 'goo.gl/LAhqoF'), this});
