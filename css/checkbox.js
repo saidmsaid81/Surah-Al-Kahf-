@@ -48,7 +48,7 @@ function setNotificationFriday() {
     id: 1,
     title: 'Reminder to recite Suratul Kahf',
     text: 'Tap here to read now',
-      firstAt: friday_in_morning,
+    firstAt: localStorage.getItem("friNotiftime"),
     every: 10080 // 
     });window.plugins.toast.showLongBottom("Successfully Enabled");
   
@@ -59,7 +59,7 @@ function setNotificationThurs() {
     id: 2,
     title: 'Reminder to recite Suratul Kahf',
     text: 'Tap here to read now',
-    firstAt: thursday_in_night,
+    firstAt: localStorage.getItem("thursNotiftime"),
     every: 10080 // 
     });window.plugins.toast.showLongBottom("Successfully Enabled");
   
