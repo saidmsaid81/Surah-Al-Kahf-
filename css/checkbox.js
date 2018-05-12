@@ -4,10 +4,11 @@
     
 }
 
-else 
+else {
    cordova.plugins.notification.local.cancel(1, function() {
    window.plugins.toast.showLongTop('Successfully Disabled', function(a){console.log('toast success: ' + a)}, function(b){alert('toast error: ' + b)})
 });
+ }
  cordova.plugins.notification.local.on("click", function (notification, state) {
    admob.banner.hide(); window.open('pages.html');
 }, this)
@@ -17,15 +18,11 @@ else
   if ($(this).is(":checked")){
     javascript:showhide('thurs-time');
   }
-  else 
+  else {
    cordova.plugins.notification.local.cancel(2, function() {
    window.plugins.toast.showLongTop('Successfully Disabled', function(a){console.log('toast success: ' + a)}, function(b){alert('toast error: ' + b)})
 });
- cordova.plugins.notification.local.on("click", function (notification, state) {
-   AdMob.hideBanner(); window.open('pages.html');
-}, this);
-cordova.plugins.notification.local.on('readNow', function (notification, eopts) { AdMob.hideBanner(); window.open('pages.html') });
-cordova.plugins.notification.local.on('remind', function (notification, eopts) { window.plugins.socialsharing.share('test', null, null, 'goo.gl/LAhqoF'); });
+ }
 });
 
 
@@ -67,11 +64,22 @@ function setNotificationThurs() {
     text: 'Tap here to read now',
     firstAt: localStorage.getItem("thursNotiftime"),
     actions: [
-        { id: 'readNow', title: 'Read Now' },
-        { id: 'remind',  title: 'Remind others' }
+        { id: 'readNow', title: 'Read Now', type: 'button' },
+        { id: 'remind',  title: 'Remind others', type: 'button' }
     ],
     every: 10080 // 
     });window.plugins.toast.showLongTop("Successfully Enabled");
   
 }
+
+// Listen for events
+    bindNotificationEvents: function () {
+        cordova.plugins.notification.local.on("click", function (notification, state) {
+        AdMob.hideBanner(); window.open('pages.html');
+        }, this);
+        cordova.plugins.notification.local.on('readNow', function (notification, eopts) { 
+        AdMob.hideBanner(); window.open('pages.html') });
+        cordova.plugins.notification.local.on('remind', function (notification, eopts) { 
+        window.plugins.socialsharing.share('test', null, null, 'goo.gl/LAhqoF'); });
+    }
 
