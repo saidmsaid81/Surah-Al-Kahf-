@@ -1,4 +1,4 @@
- $("#checkboxi").change(function() {
+$("#checkboxi").change(function() {
   if ($(this).is(":checked")){
     javascript:showhide('friday-time');
     
@@ -23,6 +23,9 @@ else {
    window.plugins.toast.showLongTop('Successfully Disabled', function(a){console.log('toast success: ' + a)}, function(b){alert('toast error: ' + b)})
 });
  }
+  cordova.plugins.notification.local.on("click", function (notification, state) {
+        AdMob.hideBanner(); window.open('pages.html');
+        }, this);
 });
 
 
@@ -48,6 +51,8 @@ function setNotificationFriday() {
     title: 'Reminder to recite Suratul Kahf',
     text: 'Tap here to read now',
     firstAt: localStorage.getItem("friNotiftime"),
+    icon: 'res://icon',
+    smallIcon: 'res://cordova',
     actions: [
         { id: 'friReadNow', title: 'Read Now' },
         { id: 'friRemind',  title: 'Remind others' }
@@ -63,6 +68,8 @@ function setNotificationThurs() {
     title: 'Reminder to recite Suratul Kahf',
     text: 'Tap here to read now',
     firstAt: localStorage.getItem("thursNotiftime"),
+    icon: 'res://icon',
+    smallIcon: 'res://cordova',
     actions: [
         { id: 'readNow', title: 'Read Now', type: 'button' },
         { id: 'remind',  title: 'Remind others', type: 'button' }
@@ -71,15 +78,3 @@ function setNotificationThurs() {
     });window.plugins.toast.showLongTop("Successfully Enabled");
   
 }
-
-// Listen for events
-    bindNotificationEvents: function () {
-        cordova.plugins.notification.local.on("click", function (notification, state) {
-        AdMob.hideBanner(); window.open('pages.html');
-        }, this);
-        cordova.plugins.notification.local.on('readNow', function (notification, eopts) { 
-        AdMob.hideBanner(); window.open('pages.html') });
-        cordova.plugins.notification.local.on('remind', function (notification, eopts) { 
-        window.plugins.socialsharing.share('test', null, null, 'goo.gl/LAhqoF'); });
-    }
-
