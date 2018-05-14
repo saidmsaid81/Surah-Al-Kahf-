@@ -6,8 +6,9 @@ $("#checkboxi").change(function() {
 
 else {
    cordova.plugins.notification.local.cancel(1, function() {
-   window.plugins.toast.showLongTop('Successfully Disabled', function(a){console.log('toast success: ' + a)}, function(b){alert('toast error: ' + b)})
+   window.plugins.toast.showLongTop("Successfully Disabled");
 });
+   document.getElementById("save-fri").disabled = true;
  }
  cordova.plugins.notification.local.on("click", function (notification, state) {
    admob.banner.hide(); window.open('pages.html');
@@ -20,8 +21,9 @@ else {
   }
   else {
    cordova.plugins.notification.local.cancel(2, function() {
-   window.plugins.toast.showLongTop('Successfully Disabled', function(a){console.log('toast success: ' + a)}, function(b){alert('toast error: ' + b)})
+   window.plugins.toast.showLongTop("Successfully Disabled");
 });
+   document.getElementById("save-thurs").disabled = true;
  }
   cordova.plugins.notification.local.on("click", function (notification, state) {
         AdMob.hideBanner(); window.open('pages.html');
@@ -52,7 +54,7 @@ function setNotificationFriday() {
     text: 'Tap here to read now',
     firstAt: localStorage.getItem("friNotiftime"),
     icon: 'res://icon',
-    smallIcon: 'res://cordova',
+    smallIcon: 'res://ic_popup_reminder',
     actions: [
         { id: 'friReadNow', title: 'Read Now' },
         { id: 'friRemind',  title: 'Remind others' }
@@ -69,7 +71,7 @@ function setNotificationThurs() {
     text: 'Tap here to read now',
     firstAt: localStorage.getItem("thursNotiftime"),
     icon: 'res://icon',
-    smallIcon: 'res://cordova',
+    smallIcon: 'res://ic_popup_reminder',
     actions: [
         { id: 'readNow', title: 'Read Now', type: 'button' },
         { id: 'remind',  title: 'Remind others', type: 'button' }
@@ -78,3 +80,7 @@ function setNotificationThurs() {
     });window.plugins.toast.showLongTop("Successfully Enabled");
   
 }
+cordova.plugins.notification.local.on('readNow', function () {
+            console.log('like', arguments);
+            
+        });

@@ -140,7 +140,7 @@
 						    <label for="time-1">Select the time to be notified on Friday</label>
 						    <input type="time" data-clear-btn="false" name="time-1" id="time-1" value="">
 						    <p id ="friday-time-set"></p>
-						     <a href="#" data-role="button" onclick="
+						     <a href="#" id="save-thurs" data-role="button" onclick="
 						     var timeSet = $('#time-1').val();
 						     var hour = timeSet.substring(0, 2);
 						     localStorage.setItem('hourVal', parseInt(hour));
@@ -161,7 +161,7 @@
 						    <label for="time-2">Select the time to be notified on Thursday</label>
 						    <input type="time" data-clear-btn="false" name="time-2" id="time-2" value="">
 						    <p id ="thurs-time-set"></p>
-						     <a href="#" data-role="button" onclick="
+						     <a href="#" id="save-thurs" data-role="button" onclick="
 						     var thursTimeSet = $('#time-2').val();
 						     var thursHour = thursTimeSet.substring(0, 2);
 						     localStorage.setItem('thursHourVal', parseInt(thursHour));

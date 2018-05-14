@@ -48,6 +48,7 @@
                 <a href="index.html" class="ui-btn ui-btn-inline ui-btn-fab" data-ajax="false"><i class='zmdi zmdi-home'></i></a>
 
                 <h1 class="wow fadeIn" data-wow-delay='0.4s'> Page 293</h1>
+                <a href="#" onclick='openHelpDialog();' data-ajax="false" class=" ui-btn ui-btn-inline ui-btn-fab ui-btn-right" style="margin-right: 120px; visibility: visible; animation-delay: 1s; animation-name: fadeIn;"><i class='fa fa-question'></i></a>
 
                 <a href="#" onclick="window.plugins.socialsharing.share('I am reminding you to read Surah Al Kahf its the Sunnah of our beloved Prophet Muhammad (SAW).\n\nIt was narrated from Abu Sa’eed al-Khduri that the Prophet (peace and blessings of Allaah be upon him) said: \n\n“Whoever reads Soorat al-Kahf on Friday, he will be illuminated with light between the two Fridays.”\n\n Narrated by al-Haakim; classed as saheeh by al-Albaani in Saheeh al-Targheeb, 836 \n\nSent from Surah Al Kahf Android app\n\nHave a look at Surah Al Kahf App\nLink:', null, null, 'https://goo.gl/LAhqoF'); return false;" id="share" class=" ui-btn ui-btn-inline ui-btn-fab ui-btn-right" style="margin-right: 80px; visibility: visible; animation-delay: 1s; animation-name: fadeIn;"><i class='zmdi zmdi-notifications-active'></i></a>
                 <a href="trans.html" data-ajax="false" class="ui-btn ui-btn-inline ui-btn-fab ui-btn-right" style="margin-right: 42px; visibility: visible; animation-delay: 1s; animation-name: fadeIn;"><i class='fa fa-language '></i></a>
@@ -59,12 +60,13 @@
                 Tap here to remind others to read too
             </div>
 
-            <div id="pagesdialog-message" title="Tutorial" style="display:none">
+            <div  id="pagesdialog-message" data-role="popup"  title="Tutorial" style="display:none">
                <!--Appears on first visit by the user--> 
                 <h4>
                     1. Tap the screen once to hide/show the header<br><br>
-                    2. Tap <i class='zmdi zmdi-share'></i> above to remind others to recite Suratul Kahf and earn the ajr <br><br>
-                    3. Tap <i class='fa fa-language '></i> to view translations currently we've Provided 16 Translations of Suratul Kahf<br>
+                    2. Swipe Right to move to next page and swipe left to move to previous page<br><br>
+                    3. Tap <i class='zmdi zmdi-notifications-active'></i> above to remind others to recite Suratul Kahf and earn the ajr <br><br>
+                    4. Tap <i class='fa fa-language '></i> to view translations currently we've Provided 17 Translations of Suratul Kahf<br>
     
                 </h4>
  
@@ -78,19 +80,19 @@
   <script>
   $(function() {
     if( ! localStorage.getItem( "pagesrunOnce" ) ) {
-        $( "#pagesdialog-message" ).dialog({
+                    openHelpDialog();
+                    localStorage.setItem( "pagesrunOnce", true );
+                }
+            });
+      
+  function openHelpDialog() {
+    $( "#pagesdialog-message" ).dialog({
             modal: true,
             resizable: false,
             
             buttons: {
                 Ok: function() {
-                    $( this ).dialog( "close" );
-                    localStorage.setItem( "pagesrunOnce", true );
-                }
-            }
-        });
-    }
-});
+                    $( this ).dialog( "close" );}}})};
   </script>
 
   <script type="text/javascript"> 
