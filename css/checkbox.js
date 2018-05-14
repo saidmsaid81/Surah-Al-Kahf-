@@ -22,7 +22,6 @@ else {
   }
   else {
     $("#save-thurs").prop("disabled",true);
-    document.getElementById("thurs-time-set").innerHTML="Currently Disabled Check the box to enable";
    cordova.plugins.notification.local.cancel(2, function() {
    window.plugins.toast.showLongTop("Successfully Disabled");
 });
