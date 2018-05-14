@@ -16,6 +16,8 @@
 	<link rel="stylesheet" href="css/font-awesome
 	.css">
  	<link rel="shortcut icon" href="../../favicon.ico">
+ 	<script type="text/javascript" src="cordova.js"></script>
+ 	<script type="text/javascript" src="js/index.js"></script>
 	<script src="css/jquery-1.7.1.min.js"></script>
 	<script src="css/jquery.mobile-1.3.0.js"></script>
 	<script type="text/javascript" src="js/time.js"></script>
@@ -100,7 +102,7 @@
 		<!--Remind a friend popup-->
 		<div data-role="popup" id="remind-a-friend" class="ui-content" data-theme="a" style="max-width:350px;">
   			<h3>Why Remind</h3><p><strong>Abu Mas'ud Al-Ansari (r.a.) narrated that Allah’s Messenger (s.a.w.s.) said, “…One who guides to something good has a reward similar to that of its doer.” (Muslim, Vol. 4, Hadeeth 4665) </strong></p>
-  			<button data-inline="true" onclick="window.plugins.socialsharing.share('I am reminding you to read Surah Al Kahf its the Sunnah of our beloved Prophet Muhammad (SAW).\n\nIt was narrated from Abu Sa’eed al-Khduri that the Prophet (peace and blessings of Allaah be upon him) said: \n\n“Whoever reads Soorat al-Kahf on Friday, he will be illuminated with light between the two Fridays.” \n\nNarrated by al-Haakim; classed as saheeh by al-Albaani in Saheeh al-Targheeb, 836 ;Sent from Surah Al Kahf android App Link to app', null, null, 'goo.gl/LAhqoF')" data-theme="e">Remind Others
+  			<button data-inline="true" onclick="openReminderDialog();" data-theme="e">Remind Others
   			</button>
   		<a href="#" data-rel="back" data-role="button" data-inline="true"    data-theme="e" >No thanks</a> 
 		</div>
@@ -232,7 +234,7 @@
 
 <!--Scripts-->
 
-<script type="text/javascript" src="js/index.js"></script>
+
 <script src="css/checkbox.js"></script>
 <script type="text/javascript">
 	//Checks if its the user's first time an displays a welcome screen
@@ -250,6 +252,7 @@
      }
 </script>
 <script src="css/video.js"></script>
+<script src="js/share.js"></script>
 <script>
           function playVideo(videoUrl) {
               // Play a video with callbacks
@@ -280,10 +283,9 @@
      }
 						    
   </script>
-<script type="text/javascript" src="cordova.js"></script>
-<script type="text/javascript">
-    AdMob.showAd(true);
-</script>
+
+
+
 
 </body>
 </html>

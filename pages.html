@@ -11,7 +11,8 @@
     <link rel="stylesheet" href="css/nativedroid21.css" />
     <link rel="stylesheet" href="css/nativedroid2.color.blue.css" />
     <link rel="stylesheet" href="css/font-awesome.css">
- 
+    <script type="text/javascript" src="cordova.js"></script>
+    <script type="text/javascript" src="js/pages.js"></script>
     <script src="css/jquery-1.7.1.min.js"></script>
     <style>
       /* Prevent FOUC */
@@ -50,9 +51,9 @@
                 <h1 class="wow fadeIn"  data-wow-delay='0.4s'> Suratul Kahf</h1>
                 <a href="#" onclick='openHelpDialog();' data-ajax="false" class=" ui-btn ui-btn-inline ui-btn-fab ui-btn-right" style="margin-right: 120px; visibility: visible; animation-delay: 1s; animation-name: fadeIn;"><i class='fa fa-question'></i></a>
 
-                <a href="#" onclick="window.plugins.socialsharing.share('I am reminding you to read Surah Al Kahf its the Sunnah of our beloved Prophet Muhammad (SAW).\n\nIt was narrated from Abu Sa’eed al-Khduri that the Prophet (peace and blessings of Allaah be upon him) said: \n\n“Whoever reads Soorat al-Kahf on Friday, he will be illuminated with light between the two Fridays.”\n\n Narrated by al-Haakim; classed as saheeh by al-Albaani in Saheeh al-Targheeb, 836 \n\nSent from Surah Al Kahf Android app\n\nHave a look at Surah Al Kahf App\nLink:', null, null, 'https://goo.gl/LAhqoF'); return false;" id="share" class=" ui-btn ui-btn-inline ui-btn-fab ui-btn-right" style="margin-right: 80px; visibility: visible; animation-delay: 1s; animation-name: fadeIn;"><i class='zmdi zmdi-notifications-active'></i></a>
+                <a href="#" onclick="openReminderDialog(); return false;" id="share" class=" ui-btn ui-btn-inline ui-btn-fab ui-btn-right" style="margin-right: 80px; visibility: visible; animation-delay: 1s; animation-name: fadeIn;"><i class='zmdi zmdi-notifications-active'></i></a>
                 <a href="trans.html" data-ajax="false" class="ui-btn ui-btn-inline ui-btn-fab ui-btn-right" style="margin-right: 42px; visibility: visible; animation-delay: 1s; animation-name: fadeIn;"><i class='fa fa-language '></i></a>
-                <a href="#"   onclick="window.plugins.socialsharing.share('I am reminding you to read Surah Al Kahf its the Sunnah of our beloved Prophet Muhammad (SAW).\n\nIt was narrated from Abu Sa’eed al-Khduri that the Prophet (peace and blessings of Allaah be upon him) said: \n\n“Whoever reads Soorat al-Kahf on Friday, he will be illuminated with light between the two Fridays.”\n\n Narrated by al-Haakim; classed as saheeh by al-Albaani in Saheeh al-Targheeb, 836 \n\nSent from Surah Al Kahf Android app\n\nHave a look at Surah Al Kahf App\nLink:', null, 'www/images/293.jpg', 'https://goo.gl/LAhqoF'); return false;" class=" ui-btn ui-btn-inline ui-btn-fab ui-btn-right"><i class='zmdi zmdi-share'></i></a> 
+                <a href="#"   onclick="openShareDialog(); return false;" class=" ui-btn ui-btn-inline ui-btn-fab ui-btn-right"><i class='zmdi zmdi-share'></i></a> 
                 
             </div>
             <!--Popup appears only on Thursday Nights and Friday-->
@@ -163,9 +164,10 @@ break;
         <script src="css/nd2settings.js"></script>
 
         <script src="css/swipe-page.js"></script>
+        <script src="js/share.js"></script>
         
         
-        <script type="text/javascript" src="cordova.js"></script>
+       
  
 
     </body>
