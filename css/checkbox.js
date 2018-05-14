@@ -5,10 +5,11 @@ $("#checkboxi").change(function() {
 }
 
 else {
+  $("#save-fri").prop("disabled",true);
    cordova.plugins.notification.local.cancel(1, function() {
    window.plugins.toast.showLongTop("Successfully Disabled");
 });
-   document.getElementById("save-fri").disabled = true;
+
  }
  cordova.plugins.notification.local.on("click", function (notification, state) {
    admob.banner.hide(); window.open('pages.html');
@@ -20,10 +21,11 @@ else {
     javascript:showhide('thurs-time');
   }
   else {
+    $("#save-thurs").prop("disabled",true);
+    document.getElementById("thurs-time-set").innerHTML="Currently Disabled Check the box to enable";
    cordova.plugins.notification.local.cancel(2, function() {
    window.plugins.toast.showLongTop("Successfully Disabled");
 });
-   document.getElementById("save-thurs").disabled = true;
  }
   cordova.plugins.notification.local.on("click", function (notification, state) {
         AdMob.hideBanner(); window.open('pages.html');
@@ -55,10 +57,6 @@ function setNotificationFriday() {
     firstAt: localStorage.getItem("friNotiftime"),
     icon: 'res://icon',
     smallIcon: 'res://ic_popup_reminder',
-    actions: [
-        { id: 'friReadNow', title: 'Read Now' },
-        { id: 'friRemind',  title: 'Remind others' }
-    ],
     every: 10080 // 
     });window.plugins.toast.showLongTop("Successfully Enabled");
   
@@ -72,15 +70,7 @@ function setNotificationThurs() {
     firstAt: localStorage.getItem("thursNotiftime"),
     icon: 'res://icon',
     smallIcon: 'res://ic_popup_reminder',
-    actions: [
-        { id: 'readNow', title: 'Read Now', type: 'button' },
-        { id: 'remind',  title: 'Remind others', type: 'button' }
-    ],
     every: 10080 // 
     });window.plugins.toast.showLongTop("Successfully Enabled");
   
 }
-cordova.plugins.notification.local.on('readNow', function () {
-            console.log('like', arguments);
-            
-        });

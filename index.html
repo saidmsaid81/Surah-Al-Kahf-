@@ -83,7 +83,7 @@
 			<!--Plays the video file if downloaded/Streams it if not-->
 			<a href="#" onclick="doesitexist(); return false;" data-role="button"  data-theme="e" >Listen and read Surah Al-Kahf(video)</a>
 
-			<a href="#sub-page"  data-role="button" data-theme="e" >Stories,Virtues and Lessons from Surah Al Kahf</a>
+			<a href="#sub-page"  data-role="button"  data-theme="e" >Stories,Virtues and Lessons from Surah Al Kahf</a>
 
 			<a href="one.html#twentyeight"  data-role="button" data-theme="e" data-ajax="false">Frequently Asked questions</a>
 
@@ -140,7 +140,7 @@
 						    <label for="time-1">Select the time to be notified on Friday</label>
 						    <input type="time" data-clear-btn="false" name="time-1" id="time-1" value="">
 						    <p id ="friday-time-set"></p>
-						     <a href="#" id="save-thurs" data-role="button" onclick="
+						     <button id="save-fri"  onclick="
 						     var timeSet = $('#time-1').val();
 						     var hour = timeSet.substring(0, 2);
 						     localStorage.setItem('hourVal', parseInt(hour));
@@ -149,7 +149,7 @@
 						     document.getElementById('friday-time-set').innerHTML = 'Currently set to Friday at ' + timeSet;
 						     updateFridayTime();
 						     setNotificationFriday();
-						     " data-theme="b">Save</a>
+						     " data-theme="b">Save</button>
 						
 						 </form>
 				    </div>
@@ -161,7 +161,7 @@
 						    <label for="time-2">Select the time to be notified on Thursday</label>
 						    <input type="time" data-clear-btn="false" name="time-2" id="time-2" value="">
 						    <p id ="thurs-time-set"></p>
-						     <a href="#" id="save-thurs" data-role="button" onclick="
+						     <button id="save-thurs" onclick="
 						     var thursTimeSet = $('#time-2').val();
 						     var thursHour = thursTimeSet.substring(0, 2);
 						     localStorage.setItem('thursHourVal', parseInt(thursHour));
@@ -169,7 +169,7 @@
 						     localStorage.setItem('thursMinuteVal', parseInt(thursMinute));
 						     document.getElementById('thurs-time-set').innerHTML = 'Currently set to Thursday at ' + thursTimeSet;
 						     updateThursTime();
-						     setNotificationFriday();" data-theme="b">Save</a>
+						     setNotificationThurs();" data-theme="b">Save</a>
 						
 						 </form>
 				    </div>
