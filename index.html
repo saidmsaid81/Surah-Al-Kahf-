@@ -128,9 +128,10 @@
 
 		<div data-role="popup" id="notification-settings" data-theme="c">
        	
-           <h4><strong>Enable/Disable Notifications:</strong></h4>
+            <h4><strong>Enable/Disable Notifications:</strong></h4>
             Tick to enable untick to disable
             <div id="checkbox-container">
+<<<<<<< HEAD
 <<<<<<< HEAD
 <form>
 <fieldset data-role="controlgroup">
@@ -144,6 +145,8 @@
         </fieldset>
 </form>
 =======
+=======
+>>>>>>> parent of b823283... Removed all notifications updates
 			<form>
 				
 				<fieldset data-role="controlgroup">
@@ -153,7 +156,11 @@
 				    <div id="friday-time" style="display: none;">
 				    	<form>
 						    <label for="time-1">Select the time to be notified on Friday</label>
+<<<<<<< HEAD
 						    <input type="time" data-clear-btn="false" name="time-1" id="time-1" value="">
+=======
+						    <input type="time" placeholder="Tap to input Time" data-clear-btn="false" name="time-1" id="time-1" value="">
+>>>>>>> parent of b823283... Removed all notifications updates
 						    <p id ="friday-time-set"></p>
 						     <button id="save-fri"  onclick="
 						     var timeSet = $('#time-1').val();
@@ -162,7 +169,10 @@
 						     var minute = timeSet.substring(3,5);
 						     localStorage.setItem('minuteVal', parseInt(minute));
 						     document.getElementById('friday-time-set').innerHTML = 'Currently set to Friday at ' + timeSet;
+<<<<<<< HEAD
 						     updateFridayTime();
+=======
+>>>>>>> parent of b823283... Removed all notifications updates
 						     setNotificationFriday();
 						     " data-theme="b">Save</button>
 						
@@ -174,23 +184,35 @@
 				     <div id="thurs-time" style="display: none;">
 				    	<form>
 						    <label for="time-2">Select the time to be notified on Thursday</label>
+<<<<<<< HEAD
 						    <input type="time" data-clear-btn="false" name="time-2" id="time-2" value="">
 						    <p id ="thurs-time-set"></p>
 						     <button id="save-thurs" onclick="
+=======
+						    <input type="time" placeholder="Tap to input Time" data-clear-btn="false" name="time-2" id="time-2" value="">
+						    <p id ="thurs-time-set"></p>
+						     <button type="submit" id="save-thurs" onclick="
+>>>>>>> parent of b823283... Removed all notifications updates
 						     var thursTimeSet = $('#time-2').val();
 						     var thursHour = thursTimeSet.substring(0, 2);
 						     localStorage.setItem('thursHourVal', parseInt(thursHour));
 						     var thursMinute = thursTimeSet.substring(3,5);
 						     localStorage.setItem('thursMinuteVal', parseInt(thursMinute));
 						     document.getElementById('thurs-time-set').innerHTML = 'Currently set to Thursday at ' + thursTimeSet;
+<<<<<<< HEAD
 						     updateThursTime();
+=======
+>>>>>>> parent of b823283... Removed all notifications updates
 						     setNotificationThurs();" data-theme="b">Save</a>
 						
 						 </form>
 				    </div>
         		</fieldset>
 			</form>
+<<<<<<< HEAD
 >>>>>>> parent of 6804cdf... Used version 0.8 of notification plugin
+=======
+>>>>>>> parent of b823283... Removed all notifications updates
 			</div>
 		</div>
 		
