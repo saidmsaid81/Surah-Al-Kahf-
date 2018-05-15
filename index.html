@@ -18,8 +18,8 @@
  	<link rel="shortcut icon" href="../../favicon.ico">
  	<script type="text/javascript" src="cordova.js"></script>
  	<script type="text/javascript" src="js/index.js"></script>
-	<script src="css/jquery-1.7.1.min.js"></script>
-	<script src="css/jquery.mobile-1.3.0.js"></script>
+	<script src="js/jquery-1.7.1.min.js"></script>
+	<script src="js/jquery.mobile-1.3.0.js"></script>
 	<script type="text/javascript" src="js/time.js"></script>
 
 	<style>
@@ -119,10 +119,10 @@
         	<ul data-role="listview" data-theme="d" class="nav-search">
 				<li><a href="index.html" data-ajax="false">Home</a></li>
             	<li><a href="one.html#fifty"   data-ajax="false">About</a></li>
-            	<li><a href="mailto:thesunnahrevival.tsr@gmail.com?&subject=Surah%20Al%20Kahf%20App&body=Please%20write%20your%20feedback%20below%0A%0A%0A%0A%0ASent%20from%20Version%202.0.3" target="_top"  >Contact Us</a></li>
+            	<li><a href="mailto:thesunnahrevival.tsr@gmail.com?&subject=Surah%20Al%20Kahf%20App&body=Please%20write%20your%20feedback%20below%0A%0A%0A%0A%0ASent%20from%20Version%202.0.4" onclick="window.open(this.href,'_system'); return false;"  >Contact Us</a></li>
 	            <li><a href="one.html#twentyeight" data-ajax="false">Frequently asked Questions</a></li>
 				<li><a href="market://details?id=com.ihyausunnah.surahalkahf"   data-ajax="false" >Rate this App</a></li>
-				<li><button onclick="window.open('#fiftythree')">More Apps</button>
+				<li><a href="#fiftythree"   data-ajax="false" >More Apps</a>
         	</ul>
 		</div>
 
@@ -235,7 +235,7 @@
 <!--Scripts-->
 
 
-<script src="css/checkbox.js"></script>
+<script src="js/checkbox.js"></script>
 <script type="text/javascript">
 	//Checks if its the user's first time an displays a welcome screen
 	function welcomeScreen(){
@@ -251,7 +251,7 @@
           }
      }
 </script>
-<script src="css/video.js"></script>
+<script src="js/video.js"></script>
 <script src="js/share.js"></script>
 <script>
           function playVideo(videoUrl) {
