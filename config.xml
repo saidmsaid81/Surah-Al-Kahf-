@@ -66,10 +66,14 @@
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
         <plugin name="cordova-plugin-admob-free" version="0.16.1" source="npm" />
 =======
         <plugin spec="https://github.com/ratson/cordova-plugin-admob-free.git#v0.8.0" source="git" />
 >>>>>>> parent of 80dda0c... admob fixes
+=======
+        <plugin name="cordova-plugin-admob-free" version="0.16.1" source="npm" />
+>>>>>>> parent of b823283... Removed all notifications updates
 =======
         <plugin name="cordova-plugin-admob-free" version="0.16.1" source="npm" />
 >>>>>>> parent of b823283... Removed all notifications updates
