@@ -33,11 +33,14 @@ else {
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> parent of 6804cdf... Used version 0.8 of notification plugin
 =======
   localStorage.removeItem("hourVal");
   localStorage.removeItem("minuteVal");
 >>>>>>> parent of b823283... Removed all notifications updates
+=======
+>>>>>>> parent of 6804cdf... Used version 0.8 of notification plugin
    cordova.plugins.notification.local.cancel(1, function() {
    window.plugins.toast.showLongTop("Successfully Disabled");
 });
@@ -78,7 +81,9 @@ else {
 >>>>>>> parent of b823283... Removed all notifications updates
 
  }
- 
+ cordova.plugins.notification.local.on("click", function (notification, state) {
+   admob.banner.hide(); window.open('pages.html');
+}, this)
 
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -114,6 +119,7 @@ else {
 >>>>>>> parent of b823283... Removed all notifications updates
   else {
     $("#save-thurs").prop("disabled",true);
+<<<<<<< HEAD
     localStorage.removeItem("thursHourVal");
   localStorage.removeItem("thursMinuteVal");
 <<<<<<< HEAD
@@ -139,10 +145,13 @@ else {
   
 >>>>>>> parent of b823283... Removed all notifications updates
 =======
+=======
+>>>>>>> parent of 6804cdf... Used version 0.8 of notification plugin
    cordova.plugins.notification.local.cancel(2, function() {
    window.plugins.toast.showLongTop("Successfully Disabled");
 });
  }
+<<<<<<< HEAD
   
 >>>>>>> parent of b823283... Removed all notifications updates
 =======
@@ -159,7 +168,13 @@ else {
  }
   
 >>>>>>> parent of b823283... Removed all notifications updates
+=======
+  cordova.plugins.notification.local.on("click", function (notification, state) {
+        AdMob.hideBanner(); window.open('pages.html');
+        }, this);
+>>>>>>> parent of 6804cdf... Used version 0.8 of notification plugin
 });
+
 
   $("#checkbox-container :checkbox").on("change", function(){
   
@@ -228,5 +243,32 @@ function setNotificationThurs() {
 =======
 });
 
+function setNotificationFriday() {
+  cordova.plugins.notification.local.schedule({
+    id: 1,
+    title: 'Reminder to recite Suratul Kahf',
+    text: 'Tap here to read now',
+    firstAt: localStorage.getItem("friNotiftime"),
+    icon: 'res://icon',
+    smallIcon: 'res://ic_popup_reminder',
+    every: 10080 // 
+    });window.plugins.toast.showLongTop("Successfully Enabled");
+  
+}
 
+<<<<<<< HEAD
 >>>>>>> parent of b823283... Removed all notifications updates
+=======
+function setNotificationThurs() {
+  cordova.plugins.notification.local.schedule({
+    id: 2,
+    title: 'Reminder to recite Suratul Kahf',
+    text: 'Tap here to read now',
+    firstAt: localStorage.getItem("thursNotiftime"),
+    icon: 'res://icon',
+    smallIcon: 'res://ic_popup_reminder',
+    every: 10080 // 
+    });window.plugins.toast.showLongTop("Successfully Enabled");
+  
+}
+>>>>>>> parent of 6804cdf... Used version 0.8 of notification plugin
