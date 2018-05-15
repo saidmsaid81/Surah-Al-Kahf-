@@ -2,6 +2,7 @@ $("#checkboxi").change(function() {
   if ($(this).is(":checked")){
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
     cordova.plugins.notification.local.schedule({
     id: 1,
     title: 'Reminder to recite Suratul Kahf',
@@ -14,12 +15,15 @@ $("#checkboxi").change(function() {
 =======
 =======
 >>>>>>> parent of b823283... Removed all notifications updates
+=======
+>>>>>>> parent of b823283... Removed all notifications updates
     javascript:showhide('friday-time');
     
 }
 
 else {
   $("#save-fri").prop("disabled",true);
+<<<<<<< HEAD
 <<<<<<< HEAD
 >>>>>>> parent of 6804cdf... Used version 0.8 of notification plugin
 =======
@@ -43,10 +47,20 @@ else {
 
 >>>>>>> parent of 6804cdf... Used version 0.8 of notification plugin
 =======
+=======
+  localStorage.removeItem("hourVal");
+  localStorage.removeItem("minuteVal");
+   cordova.plugins.notification.local.cancel(1, function() {
+   window.plugins.toast.showLongTop("Successfully Disabled");
+});
+>>>>>>> parent of b823283... Removed all notifications updates
 
  }
  
 
+<<<<<<< HEAD
+>>>>>>> parent of b823283... Removed all notifications updates
+=======
 >>>>>>> parent of b823283... Removed all notifications updates
 });
   $("#checkboxii").change(function() {
@@ -55,16 +69,20 @@ else {
   }
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
   else 
 =======
   else {
     $("#save-thurs").prop("disabled",true);
 >>>>>>> parent of 6804cdf... Used version 0.8 of notification plugin
 =======
+=======
+>>>>>>> parent of b823283... Removed all notifications updates
   else {
     $("#save-thurs").prop("disabled",true);
     localStorage.removeItem("thursHourVal");
   localStorage.removeItem("thursMinuteVal");
+<<<<<<< HEAD
 >>>>>>> parent of b823283... Removed all notifications updates
    cordova.plugins.notification.local.cancel(2, function() {
    window.plugins.toast.showLongTop("Successfully Disabled");
@@ -84,6 +102,13 @@ else {
  }
   
 >>>>>>> parent of b823283... Removed all notifications updates
+=======
+   cordova.plugins.notification.local.cancel(2, function() {
+   window.plugins.toast.showLongTop("Successfully Disabled");
+});
+ }
+  
+>>>>>>> parent of b823283... Removed all notifications updates
 });
 
   $("#checkbox-container :checkbox").on("change", function(){
@@ -100,6 +125,7 @@ $checkboxes.on("change", function(){
 });
 $.each(checkboxValues, function(key, value) {
   $("#" + key).prop('checked', value);
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 });
@@ -132,6 +158,11 @@ function setNotificationThurs() {
   
 }
 >>>>>>> parent of 6804cdf... Used version 0.8 of notification plugin
+=======
+});
+
+
+>>>>>>> parent of b823283... Removed all notifications updates
 =======
 });
 
