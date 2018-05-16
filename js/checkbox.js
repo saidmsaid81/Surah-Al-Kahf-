@@ -5,7 +5,7 @@ $("#checkboxi").change(function() {
 }
 
 else {
-  $("#save-fri").prop("disabled",true);
+  document.getElementById('friday-time').style.display = "none";
    cordova.plugins.notification.local.cancel(1, function() {
    window.plugins.toast.showLongTop("Successfully Disabled");
 });
@@ -21,14 +21,12 @@ else {
     javascript:showhide('thurs-time');
   }
   else {
-    $("#save-thurs").prop("disabled",true);
+    document.getElementById('thurs-time').style.display = "none";
    cordova.plugins.notification.local.cancel(2, function() {
    window.plugins.toast.showLongTop("Successfully Disabled");
 });
  }
-  cordova.plugins.notification.local.on("click", function (notification, state) {
-        AdMob.hideBanner(); window.open('pages.html');
-        }, this);
+ 
 });
 
 
@@ -48,16 +46,5 @@ $.each(checkboxValues, function(key, value) {
   $("#" + key).prop('checked', value);
 });
 
-function setNotificationFriday() {
-  cordova.plugins.notification.local.schedule({
-    id: 1,
-    title: 'Reminder to recite Suratul Kahf',
-    text: 'Tap here to read now',
-    firstAt: localStorage.getItem("friNotiftime"),
-    icon: 'res://icon',
-    smallIcon: 'res://ic_popup_reminder',
-    every: 10080 // 
-    });window.plugins.toast.showLongTop("Successfully Enabled");
-  
-}
+
 

@@ -127,7 +127,7 @@
 		</div>
 
 		<div data-role="popup" id="notification-settings" data-theme="c">
-       	
+       	<a href="#" data-rel="back" data-role="button" data-theme="a" data-icon="delete" data-iconpos="notext" class="ui-btn-left">Close</a>
             <h4><strong>Enable/Disable Notifications:</strong></h4>
             Tick to enable untick to disable
             <div id="checkbox-container">
@@ -142,16 +142,26 @@
 						    <label for="time-1">Select the time to be notified on Friday</label>
 						    <input type="time" data-clear-btn="false" name="time-1" id="time-1" value="">
 						    <p id ="friday-time-set"></p>
-						     <button id="save-fri"  onclick="
+						     <a href="#" id="save-fri" data-role="button"  onclick="
+
 						     var timeSet = $('#time-1').val();
+						     if (timeSet == '') {
+						     	
+						     	document.getElementById('friday-time-set').style.color = 'red';
+						     	document.getElementById('friday-time-set').innerHTML = 'Error! Please Select Time Above';
+						     
+						     }
+						     else {
 						     var hour = timeSet.substring(0, 2);
 						     localStorage.setItem('hourVal', parseInt(hour));
 						     var minute = timeSet.substring(3,5);
 						     localStorage.setItem('minuteVal', parseInt(minute));
-						     document.getElementById('friday-time-set').innerHTML = 'Currently set to Friday at ' + timeSet;
-						     updateFridayTime();
+						     document.getElementById('friday-time-set').style.color = 'black';
+						     document.getElementById('friday-time-set').innerHTML = 'Success! Currently set to Friday at ' + timeSet;
 						     setNotificationFriday();
-						     " data-theme="b">Save</button>
+						     }
+						     
+						     " data-theme="b">Save</a>
 						
 						 </form>
 				    </div>
@@ -163,14 +173,23 @@
 						    <label for="time-2">Select the time to be notified on Thursday</label>
 						    <input type="time" data-clear-btn="false" name="time-2" id="time-2" value="">
 						    <p id ="thurs-time-set"></p>
-						     <button id="save-thurs" onclick="
+						     <a href="#" id="save-thurs" onclick="
 						     var thursTimeSet = $('#time-2').val();
+						     if (thursTimeSet == '') {
+						     	
+						     	document.getElementById('thurs-time-set').style.color = 'red';
+						     	document.getElementById('thurs-time-set').innerHTML = 'Error! Please Select Time Above';
+						     
+						     }
+						     else {
 						     var thursHour = thursTimeSet.substring(0, 2);
 						     localStorage.setItem('thursHourVal', parseInt(thursHour));
 						     var thursMinute = thursTimeSet.substring(3,5);
 						     localStorage.setItem('thursMinuteVal', parseInt(thursMinute));
-						     document.getElementById('thurs-time-set').innerHTML = 'Currently set to Thursday at ' + thursTimeSet;
-						     setNotificationThurs();" data-theme="b">Save</a>
+						     document.getElementById('thurs-time-set').style.color = 'black';
+						     document.getElementById('thurs-time-set').innerHTML = 'Success! Currently set to Thursday at ' + thursTimeSet;
+						     setNotificationThurs();
+						     }" data-role="button" data-theme="b">Save</a>
 						
 						 </form>
 				    </div>
