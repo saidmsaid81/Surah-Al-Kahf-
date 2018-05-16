@@ -9,7 +9,7 @@ var morning =new Date();
         var friday_in_morning = new Date(morning);
         localStorage.setItem("friNotiftime", friday_in_morning);
 }
-function updateThursTime() {    
+  
         var thursday = new Date();
         thursday.setDate(thursday.getDate() + (1 + 3 - thursday.getDay()) % 7);
         var night =new Date();
@@ -18,5 +18,19 @@ function updateThursTime() {
         night.setMinutes(localStorage.getItem("thursMinuteVal"));
         night.setSeconds(0);
         var thursday_in_night = new Date(night);
-        localStorage.setItem("thursNotiftime", thursday_in_night)
-    }
+       
+    function setNotificationThurs() {
+  cordova.plugins.notification.local.schedule({
+    id: 2,
+    title: 'Reminder to recite Suratul Kahf',
+    text: 'Tap here to read now',
+    trigger:{
+    firstAt: thursday_in_night,
+    every: "week"
+        },
+    icon: 'res://icon',
+    smallIcon: 'res://ic_popup_reminder',
+    
+    });window.plugins.toast.showLongTop("Successfully Enabled");
+  
+}
