@@ -152,12 +152,7 @@
 						     
 						     }
 						     else {
-						     var hour = timeSet.substring(0, 2);
-						     localStorage.setItem('hourVal', parseInt(hour));
-						     var minute = timeSet.substring(3,5);
-						     localStorage.setItem('minuteVal', parseInt(minute));
-						     document.getElementById('friday-time-set').style.color = 'black';
-						     document.getElementById('friday-time-set').innerHTML = 'Success! Currently set to Friday at ' + timeSet;
+						     
 						     setNotificationFriday();
 						     }
 						     
@@ -182,13 +177,9 @@
 						     
 						     }
 						     else {
-						     var thursHour = thursTimeSet.substring(0, 2);
-						     localStorage.setItem('thursHourVal', parseInt(thursHour));
-						     var thursMinute = thursTimeSet.substring(3,5);
-						     localStorage.setItem('thursMinuteVal', parseInt(thursMinute));
-						     document.getElementById('thurs-time-set').style.color = 'black';
-						     document.getElementById('thurs-time-set').innerHTML = 'Success! Currently set to Thursday at ' + thursTimeSet;
+						     
 						     setNotificationThurs();
+						     
 						     }" data-role="button" data-theme="b">Save</a>
 						
 						 </form>
