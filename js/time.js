@@ -57,6 +57,10 @@ var thursday_in_night = new Date(night);
     firstAt: thursday_in_night,
     every: "week"
         },
+    actions: [
+        { id: 'readNow', title: 'Read Now' },
+        { id: 'remindOthers',  title: 'Remind Others' }
+    ],
     icon: 'res://icon',
     smallIcon: 'res://ic_popup_reminder',
     });window.plugins.toast.showLongTop("Successfully Enabled " + thursday_in_night);

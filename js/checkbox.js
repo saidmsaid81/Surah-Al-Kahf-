@@ -29,6 +29,8 @@ else {
   cordova.plugins.notification.local.on("click", function (notification, state) {
         AdMob.hideBanner(); window.open('pages.html');
         }, this);
+  cordova.plugins.notification.local.on('readNow', function (notification, eopts) { AdMob.hideBanner(); window.open('pages.html'); });
+  cordova.plugins.notification.local.on('remindOthers', function (notification, eopts) { openReminderDialog(); });
 });
 
 

@@ -70,7 +70,7 @@
 
 			<h3><strong>Surah Al Kahf</strong></h3>
 			
-	       <a href="#notification-settings" data-rel="popup" data-role="button" data-theme="e" ><i class='zmdi zmdi-notifications '></i></a>
+	       <a href="#notification-settings" id="notification" data-rel="popup" data-role="button" data-theme="e" ><i class='zmdi zmdi-notifications '></i></a>
 
 		</div>
 
@@ -179,7 +179,7 @@
 						     else {
 						     
 						     setNotificationThurs();
-						     
+
 						     }" data-role="button" data-theme="b">Save</a>
 						
 						 </form>
@@ -188,7 +188,9 @@
 			</form>
 			</div>
 		</div>
-		
+		<div data-role="popup" id="popupInfo" data-position-to="#notification" data-arrow="t" class="ui-content" data-theme="b"  style="max-width:350px;" style="display:none">
+                Tap <i class="zmdi zmdi-notifications"></i> to manage notification reminders such as Suratul Kahf reminders on Friday
+         </div>
 	</div>
 </div>
 
@@ -248,17 +250,28 @@
 <script type="text/javascript">
 	//Checks if its the user's first time an displays a welcome screen
 	function welcomeScreen(){
-        var welcome = window.localStorage.getItem("welcome");
+        var welcome = window.localStorage.getItem("welcomeNew");
          if(!welcome){
-           	window.localStorage.setItem("welcome", "1");
-            navigator.notification.alert(
-    		'Tap the bell icon above to manage reminders such as Suratul Kahf reminders on Friday',  // message
-    			null,
-    			'New',            // title
-    			'Got It'                  // buttonName
-			); // replace with welcome screen display    
+           	window.localStorage.setItem("welcomeNew", "1");
+            $(document).ready(function(){
+   setTimeout(function(){
+     $('#popupInfo').popup();
+    $('#popupInfo').popup('open');
+   },500);setTimeout(function(){
+     closepopup()
+   },5000); // 5000 to load it after 5 seconds from page load
+});
+    
+    
+     
+
+
+function closepopup() {
+    $('#popupInfo').popup('close');
+};   
           }
      }
+     welcomeScreen();
 </script>
 <script src="js/video.js"></script>
 <script src="js/share.js"></script>
