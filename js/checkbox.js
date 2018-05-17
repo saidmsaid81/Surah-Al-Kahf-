@@ -26,9 +26,7 @@ else {
    window.plugins.toast.showLongTop("Successfully Disabled");
 });
  }
-  cordova.plugins.notification.local.on("click", function (notification, state) {
-        AdMob.hideBanner(); window.open('pages.html');
-        }, this);
+  
   
 });
 

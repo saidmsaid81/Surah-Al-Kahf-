@@ -27,7 +27,7 @@ function setNotificationFriday() {
         },
     icon: 'res://icon',
     smallIcon: 'res://ic_popup_reminder',
-    });window.plugins.toast.showLongTop("Successfully Enabled " + friday_in_morning);
+    });window.plugins.toast.showLongTop("Successfully Enabled");
   
 }
 
@@ -59,8 +59,11 @@ var thursday_in_night = new Date(night);
         },
     icon: 'res://icon',
     smallIcon: 'res://ic_popup_reminder',
-    });window.plugins.toast.showLongTop("Successfully Enabled " + thursday_in_night);
+    });window.plugins.toast.showLongTop("Successfully Enabled");
   
+  cordova.plugins.notification.local.on("click", function (notification, state) {
+        AdMob.hideBanner(); window.open('pages.html');
+        }, this);
   
 }
 
