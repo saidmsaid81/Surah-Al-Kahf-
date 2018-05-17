@@ -1,4 +1,31 @@
 function doesitexist() {
+var list = [
+  permissions.CAMERA,
+  permissions.GET_ACCOUNTS
+];
+
+permissions.hasPermission(list, callback, null);
+
+function error() {
+  console.warn('Camera or Accounts permission is not turned on');
+}
+
+function success( status ) {
+  if( !status.hasPermission ) {
+  
+    permissions.requestPermissions(
+      list,
+      function(status) {
+        if( !status.hasPermission ) error();
+      },
+      error);
+  }
+}
+
+}
+
+
+/*
        $.ajax({
 url:'file:///storage/emulated/0/Download/Surah Al-Kahf.mp4',
 type:'HEAD',
@@ -28,5 +55,6 @@ success: function()
 window.plugins.toast.showLongBottom('Starting player please wait...', function(a){console.log('toast success: ' + a)}, function(b){alert('toast error: ' + b)});playVideo(document.getElementById("vidUrl").value);
 }
 });}
+*/
 
       
