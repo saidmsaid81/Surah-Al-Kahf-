@@ -1,5 +1,12 @@
 function doesitexist() {
-       $.ajax({
+
+var permissions = cordova.plugins.permissions;
+permissions.checkPermission(permissions.WRITE_EXTERNAL_STORAGE, openFile(), permissions.requestPermission(permissions.WRITE_EXTERNAL_STORAGE));
+
+}
+
+function openFile() {
+	$.ajax({
 url:'file:///storage/emulated/0/Download/Surah Al-Kahf.mp4',
 type:'HEAD',
 error: function()
@@ -27,6 +34,11 @@ success: function()
     //file exists
 window.plugins.toast.showLongBottom('Starting player please wait...', function(a){console.log('toast success: ' + a)}, function(b){alert('toast error: ' + b)});playVideo(document.getElementById("vidUrl").value);
 }
-});}
+});
+
+}
+
+       
+
 
       
