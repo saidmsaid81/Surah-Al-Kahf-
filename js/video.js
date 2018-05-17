@@ -1,3 +1,21 @@
+function readFile(fileEntry) {
+
+    fileEntry.file(function (file) {
+        var reader = new FileReader();
+
+        reader.onloadend = function() {
+            console.log("Successful file read: " + this.result);
+            displayFileData(fileEntry.fullPath + ": " + this.result);
+        };
+
+        reader.readAsText(file);
+
+    }, onErrorReadFile);
+}
+
+
+
+
 function doesitexist() {
        $.ajax({
 url:'file:///storage/emulated/0/Download/Surah Al-Kahf.mp4',

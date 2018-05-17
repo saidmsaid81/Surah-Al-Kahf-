@@ -67,6 +67,7 @@
         <gap:plugin name="cordova-plugin-streaming-media" source="npm" />
         <gap:plugin name="cordova-plugin-file" source="npm"
          />
+         <preference name="AndroidPersistentFileLocation" value="Compatibility"/>
        
 
     <!-- Define app icon for each platform. -->
