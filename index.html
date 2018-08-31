@@ -1,258 +1,335 @@
-<!DOCTYPE html>
+<!--This is the homepage of the App it contains navigation to all parts of the app.
+	It also contains the notification settings where you can control notifications-->
 
+<!DOCTYPE HTML>
 <html>
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+        
+        <title>Surah Al Kahf</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
 
-<head>
-	
-	<meta charset="utf-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1">
+        
+        <link rel="stylesheet" href="css/jquery.mobile.min.css" />
+        <link rel="stylesheet" href="css/fonti-awesome.min.css" />
+        <link rel="stylesheet" href="css/animate.min.css">
+        <link rel="stylesheet" href="css/nativedroid2.css" />
+        <link rel="stylesheet" href="css/nativedroid2.color.blue.css" />
 
-	<title>Surah Al Kahf</title>
-
-	<link rel="stylesheet" href="css/jquery-ui.css">
-	<link rel="stylesheet"  href="css/jquery.mobile-1.3.0.css">
-	<link rel="stylesheet" href="css/material-design-iconic-font
-	.css">
-	<link rel="stylesheet" href="css/font-awesome
-	.css">
- 	<link rel="shortcut icon" href="../../favicon.ico">
- 	<script type="text/javascript" src="cordova.js"></script>
- 	<script type="text/javascript" src="js/index.js"></script>
-	<script src="js/jquery-1.7.1.min.js"></script>
-	<script src="js/jquery.mobile-1.3.0.js"></script>
-	<script type="text/javascript" src="js/time.js"></script>
-
-	<style>
-        .nav-search .ui-btn-up-a {
-            background-image:none;
-            background-color:#333333;
+        <script type="text/javascript" src="cordova.js"></script>
+        
+        <style>
+             /* Prevent FOUC */
+            body { opacity: 0; }
+        </style>
+        <style>
+        .badged:after{
+            content:attr(data-count);
+            font-size:12px;
+            text-shadow: 0 1px #444;
+            text-align:center;
+            position:relative;
+            color:#EFEFEF;
+            display:inline-block;
+            z-index:2000;
+            top:0px;
+            right:-60px;
+            border-radius:50%;
+            padding:0px 3px;
+            /*min-width:22px;*/
+            border:2px solid #eee;
+            box-shadow: -1px 1px 4px #444;
+            margin:0 4px;
+            background: #ff0505;
         }
-        .nav-search .ui-btn-inner {
-            border-top: 1px solid #888;
-            border-color: rgba(255, 255, 255, .1);
+
+        .videoWrapper {
+            position: relative;
+            padding-bottom: 56.25%; /* 16:9 */
+            padding-top: 25px;
+            height: 0;
         }
-        .nav-search .ui-btn.ui-first-child {
-            border-top-width: 0;
-            background: #111;
+        .videoWrapper iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
         }
-        .userform {
-			padding: .8em 1.2em;
-		}
-        .userform h2 {
-			color: #555;
-			margin: 0.3em 0 .8em 0;
-			padding-bottom: .5em;
-			border-bottom: 1px solid rgba(0,0,0,.1);
-		}
-        .userform label {
-			display: block;
-			margin-top: 1.2em;
-		}
-        .switch .ui-slider-switch {
-			width: 6.5em !important;
-		}
-        .ui-grid-a {
-			margin-top: 1em;
-			padding-top: .8em;
-			margin-top: 1.4em;
-			border-top: 1px solid rgba(0,0,0,.1);
-		}
-   </style>
+            </style>
+
+    </head>
+    <body>
+        <div data-role="page" id="homepage">
+
+            <div data-role="header"  data-position="fixed">
+                <a href="#leftpanel" class="ui-btn ui-btn-left"><i class="zmdi zmdi-menu"></i></a>
+                <h1>Surah al Kahf</h1>
+                <a href="market://details?id=com.ihyausunnah.surahalkahf" onclick="window.open(this.href,'_system'); return false;" class="ui-btn ui-btn-inline ui-btn-fab ui-btn-right"  style="margin-right: 40px; visibility: visible; "><i style="color: yellow" class="zmdi zmdi zmdi-star animated finite flash zmdi-hc-fw"></i></a>
+                <a href="#notifications"  data-rel="popup" class="ui-btn ui-btn-inline ui-btn-fab ui-btn-right" id="notification"><i class='zmdi zmdi-notifications '></i></a>
+            
+             
+        	</div>
+            
+            <div role="main" class="ui-content" data-inset="false">
+            	<ul data-role="listview" data-icon="false">
+   					<!--Button for reading the Surah the script: keeps screen awake until the page is closed, shows a bottom toast and disable ads-->
+   					<li>
+                        <a href="pages.html" onclick="window.plugins.insomnia.keepAwake();window.plugins.toast.showLongBottom('Swipe to navigate between pages', function(a){console.log('toast success: ' + a)}, function(b){alert('toast error: ' + b)});AdMob.showAd(false);" data-ajax="false">
+                            <img src="icons/read.png" class="ui-thumbnail ui-thumbnail-circular" />
+                            <br>Read Surah Al-Kahf
+                        </a>
+                    </li>
+                        
+                    <li>
+                        <!--Plays the video file if downloaded/Streams it if not-->
+                        <a href="#" onclick="checkKahfFile(); return false">
+                       		<img src="icons/listen.jpg" class="ui-thumbnail ui-thumbnail-circular" />
+                        	<br>Listen and Read Surah Al Kahf(Video)
+                        </a>
+                    </li>
+                        
+                    <li>
+                            <a href="#sub-page" data-ajax="false">
+                                <img src="icons/benefits.jpg" class="ui-thumbnail ui-thumbnail-circular" />
+                                <br>Stories,Virtues and Lessons from Surah Al Kahf
+                            </a>
+                    </li>
+                        
+                     <li>
+                        <a href="about.html#faq" data-ajax="false">
+                            <img src="icons/faq.png" class="ui-thumbnail ui-thumbnail-circular" />
+                            <br>Frequently Asked Questions
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="#" onclick="openReminderDialog();">
+                            <img src="icons/share.png" class="ui-thumbnail ui-thumbnail-circular" />
+                            <br>Remind others to read Surah Al Kahf
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="market://details?id=com.ihyausunnah.thesunnahrevival"  onclick="window.open(this.href,'_system'); return false;"  data-ajax="false">
+                        	<img src="icons/tsr.png" class="ui-thumbnail ui-thumbnail-circular" />
+                        	<br>Download The Sunnah Revival App
+                        </a>
+                    </li>
+                </ul>
+                <!--Popup for streaming Mulk video-->
+                <div data-role="popup" id="popupmulkvideo" data-overlay-theme="a" data-tolerance="15,15" class="ui-content" data-theme="b">
+                        
+                    <iframe src="https://player.vimeo.com/video/64552532" width="200" height="298" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
+                    <p><a href="https://vimeo.com/64552532">Surah Al-Kahf</a><br> from <a href="https://vimeo.com/user17555859">Al-Qur&aacute;n</a><br> on <a href="https://vimeo.com">Vimeo</a>.</p>
+
+                </div>
+
+            </div>
+        <div data-role="popup" id="more">
+
+            <div data-role="content">
+                <a href="#" onclick="window.plugins.socialsharing.share('Have a look at Surah Al Mulk & Al-Sajdah App \n\n', null, null, 'http://bit.ly/mulk-app'); return false;"   data-role="button" data-inline="true" class="ui-btn ui-btn-primary"> Share App</a>
+                <a href="about.html#about"  data-role="button" data-inline="true" data-ajax="false" class="ui-btn ui-btn-primary"> About App</a>
+                <a href="https://thesunnahrevival.wordpress.com/" class="ui-btn ui-btn-primary" onclick="window.open(this.href,'_blank');displayToast(); return false;" >Visit Blog</a>
+                <a href="market://details?id=com.ihyausunnah.surahalmulk" onclick="window.open(this.href,'_system'); return false;" class="ui-btn ui-btn-primary"> Rate this App</a>
+                <a href="mailto:thesunnahrevival.tsr@gmail.com?&subject=Surah%20Al%20Mulk%20App&body=**Please%20write%20your%20feedback%20here%20in%20English**%0A%0ASent%20from%3A%0ASurah%20Al%20Mulk%20Android%20App%20Vesion%201.0.6"  data-role="button" data-inline="true" class="ui-btn ui-btn-primary"> Send Feedback</a>
+                     
+                <a href="market://dev?id=6919675665650793025"  onclick="window.open(this.href,'_system'); return false;" data-role="button" data-inline="true" data-ajax="false" class="ui-btn ui-btn-primary"> More Apps</a>
+                <a href="http://m.facebook.com/TSRapps" onclick="window.open(this.href,'_system'); return false;" class="ui-btn ui-btn-inline ui-btn-fab" data-ajax="false"><i class='fa fa-facebook'></i></a>
+                <a href="http://twitter.com/TSRapps" onclick="window.open(this.href,'_system'); return false;" class="ui-btn ui-btn-inline ui-btn-fab" data-ajax="false"><i class='fa fa-twitter'></i></a>
+                <a href="http://telegram.me/tsrapps" onclick="window.open(this.href,'_system'); return false;" class="ui-btn ui-btn-inline ui-btn-fab" data-ajax="false"><i class='fa fa-telegram'></i></a>
+                <a href="http://instagram.com/TSRapps" onclick="window.open(this.href,'_system'); return false;" class="ui-btn ui-btn-inline ui-btn-fab" data-ajax="false"><i class='fa fa-instagram'></i></a>
+
+            </div>
+        </div>
+        <div data-role="popup" id="notifications" >
+            <div data-role="header">
+                <a href="#" data-rel="back"  class="ui-btn ui-btn-inline ui-btn-right"><i class="zmdi zmdi-close-circle"></i></a>
+                <h1 class='nd-title'>Manage Notifications:</h1>
+            </div>
+            <h5>Tick to enable untick to disable</h5>
+                <div id="checkbox-container">
+                    <form>
+                        <fieldset data-role="controlgroup">
+
+                            <label>
+                        		<input type="checkbox" name="checkbox-0 " id="checkboxi" data-theme="d">Suratul Kahf every Thursday Night
+                    		</label>
+                    		<div id="night-time" style="display: none;">
+                        		<form>
+                            		<label for="time-1">Select the time to be notified every Thursday Night</label>
+                            		<input type="time" data-clear-btn="false" name="time-1" id="time-1" value="">
+                            		<p id ="night-time-set"></p>
+                             		<a href="#" id="save-time" data-role="button"  onclick="var timeSet = $('#time-1').val();
+                             			if (timeSet == '') {
+                             			document.getElementById('night-time-set').style.color = 'red';
+                                		document.getElementById('night-time-set').innerHTML = 'Error! Please Select Time Above';
+                             			}
+                             			else {
+                             			setNotification();
+                             			}
+                             			" data-theme="b">Save</a>
+                        		</form>
+                    		</div>
+                    		<label>
+                        		<input type="checkbox" name="checkbox-1" id="checkboxii" data-theme="d">Suratul Kahf every Friday
+                    		</label>
+                    		<div id="day-time" style="display: none;">
+                        		<form>
+                            		<label for="time-2">Select the time to be notified every Friday</label>
+                            		<input type="time" data-clear-btn="false" name="time-2" id="time-2" value="">
+                            		<p id ="day-time-set"></p>
+                             		<a href="#" id="save-time-2" data-role="button"  onclick="var timeSet2 = $('#time-2').val();
+                             			if (timeSet2 == '') {
+                             			document.getElementById('day-time-set').style.color = 'red';
+                                		document.getElementById('day-time-set').innerHTML = 'Error! Please Select Time Above';
+                             			}
+                             			else {
+                             			setNotificationFriday();
+                             			}
+                             			" data-theme="b">Save</a>
+                        		</form>
+                    		</div>
 
 
-</head>
-	
-<body>
-
-	<div data-role="page" id="home-page" class="demo-page" data-theme="a">
-		<div data-theme="c" data-role="header" data-position="fixed">
-			<a href="#nav-panel" data-icon="bars" data-role="button" data-inline="true" data-theme="e"   >Menu</a>
-
-			<h3><strong>Surah Al Kahf</strong></h3>
-			
-	       <a href="#notification-settings" id="notification" data-rel="popup" data-role="button" data-theme="e" ><i class='zmdi zmdi-notifications '></i></a>
-
-		</div>
-
-		<div data-role="main" class="ui-content">
-			<!--Button for reading the Surah the script keeps screen awake until the page is closed, shows a bottom toast and disable ads-->
-			<a href="pages.html" data-role="button"  data-theme="e" data-ajax="false" onclick="window.plugins.insomnia.keepAwake();window.plugins.toast.showLongBottom('Swipe to navigate between pages', function(a){console.log('toast success: ' + a)}, function(b){alert('toast error: ' + b)});AdMob.showAd(false)" >Read Surah Al-Kahf
-			</a>
-
-			<div style="display: none">
-				<input type="url" size="60" value="file:///storage/emulated/0/Download/Surah Al-Kahf.mp4" id="vidUrl"  />
-			</div>
-			<!--Plays the video file if downloaded/Streams it if not-->
-			<a href="#" onclick="doesitexist(); return false;" data-role="button"  data-theme="e" >Listen and read Surah Al-Kahf(video)</a>
-
-			<a href="#sub-page"  data-role="button"  data-theme="e" >Stories,Virtues and Lessons from Surah Al Kahf</a>
-
-			<a href="one.html#twentyeight"  data-role="button" data-theme="e" data-ajax="false">Frequently Asked questions</a>
-
-			<a href="#remind-a-friend" data-rel="popup" data-role="button"   data-transition="pop"  data-theme="e" >Remind Others to read Suratul Kahf</a>
-
-			<a href="market://details?id=com.ihyausunnah.thesunnahrevival"  data-role="button" data-theme="e" data-ajax="false">Download The Sunnah Revival App</a>
-		<!--Popup for streaming the video-->
-		<div data-role="popup" id="popupvideo" data-overlay-theme="a" data-theme="d" data-tolerance="15,15" class="ui-content">
-
-		    <iframe src="https://player.vimeo.com/video/64552532" width="200" height="298" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
-			<p><a href="https://vimeo.com/64552532">Surah Al-Kahf</a> from <a href="https://vimeo.com/user17555859">Al-Qur&aacute;n</a> on <a href="https://vimeo.com">Vimeo</a>.</p>
-
-		</div>
-		<!--Remind a friend popup-->
-		<div data-role="popup" id="remind-a-friend" class="ui-content" data-theme="a" style="max-width:350px;">
-  			<h3>Why Remind</h3><p><strong>Abu Mas'ud Al-Ansari (r.a.) narrated that Allah’s Messenger (s.a.w.s.) said, “…One who guides to something good has a reward similar to that of its doer.” (Muslim, Vol. 4, Hadeeth 4665) </strong></p>
-  			<button data-inline="true" onclick="openReminderDialog();" data-theme="e">Remind Others
-  			</button>
-  		<a href="#" data-rel="back" data-role="button" data-inline="true"    data-theme="e" >No thanks</a> 
-		</div>
-
-		Join our Social Pages
-		<a href="http://m.facebook.com/TSRapps"  onclick="window.open(this.href,'_system'); return false;"  data-ajax="false"><i class='fa fa-facebook fa-lg'></i></a>&nbsp;&nbsp;&nbsp;
-		<a href="http://twitter.com/TSRapps" onclick="window.open(this.href,'_system'); return false;" data-ajax="false"><i class='fa fa-twitter fa-lg'></i></a>&nbsp;&nbsp;&nbsp;
-		<a href="http://telegram.me/TSRapps" onclick="window.open(this.href,'_system'); return false;"  data-ajax="false"><i class='fa fa-telegram fa-lg'></i></a>&nbsp;&nbsp;&nbsp;
-		<a href="http://instagram.com/tsrapps" onclick="window.open(this.href,'_system'); return false;"  data-ajax="false"><i class='fa fa-instagram fa-lg'></i></a>
-
-		<!--Side Panel-->
-		<div data-role="panel"  data-theme="a" id="nav-panel" data-position="left" data-display="overlay">
-
-        	<ul data-role="listview" data-theme="d" class="nav-search">
-				<li><a href="index.html" data-ajax="false">Home</a></li>
-            	<li><a href="one.html#fifty"   data-ajax="false">About</a></li>
-            	<li><a href="mailto:thesunnahrevival.tsr@gmail.com?&subject=Surah%20Al%20Kahf%20App&body=Please%20write%20your%20feedback%20below%0A%0A%0A%0A%0ASent%20from%20Version%202.0.4" onclick="window.open(this.href,'_system'); return false;"  >Contact Us</a></li>
-	            <li><a href="one.html#twentyeight" data-ajax="false">Frequently asked Questions</a></li>
-				<li><a href="market://details?id=com.ihyausunnah.surahalkahf"   data-ajax="false" >Rate this App</a></li>
-				<li><a href="#fiftythree"   data-ajax="false" >More Apps</a>
-        	</ul>
-		</div>
-
-		<div data-role="popup" id="notification-settings" data-theme="c">
-       	<a href="#" data-rel="back" data-role="button" data-theme="a" data-icon="delete" data-iconpos="notext" class="ui-btn-left">Close</a>
-            <h4><strong>Enable/Disable Notifications:</strong></h4>
-            Tick to enable untick to disable
-            <div id="checkbox-container">
-			<form>
-				
-				<fieldset data-role="controlgroup">
-					<label>
-				        <input type="checkbox" name="checkbox-0 " id="checkboxi" data-theme="d">Suratul Kahf reminder on Friday
-				    </label>
-				    <div id="friday-time" style="display: none;">
-				    	<form>
-						    <label for="time-1">Select the time to be notified on Friday</label>
-						    <input type="time" data-clear-btn="false" name="time-1" id="time-1" value="">
-						    <p id ="friday-time-set"></p>
-						     <a href="#" id="save-fri" data-role="button"  onclick="
-
-						     var timeSet = $('#time-1').val();
-						     if (timeSet == '') {
-						     	
-						     	document.getElementById('friday-time-set').style.color = 'red';
-						     	document.getElementById('friday-time-set').innerHTML = 'Error! Please Select Time Above';
-						     
-						     }
-						     else {
-						     
-						     setNotificationFriday();
-						     }
-						     
-						     " data-theme="b">Save</a>
-						
-						 </form>
-				    </div>
-				    <label>
-				    	<input type="checkbox" name="checkbox-v-2b" data-theme="d" id="checkboxii">Suratul Kahf reminder on Thursday Night
-				     </label>
-				     <div id="thurs-time" style="display: none;">
-				    	<form>
-						    <label for="time-2">Select the time to be notified on Thursday</label>
-						    <input type="time" data-clear-btn="false" name="time-2" id="time-2" value="">
-						    <p id ="thurs-time-set"></p>
-						     <a href="#" id="save-thurs" onclick="
-						     var thursTimeSet = $('#time-2').val();
-						     if (thursTimeSet == '') {
-						     	
-						     	document.getElementById('thurs-time-set').style.color = 'red';
-						     	document.getElementById('thurs-time-set').innerHTML = 'Error! Please Select Time Above';
-						     
-						     }
-						     else {
-						     
-						     setNotificationThurs();
-
-						     }" data-role="button" data-theme="b">Save</a>
-						
-						 </form>
-				    </div>
-        		</fieldset>
-			</form>
-			</div>
-		</div>
-		<div data-role="popup" id="popupInfo" data-position-to="#notification" data-arrow="t" class="ui-content" data-theme="b"  style="max-width:350px;" style="display:none">
-                Tap <i class="zmdi zmdi-notifications"></i> to manage notification reminders such as Suratul Kahf reminders on Friday
+                        </fieldset>
+                    </form>
+                </div>
+            </div>
+            <div data-role="popup" id="popupInfo" data-position-to="#notification" data-arrow="t" class="ui-content" data-theme="b"  style="max-width:350px;" style="display:none">
+                Tap <i class="zmdi zmdi-notifications"></i> to manage notification reminders such as Suratul Mulk & Al-Sajdah reminders every night
          </div>
-	</div>
-</div>
+       <!-- panel left -->
+            <div data-role="panel" id="leftpanel" data-display="overlay" data-position-fixed="true" >
+                    <ul data-role="listview" data-inset="false" data-icon="false">
+                        <li><a href="#" onclick="window.plugins.socialsharing.share('Have a look at Surah Al Mulk & Al-Sajdah App \n\n', null, null, 'http://bit.ly/mulk-app'); return false;"   data-icon="false">Share App</a></li>
+                        <li><a href="about.html" data-ajax='false' data-icon="false">About</a></li>
+                        <li><a href="https://thesunnahrevival.wordpress.com/" data-ajax='false' onclick="window.open(this.href,'_blank');displayToast(); return false;"  data-icon="false">Visit Blog</a></li>
+                        <li><a href="market://details?id=com.ihyausunnah.surahalmulk" onclick="window.open(this.href,'_system'); return false;" data-ajax='false'>Rate This App</a></li>
+                        <li><a href="mailto:thesunnahrevival.tsr@gmail.com?&subject=Surah%20Al%20Mulk%20App&body=**Please%20write%20your%20feedback%20here%20in%20English**%0A%0ASent%20from%3A%0ASurah%20Al%20Mulk%20Android%20App%20Vesion%201.0.6" data-ajax='false'>Send Feedback</a></li>
+                        <li><a href="about.html#more"  data-ajax='false'>More Apps</a></li>
+                    </ul>
 
-<div data-role="page" id="sub-page" class="nd2-no-menu-swipe" data-theme="a">
+                    <a href="http://m.facebook.com/TSRapps" onclick="window.open(this.href,'_system'); return false;" class="ui-btn ui-btn-inline ui-btn-fab" data-ajax="false"><i class='fa fa-facebook'></i></a>
+                    <a href="http://twitter.com/TSRapps" onclick="window.open(this.href,'_system'); return false;" class="ui-btn ui-btn-inline ui-btn-fab" data-ajax="false"><i class='fa fa-twitter'></i></a>
+                    <a href="http://telegram.me/tsrapps" onclick="window.open(this.href,'_system'); return false;" class="ui-btn ui-btn-inline ui-btn-fab" data-ajax="false"><i class='fa fa-telegram'></i></a>
+                    <a href="http://instagram.com/TSRapps" onclick="window.open(this.href,'_system'); return false;" class="ui-btn ui-btn-inline ui-btn-fab" data-ajax="false"><i class='fa fa-instagram'></i></a>
+                     <p>&copy; 2014-
+                        <span id="copy-right">
+                        <script>document.getElementById('copy-right').appendChild(document.createTextNode(new Date().getFullYear()))</script>
+                        </span>
+                        TSR Apps
+                    </p>
+                
+            </div>
+            <!-- /panel left -->
+        </div>
 
-	<div data-theme="c" data-role="header"  data-position="fixed">
-		
-		<a href="#home-page" data-icon="home" data-role="button" data-inline="true" data-theme="e" data-ajax="false"   data-icon="home">Home</a>
-		<h3><strong>Stories,virtues,Lessons </strong></h3>
-		<a href="market://details?id=com.ihyausunnah.surahalkahf" data-role="button" data-theme="e" data-ajax="false" data-inline="true">Rate this App</a>
+         <div data-role="page" id="sub-page" class="nd2-no-menu-swipe">
 
- 	</div>
-	<div data-role="main" class="ui-content">
-		<h3><strong>Stories from Surah Al-Kahf</strong></h3>
+            <div data-role="header"  data-position="fixed">
+                <a href="#leftpanel" class="ui-btn ui-btn-left"><i class="zmdi zmdi-menu"></i></a>
+                <h1>Stories, Virtues and Lessons</h1>
+                
+            </div>
+            
+            <div role="main" class="ui-content" data-inset="false">
+                <p>Stories from Suratul Kahf</p>
+                <ul data-role="listview" data-icon="false">
+                    <li>
+                        <a href="virtues.html#PeopleofCave" data-ajax="false">
+                            <img src="icons/read.png" class="ui-thumbnail ui-thumbnail-circular" />
+                            <br>The People of the Cave
+                        </a>
+                    </li>
+                    <li>
+                        <a href="virtues.html#TheMan" data-ajax="false">
+                            <img src="icons/read.png" class="ui-thumbnail ui-thumbnail-circular" />
+                            <br>The Man Bestowed with Allah's Mercy
+                        </a>
+                    </li>
+                    <li>
+                        <a href="virtues.html#InShaaAllah" data-ajax="false">
+                            <img src="icons/read.png" class="ui-thumbnail ui-thumbnail-circular" />
+                            <br>Ettiquetes of Saying In shaa Allah
+                        </a>
+                    </li>
+                    <li>
+                        <a href="virtues.html#StoryofMusa" data-ajax="false">
+                            <img src="icons/read.png" class="ui-thumbnail ui-thumbnail-circular" />
+                            <br>The Story of Musa and Al-Khidr
+                        </a>
+                    </li>
+                    <li>
+                        <a href="virtues.html#DhulQarnayn" data-ajax="false">
+                            <img src="icons/read.png" class="ui-thumbnail ui-thumbnail-circular" />
+                            <br>The Story of DhulQarnayn
+                        </a>
+                    </li>
+                </ul>
+                <p>Virtues of Suratul Kahf</p>
+                 <ul data-role="listview" data-icon="false">
+                    <li>
+                        <a href="virtues.html#benefits" data-ajax="false">
+                            <img src="icons/benefits.jpg" class="ui-thumbnail ui-thumbnail-circular" />
+                            <br>Benefits of Surahtul Kahf
+                        </a>
+                    </li>
+                    <li>
+                        <a href="virtues.html#lessons" data-ajax="false">
+                            <img src="icons/benefits.jpg" class="ui-thumbnail ui-thumbnail-circular" />
+                            <br>Lessons from Suratul Kahf
+                        </a>
+                    </li>
+                </ul>
+            </div>
+              <!-- panel left -->
+            <div data-role="panel" id="leftpanel" data-display="overlay" data-position-fixed="true" >
+                    <ul data-role="listview" data-inset="false" data-icon="false">
+                        <li><a href="#homepage" data-ajax='false' data-icon="false">Home</a></li>
+                        <li><a href="#" onclick="window.plugins.socialsharing.share('Have a look at Surah Al Mulk & Al-Sajdah App \n\n', null, null, 'http://bit.ly/mulk-app'); return false;"   data-icon="false">Share App</a></li>
+                        <li><a href="about.html#about" data-ajax='false' data-icon="false">About</a></li>
+                        <li><a href="https://thesunnahrevival.wordpress.com/" data-ajax='false' onclick="window.open(this.href,'_blank');displayToast(); return false;"  data-icon="false">Visit Blog</a></li>
+                        <li><a href="market://details?id=com.ihyausunnah.surahalmulk" onclick="window.open(this.href,'_system'); return false;" data-ajax='false'>Rate This App</a></li>
+                        <li><a href="mailto:thesunnahrevival.tsr@gmail.com?&subject=Surah%20Al%20Mulk%20App&body=**Please%20write%20your%20feedback%20here%20in%20English**%0A%0ASent%20from%3A%0ASurah%20Al%20Mulk%20Android%20App%20Vesion%201.0.6" data-ajax='false'>Send Feedback</a></li>
+                    </ul>
 
-		<a href="one.html#twentyfive" data-ajax="false" data-role="button" data-theme="e" >The people of the cave </a>
-		<a href="one.html#twentynine"  data-ajax="false" data-role="button" data-theme="e" >The man bestowed with Allah's Mercy </a>
-		<a href="one.html#thirtyfour"  data-ajax="false" data-role="button" data-theme="e" >Ettiquetes of Saying In sha Allah</a>
-		<a href="one.html#thirty"  data-ajax="false" data-role="button" data-theme="e" >The Story of Musa and Al-khidr </a>
-		<a href="one.html#thirtyone"  data-ajax="false" data-role="button" data-theme="e" >The Story of DhulQarnayn </a>
+                    <a href="http://m.facebook.com/TSRapps" onclick="window.open(this.href,'_system'); return false;" class="ui-btn ui-btn-inline ui-btn-fab" data-ajax="false"><i class='fa fa-facebook'></i></a>
+                    <a href="http://twitter.com/TSRapps" onclick="window.open(this.href,'_system'); return false;" class="ui-btn ui-btn-inline ui-btn-fab" data-ajax="false"><i class='fa fa-twitter'></i></a>
+                    <a href="http://telegram.me/tsrapps" onclick="window.open(this.href,'_system'); return false;" class="ui-btn ui-btn-inline ui-btn-fab" data-ajax="false"><i class='fa fa-telegram'></i></a>
+                    <a href="http://instagram.com/TSRapps" onclick="window.open(this.href,'_system'); return false;" class="ui-btn ui-btn-inline ui-btn-fab" data-ajax="false"><i class='fa fa-instagram'></i></a>
+                    <p>&copy; 2014-
+                        <span id="copyright">
+                        <script>document.getElementById('copyright').appendChild(document.createTextNode(new Date().getFullYear()))</script>
+                        </span>
+                        TSR Apps
+                    </p>
+                
+            </div>
+            <!-- /panel left -->
+        </div>
 
-		<h3><strong>Virtues of Surah Al Kahf</strong></h3>
-		
-		<a href="one.html#thirtytwo"  data-ajax="false" data-role="button" data-theme="e" >Benefits of Surah Al Kahf </a>
-		<a href="one.html#thirtythree"  data-ajax="false" data-role="button" data-theme="e" >Lessons from Surah Al Kahf </a>
-		<a href="one.html#fiftytwo"  data-ajax="false" data-role="button" data-theme="e" >Secrets of Surah Al-Kahf</a>
-
-	</div>
-</div>
-
-<div data-role="page" id="fiftythree" class="nd2-no-menu-swipe" data-theme="a" data-prev="#two">
-
-
-
-<div data-theme="c" data-role="header" data-theme="b" data-position="fixed">
-<a href="index.html" data-icon="home" data-role="button" data-inline="true" data-theme="e" data-ajax="false"   data-icon="home">Home</a>
-
- 
-<h3><strong>More Apps </strong></h3>
-<a href="market://details?id=com.ihyausunnah.surahalkahf" data-role="button" data-theme="e" data-ajax="false" data-inline="true">Rate this App</a>
- 
-</div>
-<div data-role="main" class="ui-content">
-<h3>More Apps</h3>
-
-<a href="market://details?id=com.ihyausunnah.surahalmulk" data-role="button" data-theme="e" data-ajax="false">Surah Al Mulk</a>
-<a href="market://details?id=com.ihyausunnah.thesunnahrevival" data-role="button" data-theme="e" data-ajax="false">The Sunnah Revival</a>
-<p><strong>Follow us on twitter <a href="http://twitter.com/tsrapps">@tsrapps</a>to get news about updates and new apps</strong></p>
-<p><strong>Like our facebook page <a href="http://facebook.com/TSRapps">TSR Apps</a></strong></p>
-
-</div></div>
-
-<!--Scripts-->
-
-
-<script src="js/checkbox.js"></script>
-<script type="text/javascript">
-	//Checks if its the user's first time an displays a welcome screen
-	function welcomeScreen(){
+        <!--Scripts-->
+       
+        <script src="js/jquery.min.js"></script>
+        <script src="js/jquery-ui.min.js"></script>
+        <script src="js/jquery.mobile.min.js"></script>
+       
+        
+        <script type="text/javascript">
+    $(function() {
+    if( ! localStorage.getItem( "lang" ) ) {
+      localStorage.setItem('lang', 'Trans/en.sahih.xml');
+    }
+  });
+  </script>
+  <script type="text/javascript">
+    //Checks if its the user's first time an displays a welcome screen
+    function welcomeScreen(){
         var welcome = window.localStorage.getItem("welcomeNew");
          if(!welcome){
-           	window.localStorage.setItem("welcomeNew", "1");
+            window.localStorage.setItem("welcomeNew", "1");
             $(document).ready(function(){
    setTimeout(function(){
      $('#popupInfo').popup();
@@ -273,43 +350,29 @@
       function closepopup() {
     $('#popupInfo').popup('close');
 }; 
-     
+    
 </script>
-<script src="js/video.js"></script>
-<script src="js/share.js"></script>
-<script>
-          function playVideo(videoUrl) {
-              // Play a video with callbacks
-              var options = {
-                mustWatch: true,
-                successCallback: function() {
-                  console.log("Video was closed without error.");
-                },
-                errorCallback: function(errMsg) {
-                  console.log("Error! " + errMsg);
-                }
-              };
-              window.plugins.streamingMedia.playVideo(videoUrl, options);
-          
-          }
- </script>
- <script type="text/javascript">
-    $(function() {
-    if( ! localStorage.getItem( "lang" ) ) {
-      localStorage.setItem('lang', 'Trans/en.sahih.xml');
-    }
-  });
-  </script>
   <script type="text/javascript">
-  	function showhide(id) {
-       	var e = document.getElementById(id);
-       	e.style.display = (e.style.display == 'block') ? 'none' : 'block';
+
+
+    function showhide(id) {
+        var e = document.getElementById(id);
+        e.style.display = (e.style.display == 'block') ? 'none' : 'block';
      }
-						    
+                            
   </script>
 
-
-
-
-</body>
+  
+        <script src="js/index.js"></script>
+        <script src="js/time.js"></script>
+        <script src="js/video.js"></script>
+        <script src="js/share.js"></script>
+        <script src="js/nativedroid2.js"></script>
+        <script src="js/nd2settings.js"></script>
+        <script src="js/checkbox.js"></script>
+        
+    </body>
 </html>
+
+
+

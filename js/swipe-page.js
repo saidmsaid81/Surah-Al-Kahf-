@@ -1,12 +1,11 @@
 $(document).ready(function () {
-	var pageNumber = 293;//Stores Page Number
-
-	$("#pages").swiperight(function () {
+	var kahfPageNumber = 293;//Stores Page Number of Suratul Kahf
+	$("#kahf-pages").swiperight(function () {
        //Navigate to the next Image when swiping right
  	
- 	if (pageNumber < 304) {
-           pageNumber++;//Increment the pageNumber by 1
-           var img = document.getElementById('page').src = "images/" + pageNumber +'.jpg';
+ 	if (kahfPageNumber <304) {
+           kahfPageNumber++;//Increment the pageNumber by 1
+           var img = document.getElementById('kahf-page').src = "images/" + kahfPageNumber +'.jpg';
            
         }
         else {
@@ -14,11 +13,11 @@ $(document).ready(function () {
         }
 });
     
-	$("#pages").swipeleft(function () {
+	$("#kahf-pages").swipeleft(function () {
        //Navigate to the previous Image when swiping left
-	if (pageNumber > 293) {
-           pageNumber--;//decrement the pageNumber by 1
-           var img = document.getElementById('page').src = "images/" + pageNumber +'.jpg';
+	if (kahfPageNumber > 293) {
+           kahfPageNumber--;//decrement the pageNumber by 1
+           var img = document.getElementById('kahf-page').src = "images/" + kahfPageNumber +'.jpg';
 
         }
         else {
@@ -26,4 +25,6 @@ $(document).ready(function () {
         }
     
 	});
+
+
 	});

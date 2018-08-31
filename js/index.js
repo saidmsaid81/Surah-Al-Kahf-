@@ -1,6 +1,6 @@
 var admobid = {
-  banner: 'ca-app-pub-6981212130280607/8129501976',
-    interstitial: 'ca-app-pub-6981212130280607/9606235175',
+  banner: 'ca-app-pub-6981212130280607/2899891177',
+    interstitial: 'ca-app-pub-6981212130280607/4376624370',
  };
 
 document.addEventListener('deviceready', this.onDeviceReady, false);
@@ -13,9 +13,9 @@ document.addEventListener('deviceready', this.onDeviceReady, false);
         admob.banner.prepare()
         AdMob.createBannerView();
         welcomeScreen();
-        AppRate.preferences.storeAppURL.android = 'market://details?id=com.ihyausunnah.surahalkahf';
+        AppRate.preferences.storeAppURL.android = 'market://details?id=com.ihyausunnah.surahalkahfmulk';
         AppRate.preferences.openStoreInApp = true;
-        AppRate.preferences.displayAppName = 'Surah Al Kahf App';
+        AppRate.preferences.displayAppName = 'Surah Al Mulk App';
         AppRate.preferences.usesUntilPrompt = 10;
         AppRate.preferences.promptAgainForEachNewVersion = false;
         AppRate.promptForRating(false);
