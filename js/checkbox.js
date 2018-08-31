@@ -1,11 +1,11 @@
 $("#checkboxi").change(function() {
   if ($(this).is(":checked")){
-    javascript:showhide('night-time');
+    javascript:showhide('friday-time');
     
 }
 
 else {
-  document.getElementById('night-time').style.display = "none";
+  document.getElementById('friday-time').style.display = "none";
    cordova.plugins.notification.local.cancel(1, function() {
    window.plugins.toast.showLongTop("Successfully Disabled");
 });
@@ -16,26 +16,20 @@ else {
 }, this)
 
 });
-
-$("#checkboxii").change(function() {
+  $("#checkboxii").change(function() {
   if ($(this).is(":checked")){
-    javascript:showhide('day-time');
-    
-}
-
-else {
-  document.getElementById('day-time').style.display = "none";
-   cordova.plugins.notification.local.cancel(1, function() {
+    javascript:showhide('thurs-time');
+  }
+  else {
+    document.getElementById('thurs-time').style.display = "none";
+   cordova.plugins.notification.local.cancel(2, function() {
    window.plugins.toast.showLongTop("Successfully Disabled");
 });
-
  }
- cordova.plugins.notification.local.on("click", function (notification, state) {
-   admob.banner.hide(); window.open('pages.html');
-}, this)
-
+  
+  
 });
- 
+
 
   $("#checkbox-container :checkbox").on("change", function(){
   
@@ -52,6 +46,3 @@ $checkboxes.on("change", function(){
 $.each(checkboxValues, function(key, value) {
   $("#" + key).prop('checked', value);
 });
-
-
-
