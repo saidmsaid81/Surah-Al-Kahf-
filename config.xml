@@ -54,8 +54,6 @@
 <access origin="*"/> 
 
 
-    <application android:debuggable="true"/>
-
 
         
 
