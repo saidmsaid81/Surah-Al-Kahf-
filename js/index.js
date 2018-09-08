@@ -7,7 +7,7 @@ document.addEventListener('deviceready', this.onDeviceReady, false);
      function onDeviceReady() {
         admob.banner.config({
         id: admobid.banner,
-        isTesting: false,
+        isTesting: true,
         autoShow: true,
           })
         admob.banner.prepare()
