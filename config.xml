@@ -93,6 +93,7 @@
         Otherwise, you can specify specific domains:
     -->
     <access origin="*"/>
+    <allow-navigation href="https://player.vimeo.com/video/64552532" />
 	
 
 </widget>
