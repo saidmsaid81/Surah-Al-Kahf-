@@ -30,14 +30,14 @@
 
 </head>
 <body>
-<div data-role="page"  id="kahf-translations"  class="nd2-no-menu-swipe">
+<div data-role="page"  id="kahf-translations" class="nd2-no-menu-swipe">
 
 
     <div data-role="header" data-theme="b" data-position="fixed" class="wow fadeIn">
     <a href="pages.html" class="ui-btn ui-btn-inline ui-btn-fab" data-ajax="false"><i class='zmdi zmdi-home'></i></a>
 
     <h1 class="wow fadeIn" id = "heading" data-wow-delay='0.4s'>Translation</h1>
-        
+      <a href="#" onclick="activateNightMode();" class="ui-btn ui-btn-inline ui-btn-fab ui-btn-right"><i class="fa fa-moon-o"></i></a>  
     </div>
 
     <div role="main" class="ui-content wow fadeIn" data-inset="false" data-wow-delay="0.2s">
@@ -101,12 +101,20 @@
 
 
 <script src="js/jquery.min.js"></script>
+<script src="js/theme.js"></script>
   <script src="js/trans.js"></script>
   <script src="js/settings.js"></script>
   <script src="js/jquery-ui.min.js"></script>
     <script src="js/jquery.mobile.min.js"></script>
     <script type="text/javascript">
+      //Invert the quran image to simulate night mode
+      if( localStorage.getItem('theme') == 'b' ) {
+        document.getElementById('kahf-translations').setAttribute('data-theme', 'b');
+        $('head').append('<style>img {-webkit-filter: invert(1); filter: invert(1);}</style>');
+          }
+  
     loadContent (localStorage.getItem('lang'));
+
   </script>
     <script src="js/nativedroid2.js"></script>
     <script src="js/nd2settings.js"></script>

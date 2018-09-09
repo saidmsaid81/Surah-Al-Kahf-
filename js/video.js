@@ -18,7 +18,8 @@ function onConfirm(buttonIndex) {
   if (buttonIndex==1) {
 window.open('https://www.dropbox.com/s/ttsk9m2ttb8idsl/Surah%20Al-Kahf.mp4?dl=1','_system')
 } else if (buttonIndex==2) {
- $("#popupvideo").popup("open");
+ $("#popupKahfVideo").popup("open");
+ AdMob.showAd(false);
 } else {
 
 };

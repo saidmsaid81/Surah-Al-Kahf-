@@ -18,6 +18,7 @@
     <style>
       /* Prevent FOUC */
         body { opacity: 0; }
+        
     </style>
 
      <style>
@@ -53,8 +54,8 @@
                 <a href="#" id="help" onclick="setTimeout(function(){
                   $('#Info-i').popup();
                   $('#Info-i').popup('open');
-                  },100);" data-ajax="false" class=" ui-btn ui-btn-inline ui-btn-fab ui-btn-right" style="margin-right: 80px; visibility: visible; animation-delay: 1s; animation-name: fadeIn;"><i class='fa fa-question'></i></a>
-
+                  },100);" data-ajax="false" class=" ui-btn ui-btn-inline ui-btn-fab ui-btn-right" style="margin-right: 120px; visibility: visible; animation-delay: 1s; animation-name: fadeIn;"><i class='fa fa-question'></i></a>
+                  <a href="#" onclick="activateNightMode();" id="night-mode" class="ui-btn ui-btn-inline ui-btn-fab ui-btn-right"  style="margin-right: 80px; visibility: visible; "><i class="fa fa-moon-o"></i></a>
                 <a href="#" onclick="openReminderDialog(); return false;" id="share" class=" ui-btn ui-btn-inline ui-btn-fab ui-btn-right" style="margin-right: 40px; visibility: visible; animation-delay: 1s; animation-name: fadeIn;"><i class='zmdi zmdi-notifications-active animated finite wobble zmdi-hc-fw'></i></a>
                 <a href="trans.html" id="translations" data-ajax="false" class="ui-btn ui-btn-inline ui-btn-fab ui-btn-right" ><i class='fa fa-language '></i></a>
                 
@@ -89,7 +90,18 @@
                 <a href="#close" class="ui-btn ui-btn-inline ui-btn-fab">Skip</a>
             </div>
 
-            <div data-role="popup" id="Info-iv" data-position-to="#help" data-arrow="t" class="ui-content" data-theme="a"  style="max-width:350px;" style="display:none">
+            <div data-role="popup" id="Info-iv" data-position-to="#night-mode" data-arrow="t" class="ui-content" data-theme="a"  style="max-width:350px;" style="display:none">
+              Tap <i class="fa fa-moon-o"></i> to activate/deactivate night mode<br>
+                <br>
+              <a href="#"  onclick="closeTutorialiv();setTimeout(function(){
+              $('#Info-v').popup();
+              $('#Info-v').popup('open');
+              },100);" class="ui-btn ui-btn-inline ui-btn-fab">Next</a>
+                <a href="#close" class="ui-btn ui-btn-inline ui-btn-fab">Skip</a>
+                
+            </div>
+
+            <div data-role="popup" id="Info-v" data-position-to="#help" data-arrow="t" class="ui-content" data-theme="a"  style="max-width:350px;" style="display:none">
               Tap <i class="fa fa-question"></i> for assistance on how to use the app <br>
                 <a href="#close"  class="ui-btn ui-btn-inline ui-btn-fab">Got It</a>
                 
@@ -103,7 +115,6 @@
     <!--Scripts-->
 
     <script>
-
     //Checks if its the user's first time and displays a tutorial screen
     function tutorialScreen(){
         var tutorial = window.localStorage.getItem("tutorial");
@@ -130,6 +141,9 @@
     function closeTutorialiii() {
     $('#Info-iii').popup('close');
     };
+    function closeTutorialiv() {
+    $('#Info-iv').popup('close');
+    };
 
     function openHelpDialog() {
     $( "#pagesdialog-message" ).dialog({
@@ -144,6 +158,13 @@
     <script src="js/jquery.min.js"></script>
     <script src="js/jquery-ui.min.js"></script>  
     <script src="js/jquery.mobile.min.js"></script>
+    <script src="js/theme.js"></script>
+    <script type="text/javascript">
+      //Invert the quran image to simulate night mode
+      if( localStorage.getItem('theme') == 'b' ) {
+        $('head').append('<style>img {-webkit-filter: invert(1); filter: invert(1);}</style>');
+          }
+    </script>
     <script src="js/nativedroid2.js"></script>
     <script src="js/nd2settings.js"></script>
     <script src="js/swipe-page.js"></script>

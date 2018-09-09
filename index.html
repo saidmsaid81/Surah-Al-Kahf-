@@ -14,8 +14,7 @@
         <link rel="stylesheet" href="css/fonti-awesome.min.css" />
         <link rel="stylesheet" href="css/animate.min.css">
         <link rel="stylesheet" href="css/nativedroid2.css" />
-        <link rel="stylesheet" href="css/nativedroid2.color.blue.css" />
-
+        <link rel="stylesheet" href="css/nativedroid2.color.blue.css" /> 
         <script type="text/javascript" src="cordova.js"></script>
         
         <style>
@@ -60,13 +59,14 @@
 
     </head>
     <body>
-        <div data-role="page" id="homepage">
+        <div data-role="page" data-theme="a" id="homepage">
 
             <div data-role="header"  data-position="fixed">
                 <a href="#leftpanel" class="ui-btn ui-btn-left"><i class="zmdi zmdi-menu"></i></a>
                 <h1>Surah al Kahf</h1>
+                 <a href="#" onclick="activateNightMode();" id="night-mode" class="ui-btn ui-btn-inline ui-btn-fab ui-btn-right"  style="margin-right: 80px; visibility: visible; "><i class="fa fa-moon-o"></i></a>
                 <a href="market://details?id=com.ihyausunnah.surahalkahf" onclick="window.open(this.href,'_system'); return false;" class="ui-btn ui-btn-inline ui-btn-fab ui-btn-right"  style="margin-right: 40px; visibility: visible; "><i style="color: yellow" class="zmdi zmdi zmdi-star animated finite flash zmdi-hc-fw"></i></a>
-                <a href="#notification-settings"  data-rel="popup" class="ui-btn ui-btn-inline ui-btn-fab ui-btn-right" id="notification"><i class='zmdi zmdi-notifications '></i></a>
+                <a href="#notification-settings"   data-rel="popup" class="ui-btn ui-btn-inline ui-btn-fab ui-btn-right" id="notification"><i class='zmdi zmdi-notifications '></i></a>
             
              
         	</div>
@@ -117,8 +117,10 @@
                         </a>
                     </li>
                 </ul>
+             
+
                 <!--Popup for streaming Kahf video-->
-                <div data-role="popup" id="popupKahfvideo" data-overlay-theme="a" data-tolerance="15,15" class="ui-content" data-theme="b">
+                <div data-role="popup" id="popupKahfVideo" data-overlay-theme="a" data-tolerance="15,15" class="ui-content">
                         
                     <iframe src="https://player.vimeo.com/video/64552532" width="200" height="298" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
                     <p><a href="https://vimeo.com/64552532">Surah Al-Kahf</a><br> from <a href="https://vimeo.com/user17555859">Al-Qur&aacute;n</a><br> on <a href="https://vimeo.com">Vimeo</a>.</p>
@@ -205,15 +207,30 @@
             </div>
         </div>
         <div data-role="popup" id="popupInfo" data-position-to="#notification" data-arrow="t" class="ui-content" data-theme="b"  style="max-width:350px;" style="display:none">
+        	<h4>
+        		Quick One TIme Tutorial
+        	</h4>
             Tap <i class="zmdi zmdi-notifications"></i> to manage notification reminders such as Suratul Kahf reminders every Thursday Night/Friday
+            <a href="#"  onclick="closeTutoriali();setTimeout(function(){
+                    $('#Info-ii').popup();
+                    $('#Info-ii').popup('open');
+                    },100);"  class="ui-btn ui-btn-inline ui-btn-fab">Next</a>
+                <a href="#close" class="ui-btn ui-btn-inline ui-btn-fab">Skip</a>
          </div>
+
+         <div data-role="popup" id="Info-ii" data-position-to="#night-mode" data-arrow="t" class="ui-content" data-theme="a"  style="max-width:350px;" style="display:none">
+              Tap <i class="fa fa-moon-o"></i> to activate/deactivate night mode<br>
+                <br>
+                <a href="#close" class="ui-btn ui-btn-inline ui-btn-fab">Got It</a>
+                
+            </div>
        <!-- panel left -->
             <div data-role="panel" id="leftpanel" data-display="overlay" data-position-fixed="true" >
                     <ul data-role="listview" data-inset="false" data-icon="false">
                         <li><a href="#" onclick="window.plugins.socialsharing.share('Have a look at Surah Al Kahf\n\n', null, null, 'http://bit.ly/Kahf-app'); return false;"   data-icon="false">Share App</a></li>
                         <li><a href="about.html" data-ajax='false' data-icon="false">About</a></li>
                         <li><a href="https://thesunnahrevival.wordpress.com/" data-ajax='false' onclick="window.open(this.href,'_blank');displayToast(); return false;"  data-icon="false">Visit Blog</a></li>
-                        <li><a href="market://details?id=com.ihyausunnah.surahalKahf" onclick="window.open(this.href,'_system'); return false;" data-ajax='false'>Rate This App</a></li>
+                        <li><a href="market://details?id=com.ihyausunnah.surahalkahf" onclick="window.open(this.href,'_system'); return false;" data-ajax='false'>Rate This App</a></li>
                         <li><a href="mailto:thesunnahrevival.tsr@gmail.com?&subject=Surah%20Al%20Kahf%20App&body=**Please%20write%20your%20feedback%20here%20in%20English**%0A%0ASent%20from%3A%0ASurah%20Al%20Kahf%20Android%20App%20Vesion%201.0.6" data-ajax='false'>Send Feedback</a></li>
                         <li><a href="about.html#more"  data-ajax='false'>More Apps</a></li>
                     </ul>
@@ -233,7 +250,7 @@
             <!-- /panel left -->
         </div>
 
-         <div data-role="page" id="sub-page" class="nd2-no-menu-swipe">
+         <div data-role="page" id="sub-page">
 
             <div data-role="header"  data-position="fixed">
                 <a href="#leftpanel" class="ui-btn ui-btn-left"><i class="zmdi zmdi-menu"></i></a>
@@ -243,6 +260,7 @@
             
             <div role="main" class="ui-content" data-inset="false">
                 <p>Stories from Suratul Kahf</p>
+                <br>
                 <ul data-role="listview" data-icon="false">
                     <li>
                         <a href="virtues.html#PeopleofCave" data-ajax="false">
@@ -276,6 +294,7 @@
                     </li>
                 </ul>
                 <p>Virtues of Suratul Kahf</p>
+                <br>
                  <ul data-role="listview" data-icon="false">
                     <li>
                         <a href="virtues.html#benefits" data-ajax="false">
@@ -298,7 +317,7 @@
                         <li><a href="#" onclick="window.plugins.socialsharing.share('Have a look at Surah Al Kahf\n\n', null, null, 'http://bit.ly/Kahf-app'); return false;"   data-icon="false">Share App</a></li>
                         <li><a href="about.html#about" data-ajax='false' data-icon="false">About</a></li>
                         <li><a href="https://thesunnahrevival.wordpress.com/" data-ajax='false' onclick="window.open(this.href,'_blank');displayToast(); return false;"  data-icon="false">Visit Blog</a></li>
-                        <li><a href="market://details?id=com.ihyausunnah.surahalKahf" onclick="window.open(this.href,'_system'); return false;" data-ajax='false'>Rate This App</a></li>
+                        <li><a href="market://details?id=com.ihyausunnah.surahalkahf" onclick="window.open(this.href,'_system'); return false;" data-ajax='false'>Rate This App</a></li>
                         <li><a href="mailto:thesunnahrevival.tsr@gmail.com?&subject=Surah%20Al%20Kahf%20App&body=**Please%20write%20your%20feedback%20here%20in%20English**%0A%0ASent%20from%3A%0ASurah%20Al%20Kahf%20Android%20App%20Vesion%201.0.6" data-ajax='false'>Send Feedback</a></li>
                     </ul>
 
@@ -322,9 +341,10 @@
         <script src="js/jquery.min.js"></script>
         <script src="js/jquery-ui.min.js"></script>
         <script src="js/jquery.mobile.min.js"></script>
+        <script src="js/theme.js"></script>
        
         
-        <script type="text/javascript">
+        <script type="text/javascript">  	
     $(function() {
     if( ! localStorage.getItem( "lang" ) ) {
       localStorage.setItem('lang', 'Trans/en.sahih.xml');
@@ -332,32 +352,26 @@
   });
   </script>
   <script type="text/javascript">
-    //Checks if its the user's first time an displays a welcome screen
+    //Checks if its the user's first time and displays a tutorial screen
     function welcomeScreen(){
-        var welcome = window.localStorage.getItem("welcomeNew");
+        var welcome = window.localStorage.getItem("welcome205"); //205 == app version
          if(!welcome){
-            window.localStorage.setItem("welcomeNew", "1");
+            window.localStorage.setItem("welcome205", "1");
             $(document).ready(function(){
-   setTimeout(function(){
-     $('#popupInfo').popup();
-    $('#popupInfo').popup('open');
-   },500);setTimeout(function(){
-     closepopup()
-   },5000); // 5000 to load it after 5 seconds from page load
-});
+            setTimeout(function(){
+            $('#popupInfo').popup();
+            $('#popupInfo').popup('open');
+        },500); // 5000 to load it after 5 seconds from page load
+        });
     
     
-     
-
-
-  
-          }
-
      }
-      function closepopup() {
-    $('#popupInfo').popup('close');
-}; 
     
+     }
+     //end
+     function closeTutoriali() {
+    $('#popupInfo').popup('close');
+    };
 </script>
   <script type="text/javascript">
 
@@ -368,6 +382,7 @@
      }
                             
   </script>
+
 
   
         <script src="js/index.js"></script>
