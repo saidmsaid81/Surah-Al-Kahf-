@@ -160,7 +160,7 @@
                         <div id="friday-time" style="display: none;">
                             <form>
                                 <label for="time-1">Select the time to be notified on Friday</label>
-                                <input type="time" data-clear-btn="false" name="time-1" id="time-1" value="">
+                                <input type="time" data-theme="a" data-clear-btn="false" name="time-1" id="time-1" value="">
                                 <p id ="friday-time-set"></p>
                                 <a href="#" id="save-fri" data-role="button"  onclick="
                                     var timeSet = $('#time-1').val();
@@ -185,7 +185,7 @@
                         <div id="thurs-time" style="display: none;">
                             <form>
                                 <label for="time-2">Select the time to be notified on Thursday</label>
-                                <input type="time" data-clear-btn="false" name="time-2" id="time-2" value="">
+                                <input type="time" data-theme="a" data-clear-btn="false" name="time-2" id="time-2" value="">
                                 <p id ="thurs-time-set"></p>
                                 <a href="#" id="save-thurs" onclick="
                                 var thursTimeSet = $('#time-2').val();
@@ -206,11 +206,12 @@
                 </form>
             </div>
         </div>
-        <div data-role="popup" id="popupInfo" data-position-to="#notification" data-arrow="t" class="ui-content" data-theme="b"  style="max-width:350px;" style="display:none">
+        <div data-role="popup" id="popupInfo" data-position-to="#notification" data-arrow="t" class="ui-content" data-theme="a"  style="max-width:350px;" style="display:none">
         	<h4>
         		Quick One TIme Tutorial
         	</h4>
             Tap <i class="zmdi zmdi-notifications"></i> to manage notification reminders such as Suratul Kahf reminders every Thursday Night/Friday
+            <br>
             <a href="#"  onclick="closeTutoriali();setTimeout(function(){
                     $('#Info-ii').popup();
                     $('#Info-ii').popup('open');
