@@ -111,7 +111,10 @@
     <script src="js/nativedroid2.js"></script>
     <script src="js/trans.js"></script>
     <script type="text/javascript">
-       <script src="http://debug.build.phonegap.com/target/target-script-min.js#trans"></script>
+        window.onerror = function(msg, url, linenumber) {
+    alert('Error message: '+msg+'\nURL: '+url+'\nLine Number: '+linenumber);
+    return true;
+}
       //Invert the quran image to simulate night mode
       if( localStorage.getItem('theme') == 'b' ) {
         document.getElementById('kahf-translations').setAttribute('data-theme', 'b');
