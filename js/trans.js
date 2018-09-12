@@ -68,8 +68,9 @@ $(document).on("pagecreate","#kahf-translations",function(){
     var ayahNumber = id.substring(4);
     var ayahNumberInt =parseInt(ayahNumber) - 1;
     var allAyahs = document.querySelectorAll("img");
-    var fullAyah = allAyahs[ayahNumberInt].alt + "\n" + $("#" + id).text() + "\nSent from Surah Al Kahf App\n\nHave a look at Surah Al Kahf App Link:";
+    var fullAyah = allAyahs[ayahNumberInt].alt + "\n" + $("#" + id).text() + "\n\nSent from Surah Al Kahf App\nHave a look at Surah Al Kahf App Link:";
     window.plugins.socialsharing.share(fullAyah, null, null, 'http://bit.ly/kahfapp');
 
     });  
 }); 
+

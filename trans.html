@@ -100,7 +100,7 @@
 </div>
 </div>
 
-<script type="text/javascript" src="cordova.js"></script>
+
 <script src="js/jquery.min.js"></script>
 <script src="js/theme.js"></script>
   
@@ -111,6 +111,10 @@
     <script src="js/nativedroid2.js"></script>
     <script src="js/trans.js"></script>
     <script type="text/javascript">
+        window.onerror = function(msg, url, linenumber) {
+    alert('Error message: '+msg+'\nURL: '+url+'\nLine Number: '+linenumber);
+    return true;
+}
       //Invert the quran image to simulate night mode
       if( localStorage.getItem('theme') == 'b' ) {
         document.getElementById('kahf-translations').setAttribute('data-theme', 'b');
@@ -121,6 +125,7 @@
 
   </script>
     <script src="js/nd2settings.js"></script>
+    <script type="text/javascript" src="cordova.js"></script>
 
   </body>
 </html>
