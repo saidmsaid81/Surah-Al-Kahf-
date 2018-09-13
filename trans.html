@@ -6,6 +6,7 @@
     <link rel="stylesheet" href="css/jquery.mobile.min.css" />
     <link rel="stylesheet" href="css/nativedroid21.css" />
     <link rel="stylesheet" href="css/font-awesome.css">
+    <script type="text/javascript" src="cordova.js"></script>
     
     
     <style>
@@ -49,48 +50,65 @@
         <div data-role="popup"  id="settings">
             <div data-role="header" data-theme="b">
             <h1 class='nd-title'>Select another language</h1>
+			<a href="#" data-rel="back"  class="ui-btn ui-btn-inline ui-btn-right"><i class="zmdi zmdi-close-circle"></i></a>
             </div>
 
-            <div data-role="content" data-theme="b">
-            <div id="radio-container">
+            <div data-role="content">
+            <div id="trans-checkbox-container">
                 <form>
                     <fieldset data-role="controlgroup">
-                        <legend>Select another language</legend>
-                            <input type="radio" name="radio-choice-1" id="en-sahih" value="choice-1"  checked="checked">
-                                <label for="en-sahih">English(Sahih International)</label>
-                            <input type="radio" name="radio-choice-1" id="en-khan" value="choice-2">
-                                <label for="en-khan">English(Muhsin Khan)</label>
-                            <input type="radio" name="radio-choice-1" id="ar-muyassar" value="choice-3">
-                                <label for="ar-muyassar">Arabic Muyassar</label>
-                            <input type="radio" name="radio-choice-1" id="french" value="choice-4">
-                                <label for="french">French</label>
-                            <input type="radio" name="radio-choice-1" id="german" value="choice-4">
-                                <label for="german">German</label>
-                            <input type="radio" name="radio-choice-1" id="hausa" value="choice-4">
-                                <label for="hausa">Hausa</label>
-                            <input type="radio" name="radio-choice-1" id="hindi" value="choice-4">
-                                <label for="hindi">Hindi</label>
-                            <input type="radio" name="radio-choice-1" id="indonesia" value="choice-4">
-                                <label for="indonesia">Indonesian</label>
-                            <input type="radio" name="radio-choice-1" id="malay" value="choice-4">
-                                <label for="malay">Malay</label>
-                            <input type="radio" name="radio-choice-1" id="malayalam" value="choice-4">
-                                 <label for="malayalam">Malayalam</label>
-                            <input type="radio" name="radio-choice-1" id="norsk" value="choice-4">
-                                <label for="norsk">Norwegian</label>
-                            <input type="radio" name="radio-choice-1" id="russian" value="choice-4">
-                                <label for="russian">Russian</label>
-                            <input type="radio" name="radio-choice-1" id="somali" value="choice-4">
-                                <label for="somali">Somali</label>
-                            <input type="radio" name="radio-choice-1" id="spanish" value="choice-4">
-                                <label for="spanish">Spanish</label>
-                            <input type="radio" name="radio-choice-1" id="swahili" value="choice-4">
-                                <label for="swahili">Swahili</label>
-                            <input type="radio" name="radio-choice-1" id="tamil" value="choice-4">
-                                <label for="tamil">Tamil</label>
-                            <input type="radio" name="radio-choice-1" id="urdu" value="choice-4">
-                                <label for="urdu">Urdu</label>
-    
+                        <label>
+                            <input type="checkbox" name="checkboxName" checked="true"  id="ensahih" >English(Sahih International)
+                        </label>
+                        <label>
+                            <input type="checkbox" name="checkboxName"  id="enhilali">English(Muhsin Khan)
+                        </label>
+                        <label>
+                            <input type="checkbox" name="checkboxName"  id="armuyassar">Arabic Muyassar
+                        </label>
+                        <label>
+                            <input type="checkbox" name="checkboxName"  id="frhamidullah">French
+                        </label>
+                        <label>
+                            <input type="checkbox" name="checkboxName"  id="debubenheim">German
+                        </label>
+                        <label>
+                            <input type="checkbox" name="checkboxName"  id="hagumi">hausa
+                        </label>
+                        <label>
+                            <input type="checkbox" name="checkboxName"  id="hihindi">Hindi
+                        </label>
+                        <label>
+                            <input type="checkbox" name="checkboxName"  id="idindonesian">Indonesian
+                        </label>
+                        <label>
+                            <input type="checkbox" name="checkboxName"  id="msbasmeih">Malay
+                        </label>
+                        <label>
+                            <input type="checkbox" name="checkboxName"  id="mlabdulhameed">Malayalam
+                        </label>
+                        <label>
+                            <input type="checkbox" name="checkboxName"  id="noberg">Norwegian
+                        </label>
+                        <label>
+                            <input type="checkbox" name="checkboxName"  id="rukuliev">Russian
+                        </label>
+                         <label>
+                            <input type="checkbox" name="checkboxName"  id="soabduh">Somali
+                        </label>
+                         <label>
+                            <input type="checkbox" name="checkboxName"  id="esgarcia">Spanish
+                        </label>
+                         <label>
+                            <input type="checkbox" name="checkboxName"  id="swbarwani">Swahili
+                        </label>
+                         <label>
+                            <input type="checkbox" name="checkboxName"  id="tatamil">Tamil
+                        </label>
+                         <label>
+                            <input type="checkbox" name="checkboxName"  id="urjunagarhi">Urdu
+                        </label>
+
                     </fieldset>
                 </form>
             </div>
@@ -104,28 +122,35 @@
 <script src="js/jquery.min.js"></script>
 <script src="js/theme.js"></script>
   
-  <script src="js/settings.js"></script>
   <script src="js/jquery-ui.min.js"></script>
     <script src="js/jquery.mobile.min.js"></script>
     
     <script src="js/nativedroid2.js"></script>
     <script src="js/trans.js"></script>
+	 <script src="js/settings.js"></script>
     <script type="text/javascript">
-        window.onerror = function(msg, url, linenumber) {
-    alert('Error message: '+msg+'\nURL: '+url+'\nLine Number: '+linenumber);
-    return true;
-}
       //Invert the quran image to simulate night mode
       if( localStorage.getItem('theme') == 'b' ) {
         document.getElementById('kahf-translations').setAttribute('data-theme', 'b');
+		document.getElementById('settings').setAttribute('data-theme', 'b');
         $('head').append('<style>img {-webkit-filter: invert(1); filter: invert(1);}</style>');
           }
-  
-    loadContent (localStorage.getItem('lang'));
+		  
+  function retrieveContent() {
+    
+    $("input:checkbox").each(function() {
+        if ($(this).is(":checked")) {
+            loadContent (localStorage.getItem($(this).attr("id")));
+        } 
+    });
+
+}
+retrieveContent();
+
 
   </script>
     <script src="js/nd2settings.js"></script>
-    <script type="text/javascript" src="cordova.js"></script>
+    
 
   </body>
 </html>
