@@ -8,7 +8,7 @@
         xmlns:android="http://schemas.android.com/apk/res/android">
         <!--Delete the above line during production-->
         
-	 
+     
 
     <name>Surah Al Kahf  </name>
 
@@ -19,7 +19,7 @@
     <author href="http://thesunnahrevival.wordpress.com" email="ihyausunnah@yahoo.com">
         TSR Apps
     </author>
-	
+    
 
     
     <!-- Customize your app and platform with the preference element. -->
@@ -76,9 +76,7 @@
         <plugin spec="https://github.com/NeoLSN/cordova-plugin-android-permissions.git" source="git" />
         <plugin name="cordova-plugin-apprate" version="1.4.0" source="npm"/>
         <gap:plugin name="cordova-plugin-x-toast" source="npm" />
-        <plugin name="cordova-admob-plus" version="0.3.0" source="npm">
-            <param name="ADMOB_APPLICATOIN_ID" value="ca-app-pub-6981212130280607~6652768777" />
-        </plugin>
+        <plugin name="cordova-plugin-admob-free" version="0.16.1" source="npm" />
         <gap:plugin name="cordova-plugin-streaming-media" source="npm" />
         <gap:plugin name="cordova-plugin-file" source="npm"
          />
@@ -103,6 +101,6 @@
     -->
     <access origin="*"/>
     <allow-navigation href="https://player.vimeo.com/video/64552532" />
-	
+    
 
 </widget>
