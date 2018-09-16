@@ -4,9 +4,7 @@
 <widget xmlns     = "http://www.w3.org/ns/widgets"
         xmlns:gap = "http://phonegap.com/ns/1.0"
         id        = "com.ihyausunnah.surahalkahf"
-        version   = "2.0.5-beta"
-        xmlns:android="http://schemas.android.com/apk/res/android">
-        <!--Delete the above line during production-->
+        version   = "2.0.5-beta">
         
      
 
@@ -44,11 +42,7 @@
     <!-- Plugins -->
 
     <gap:platform name="android" />
-    <!-- Make the app debuggable start-->
-    <gap:config-file platform="android" parent="/manifest">
-    <application android:debuggable="true" />
-    </gap:config-file>
-    <!--end-->
+
     
 <feature name="http://api.phonegap.com/1.0/network"/>
     

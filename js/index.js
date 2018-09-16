@@ -1,6 +1,5 @@
 var admobid = {
   banner: 'ca-app-pub-6981212130280607/2899891177',
-    interstitial: 'ca-app-pub-6981212130280607/4376624370',
  };
 
 document.addEventListener('deviceready', this.onDeviceReady, false);
@@ -45,16 +44,7 @@ document.addEventListener('deviceready', this.onDeviceReady, false);
         }
       };
 
-      AppRate.promptForRating(false);
-      //Test
-      admob.rewardVideo.load({
-      id: {
-      // replace with your ad unit IDs
-      android: 'ca-app-pub-6981212130280607/2917118378',
-      },
-    }).then(() => admob.rewardVideo.show());
-
-        
+      AppRate.promptForRating(false);  
      }
 
     
