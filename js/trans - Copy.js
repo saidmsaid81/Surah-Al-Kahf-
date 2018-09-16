@@ -3,7 +3,7 @@ function addImages() {
     var i, allImages ="";
     //Loop through all ayah images
     for (i = 1; i<=110; i++) {
-        allImages += "<strong><p class='ayah'><img class='center fit' src='images/18_" + i + ".png'/></p></strong><br>";
+        allImages += "<img class='center fit' src='images/18_" + i + ".png'/><strong><p class='ayah'></p></strong><br>";
     }
     //Adds allImages to <div id="trans-container"/>
     document.getElementById("trans-container").innerHTML = allImages;

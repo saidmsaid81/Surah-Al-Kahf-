@@ -9,14 +9,22 @@ document.addEventListener('deviceready', this.onDeviceReady, false);
         isTesting: true,
         autoShow: true,
           })
+        if (localStorage.getItem("welcome205") == 1){
         admob.banner.prepare()
         AdMob.createBannerView();
+      }
         welcomeScreen();
-        AppRate.preferences = {
+        rateThisApp();
+         
+     }
+
+    function rateThisApp() {
+      if (!localStorage.getItem("counter")) {
+        localStorage.setItem("counter", 0);
+      }
+      AppRate.preferences = {
         displayAppName: 'Surah Al Kahf App',
-        usesUntilPrompt: 10,
         promptAgainForEachNewVersion: true,
-        inAppReview: true,
         storeAppURL: {
           android: 'market://details?id=com.ihyausunnah.surahalkahf',
         },
@@ -36,15 +44,24 @@ document.addEventListener('deviceready', this.onDeviceReady, false);
             window.open('mailto:thesunnahrevival.tsr@gmail.com?&subject=Surah%20Al%20Kahf%20App&body=**Please%20write%20your%20feedback%20here%20in%20English**%0A%0ASent%20from%3A%0ASurah%20Al%20Kahf%20Android%20App%20Vesion%203.0.0','_system');
           },
           onRateDialogShow: function(callback){
-            callback(1) // cause immediate click on 'Rate Now' button
+            callback(1); // cause immediate click on 'Rate Now' button
           },
           onButtonClicked: function(buttonIndex){
-            console.log("onButtonClicked -> " + buttonIndex);
+            if (buttonIndex == 2) {
+              if (!sessionStorage.getItem("buttonIndex")) {
+                sessionStorage.setItem("buttonIndex", 1);
+              }
+              else {
+                localStorage.removeItem("counter");
+              }
+            }
           }
         }
       };
 
-      AppRate.promptForRating(false);  
-     }
-
-    
+      incrementCounter = parseInt(localStorage.getItem("counter")) + 1;
+      localStorage.setItem("counter", incrementCounter);
+      if (parseInt(localStorage.getItem("counter")) == 10) {
+         AppRate.promptForRating(); 
+      }
+    }
