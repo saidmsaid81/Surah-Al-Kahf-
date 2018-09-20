@@ -14,4 +14,6 @@ function activateNightMode() {
       	document.getElementById('homepage').setAttribute('data-theme', 'b');
       	document.getElementById('sub-page').setAttribute('data-theme', 'b');
       	document.getElementById('notification-settings').setAttribute('data-theme', 'b');
+        document.getElementById('set-notification').setAttribute('data-theme', 'b');
+        
     } 

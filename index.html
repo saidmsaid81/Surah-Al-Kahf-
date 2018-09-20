@@ -209,6 +209,11 @@
                 <a href="#close" class="ui-btn ui-btn-inline ui-btn-fab">Got It</a>
                 
             </div>
+
+            <div data-role="popup" id="set-notification" data-position-to="#notification" data-arrow="t" class="ui-content" data-theme="a"  style="max-width:350px;" style="display:none">
+              Tap <i class="zmdi zmdi-notifications"></i> to set reminders for reading Suratul Kahf every Friday
+                
+            </div>
        <!-- panel left -->
             <div data-role="panel" id="leftpanel" data-display="overlay" data-position-fixed="true" >
 
@@ -401,7 +406,27 @@
         var e = document.getElementById(id);
         e.style.display = (e.style.display == 'block') ? 'none' : 'block';
      }
-                            
+
+     function displayPopup() {
+        if (!sessionStorage.getItem("notified") && localStorage.getItem("welcome205")){
+            if (!localStorage.getItem( "1" ) && !localStorage.getItem( "2" )  ) {
+            setTimeout(function(){
+            $('#set-notification').popup();
+            $('#set-notification').popup('open');
+            },500);setTimeout(function(){
+            closepopup();
+            },7000); // 7000 to load it after 7 seconds from page load
+            sessionStorage.setItem("notified", "yes");
+            } 
+
+            function closepopup() {
+            $('#set-notification').popup('close');
+            };
+        }
+        
+        }
+
+        displayPopup();                     
   </script>
 
 

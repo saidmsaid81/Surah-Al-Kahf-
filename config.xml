@@ -67,8 +67,7 @@
     -->
 <gap:plugin name="cordova-plugin-x-socialsharing" source="npm" />
         <plugin name="cordova-plugin-insomnia" version="4.1.0" source="npm" />
-        <plugin spec="https://github.com/katzer/cordova-plugin-local-notifications.git#0.9.0-beta.3" source="git" />
-        <plugin spec="https://github.com/apache/cordova-plugin-statusbar.git" source="git" />
+        <plugin spec="https://github.com/saidmsaid81/cordova-plugin-local-notifications.git" source="git" />
         <plugin spec="https://github.com/NeoLSN/cordova-plugin-android-permissions.git" source="git" />
         <plugin name="cordova-plugin-apprate" version="1.4.0" source="npm"/>
         <gap:plugin name="cordova-plugin-x-toast" source="npm" />
@@ -76,10 +75,7 @@
         <gap:plugin name="cordova-plugin-streaming-media" source="npm" />
         <gap:plugin name="cordova-plugin-file" source="npm"
          />
-        <gap:plugin name="cordova-plugin-customurlscheme" source="npm">
-        <param name="URL_SCHEME" value="surahalkahf" />
-        </gap:plugin>
-       
+        
     <!-- Define app icon for each platform. -->
     <icon src="icon.png" />
     

@@ -8,6 +8,7 @@ else {
   document.getElementById('friday-time').style.display = "none";
    cordova.plugins.notification.local.cancel(1, function() {
    window.plugins.toast.showLongTop("Successfully Disabled");
+   localStorage.removeItem("1");
 });
 
  }
@@ -22,6 +23,7 @@ else {
     document.getElementById('thurs-time').style.display = "none";
    cordova.plugins.notification.local.cancel(2, function() {
    window.plugins.toast.showLongTop("Successfully Disabled");
+    localStorage.removeItem("2");
 });
  }
   

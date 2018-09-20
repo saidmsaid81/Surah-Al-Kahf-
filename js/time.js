@@ -1,9 +1,3 @@
-//Action buttons in Notifications
-cordova.plugins.notification.local.addActionGroup('kahfActions', [
-    { id: 'read', title: 'Read Now' },
-    { id: 'remind',  title: 'Remind Others'  }
-]);
-
 //Schedules notification on Friday based on User Input
 function setNotificationFriday() {
     var timeSet = $('#time-1').val();
@@ -32,10 +26,17 @@ function setNotificationFriday() {
     firstAt: friday_in_morning,
     every: "week"
         },
-    actionGroupId: 'kahfActions'
     icon: 'res://icon',
     smallIcon: 'res://ic_popup_reminder',
     });window.plugins.toast.showLongTop("Successfully Enabled");
+    localStorage.setItem("1", "set");
+
+
+  //When Notification is clicked 
+    cordova.plugins.notification.local.on("click", function (notification, state) {
+        AdMob.hideBanner(); window.open('pages.html');
+    }, this);
+
   
 }
 
@@ -69,18 +70,12 @@ var thursday_in_night = new Date(night);
     icon: 'res://icon',
     smallIcon: 'res://ic_popup_reminder',
     });window.plugins.toast.showLongTop("Successfully Enabled");
+    localStorage.setItem("2", "set");
+
+    //When Notification is clicked 
+    cordova.plugins.notification.local.on("click", function (notification, state) {
+        AdMob.hideBanner(); window.open('pages.html');
+    }, this);
 
 }
 
-//When Notification is clicked 
-cordova.plugins.notification.local.on("click", function (notification, state) {
-        AdMob.hideBanner(); window.open('pages.html');
-        }, this);
-//When clicking the Read Action button
-cordova.plugins.notification.local.on('read', function (notification, eopts) { 
-        window.open('surahalkahf://', '_system');window.plugins.toast.showLongTop("Read");
- });
-//When clicking the Remind Action button
-cordova.plugins.notification.local.on('remind', function (notification, eopts) { 
-        window.open('surahalkahf://', '_system');window.plugins.toast.showLongTop("Remind");
- });
