@@ -11,9 +11,7 @@ else {
 });
 
  }
- cordova.plugins.notification.local.on("click", function (notification, state) {
-   admob.banner.hide(); window.open('pages.html');
-}, this)
+ 
 
 });
   $("#checkboxii").change(function() {
