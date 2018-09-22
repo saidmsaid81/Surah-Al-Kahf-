@@ -21,7 +21,7 @@
 
     
     <!-- Customize your app and platform with the preference element. -->
-    <preference name="phonegap-version"           value="cli-7.1.0" />          <!-- all: current version of PhoneGap -->
+    <preference name="phonegap-version"           value="cli-8.0.0" />          <!-- all: current version of PhoneGap cli-7.1.0 -->
     <preference name="orientation"                value="default" />        <!-- all: default means both landscape and portrait are enabled -->
     <preference name="target-device"              value="universal" />      <!-- all: possible values handset, tablet, or universal -->
     <preference name="fullscreen"                 value="false" />           <!-- all: hides the status bar at the top of the screen -->
@@ -34,14 +34,12 @@
     <preference name="show-splash-screen-spinner" value="true" />           <!-- ios: if set to false, the spinner won't appear on the splash screen during app loading -->
     <preference name="auto-hide-splash-screen"    value="true" />           <!-- ios: if set to false, the splash screen must be hidden using a JavaScript API -->
     <preference name="disable-cursor"             value="false" />          <!-- blackberry: prevents a mouse-icon/cursor from being displayed on the app -->
-    <preference name="android-minSdkVersion"      value="14" />              <!-- android: MIN SDK version supported on the target device. MAX version is blank by default. -->
+    <preference name="android-minSdkVersion"      value="15" />              <!-- android: MIN SDK version supported on the target device. MAX version is blank by default. 14 -->
     <preference name="android-installLocation"    value="auto" />           <!-- android: app install location. 'auto' will choose. 'internalOnly' is device memory. 'preferExternal' is SDCard. -->
     <preference name="android-targetSdkVersion" value="26" />
     <preference name="SplashScreenDelay" value="5000" />
    <preference name="android-build-tool" value="gradle" />
-<plugin name="phonegap-plugin-push" source="npm">
-    <param name="SENDER_ID" value="145404189500" />
-</plugin>
+
  
 <!-- Plugins -->
 
@@ -78,6 +76,7 @@
         <gap:plugin name="cordova-plugin-streaming-media" source="npm" />
         <gap:plugin name="cordova-plugin-file" source="npm"
          />
+         <gap:plugin name="onesignal-cordova-plugin" spec="^2.4.1" source="npm" />
         
     <!-- Define app icon for each platform. -->
     <icon src="icon.png" />

@@ -4,7 +4,14 @@ var admobid = {
 
 document.addEventListener('deviceready', this.onDeviceReady, false);
      function onDeviceReady() {
-        test();
+      var notificationOpenedCallback = function(jsonData) {
+    console.log('notificationOpenedCallback: ' + JSON.stringify(jsonData));
+  };
+
+  window.plugins.OneSignal
+    .startInit("b8354c06-8d64-43a3-a893-5da7a98ff689")
+    .handleNotificationOpened(notificationOpenedCallback)
+    .endInit();
         admob.banner.config({
         id: admobid.banner,
         isTesting: false,
@@ -81,35 +88,3 @@ document.addEventListener('deviceready', this.onDeviceReady, false);
     }
     }
 
-    function test() {
-      const push = PushNotification.init({
-  android: {
-  },
-    browser: {
-        pushServiceURL: 'http://push.api.phonegap.com/v1/push'
-    },
-  ios: {
-    alert: "true",
-    badge: "true",
-    sound: "true"
-  },
-  windows: {}
-});
-
-push.on('registration', (data) => {
-  // data.registrationId
-});
-
-push.on('notification', (data) => {
-  // data.message,
-  // data.title,
-  // data.count,
-  // data.sound,
-  // data.image,
-  // data.additionalData
-});
-
-push.on('error', (e) => {
-  // e.message
-});
-    }
