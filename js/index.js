@@ -4,9 +4,10 @@ var admobid = {
 
 document.addEventListener('deviceready', this.onDeviceReady, false);
      function onDeviceReady() {
+        test();
         admob.banner.config({
         id: admobid.banner,
-        isTesting: true,
+        isTesting: false,
         autoShow: true,
           })
         if (localStorage.getItem("welcome205") == 1){
@@ -78,4 +79,37 @@ document.addEventListener('deviceready', this.onDeviceReady, false);
     } else {
         navigator.app.exitApp(); // If user select a Yes, quit from the app.
     }
+    }
+
+    function test() {
+      const push = PushNotification.init({
+  android: {
+  },
+    browser: {
+        pushServiceURL: 'http://push.api.phonegap.com/v1/push'
+    },
+  ios: {
+    alert: "true",
+    badge: "true",
+    sound: "true"
+  },
+  windows: {}
+});
+
+push.on('registration', (data) => {
+  // data.registrationId
+});
+
+push.on('notification', (data) => {
+  // data.message,
+  // data.title,
+  // data.count,
+  // data.sound,
+  // data.image,
+  // data.additionalData
+});
+
+push.on('error', (e) => {
+  // e.message
+});
     }

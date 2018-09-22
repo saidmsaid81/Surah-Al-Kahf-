@@ -45,6 +45,7 @@ document.addEventListener('deviceready', this.onDeviceReady, false);
 	    case 4:
 	    case 5:
 	$(document).ready(function(){
+
 		$('#next').remove();
   		$('#skip').remove();
   		displayPopup();
@@ -53,12 +54,15 @@ document.addEventListener('deviceready', this.onDeviceReady, false);
 	   } 
 
     function displayPopup() {
+      if(!sessionStorage.getItem("reminder")) {
     	setTimeout(function(){
 	     $('#Info-iii').popup();
 	    $('#Info-iii').popup('open');
 	   },500);setTimeout(function(){
 	     closepopup();
 	   },5000); // 5000 to load it after 5 seconds from page load
+     sessionStorage.setItem("reminder", "displayed");
+   }
     } 
 
     function closepopup() {
