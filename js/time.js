@@ -27,7 +27,7 @@ function setNotificationFriday() {
     every: "week"
         },
     icon: 'res://icon',
-    smallIcon: 'res://ic_popup_reminder',
+    smallIcon: 'res://icon',
     });window.plugins.toast.showLongTop("Successfully Enabled");
     localStorage.setItem("1", "set");
 
