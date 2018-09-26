@@ -79,7 +79,21 @@
          <gap:plugin name="onesignal-cordova-plugin" spec="^2.4.1" source="npm" />
         
     <!-- Define app icon for each platform. -->
-    <icon src="icon.png" />
+    <platform name="android">
+        <!--
+            ldpi    : 36x36 px
+            mdpi    : 48x48 px
+            hdpi    : 72x72 px
+            xhdpi   : 96x96 px
+            xxhdpi  : 144x144 px
+            xxxhdpi : 192x192 px
+        -->
+        <icon src="res/android/drawable-mdpi/ic_launcher.png" density="mdpi" />
+        <icon src="res/android/drawable-hdpi/ic_launcher.png" density="hdpi" />
+        <icon src="res/android/drawable-xhdpi/ic_launcher.png" density="xhdpi" />
+        <icon src="res/android/drawable-xxhdpi/ic_launcher.png" density="xxhdpi" />
+        <icon src="res/android/drawable-xxxhdpi/ic_launcher.png" density="xxxhdpi" />
+    </platform>
     
     <!-- Define app splash screen for each platform. -->
     <platform name="android">
