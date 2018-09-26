@@ -17,10 +17,9 @@ document.addEventListener('deviceready', this.onDeviceReady, false);
         isTesting: false,
         autoShow: true,
           })
-        if (localStorage.getItem("welcome205") == 1){
+        
         admob.banner.prepare()
         AdMob.createBannerView();
-      }
         welcomeScreen();
         rateThisApp();
          
