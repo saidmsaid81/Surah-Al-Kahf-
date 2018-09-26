@@ -27,7 +27,7 @@ function setNotificationFriday() {
     every: "week"
         },
     icon: 'res://icon',
-    smallIcon: 'res://small_icon',
+    smallIcon: 'res://ic_stat_small_icon',
     });window.plugins.toast.showLongTop("Successfully Enabled");
     localStorage.setItem("1", "set");
 
@@ -68,7 +68,7 @@ var thursday_in_night = new Date(night);
     every: "week"
         },
     icon: 'res://icon',
-    smallIcon: 'res://small_icon/android/small_icon.png',
+    smallIcon: 'res://ic_stat_small_icon',
     });window.plugins.toast.showLongTop("Successfully Enabled");
     localStorage.setItem("2", "set");
 
