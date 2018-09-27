@@ -35,7 +35,7 @@ navigator.notification.confirm(
 success: function()
 {
     //file exists
-window.plugins.toast.showLongBottom('Starting player please wait...', function(a){console.log('toast success: ' + a)}, function(b){alert('toast error: ' + b)});playVideo(document.getElementById("vidUrl").value);
+window.plugins.toast.showLongBottom('Starting player please wait...');window.plugins.streamingMedia.playVideo("file:///storage/emulated/0/Download/Surah Al-Kahf.mp4");
 }
 });
 

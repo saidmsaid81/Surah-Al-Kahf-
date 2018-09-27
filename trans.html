@@ -61,55 +61,55 @@
                 <form>
                     <fieldset data-role="controlgroup">
                         <label>
-                            <input type="checkbox" name="checkboxName" checked="true"  id="ensahih" >English(Sahih International)
+                            <input type="checkbox" name="Saheeh International" checked="true"  id="ensahih" >English(Sahih International)
                         </label>
                         <label>
-                            <input type="checkbox" name="checkboxName"  id="enhilali">English(Muhsin Khan)
+                            <input type="checkbox" name="Muhammad Taqi-ud-Din al-Hilali and Muhammad Muhsin Khan"  id="enhilali">English(Muhsin Khan)
                         </label>
                         <label>
-                            <input type="checkbox" name="checkboxName"  id="armuyassar">Arabic Muyassar
+                            <input type="checkbox" name="تفسير المیسر"  id="armuyassar">Arabic Muyassar
                         </label>
                         <label>
-                            <input type="checkbox" name="checkboxName"  id="frhamidullah">French
+                            <input type="checkbox" name="Muhammad Hamidullah"  id="frhamidullah">French
                         </label>
                         <label>
-                            <input type="checkbox" name="checkboxName"  id="debubenheim">German
+                            <input type="checkbox" name="Bubenheim & Elyas"  id="debubenheim">German
                         </label>
                         <label>
-                            <input type="checkbox" name="checkboxName"  id="hagumi">hausa
+                            <input type="checkbox" name="Abubakar Mahmoud Gumi"  id="hagumi">hausa
                         </label>
                         <label>
-                            <input type="checkbox" name="checkboxName"  id="hihindi">Hindi
+                            <input type="checkbox" name="Suhel Farooq Khan and Saifur Rahman Nadwi"  id="hihindi">Hindi
                         </label>
                         <label>
-                            <input type="checkbox" name="checkboxName"  id="idindonesian">Indonesian
+                            <input type="checkbox" name="Bahasa Indonesia"  id="idindonesian">Indonesian
                         </label>
                         <label>
-                            <input type="checkbox" name="checkboxName"  id="msbasmeih">Malay
+                            <input type="checkbox" name="Abdullah Muhammad Basmeih"  id="msbasmeih">Malay
                         </label>
                         <label>
-                            <input type="checkbox" name="checkboxName"  id="mlabdulhameed">Malayalam
+                            <input type="checkbox" name="Cheriyamundam Abdul Hameed and Kunhi Mohammed Parappoor"  id="mlabdulhameed">Malayalam
                         </label>
                         <label>
-                            <input type="checkbox" name="checkboxName"  id="noberg">Norwegian
+                            <input type="checkbox" name="Einar Berg"  id="noberg">Norwegian
                         </label>
                         <label>
-                            <input type="checkbox" name="checkboxName"  id="rukuliev">Russian
+                            <input type="checkbox" name="Elmir Kuliev"  id="rukuliev">Russian
                         </label>
                          <label>
-                            <input type="checkbox" name="checkboxName"  id="soabduh">Somali
+                            <input type="checkbox" name="Mahmud Muhammad Abduh"  id="soabduh">Somali
                         </label>
                          <label>
-                            <input type="checkbox" name="checkboxName"  id="esgarcia">Spanish
+                            <input type="checkbox" name="Muhammad Isa García"  id="esgarcia">Spanish
                         </label>
                          <label>
-                            <input type="checkbox" name="checkboxName"  id="swbarwani">Swahili
+                            <input type="checkbox" name=" Ali Muhsin Al-Barwani"  id="swbarwani">Swahili
                         </label>
                          <label>
-                            <input type="checkbox" name="checkboxName"  id="tatamil">Tamil
+                            <input type="checkbox" name="Jan Turst Foundation"  id="tatamil">Tamil
                         </label>
                          <label>
-                            <input type="checkbox" name="checkboxName"  id="urjunagarhi">Urdu
+                            <input type="checkbox" name="Muhammad Junagarhi"  id="urjunagarhi">Urdu
                         </label>
 
                     </fieldset>
@@ -152,7 +152,7 @@
     
     $("input:checkbox").each(function() {
         if ($(this).is(":checked")) {
-            loadContent (localStorage.getItem($(this).attr("id")));
+            loadContent (localStorage.getItem($(this).attr("id")), $(this).attr("name"));
         } 
     });
 
