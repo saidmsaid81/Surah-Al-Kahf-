@@ -35,7 +35,7 @@ function setNotificationFriday() {
 
   //When Notification is clicked 
     cordova.plugins.notification.local.on("click", function (notification, state) {
-        AdMob.hideBanner(); window.open('pages.html');
+        window.open('pages.html');
     }, this);
 
   
@@ -76,7 +76,7 @@ var thursday_in_night = new Date(night);
 
     //When Notification is clicked 
     cordova.plugins.notification.local.on("click", function (notification, state) {
-        AdMob.hideBanner(); window.open('pages.html');
+        window.open('pages.html');
     }, this);
 
 }
