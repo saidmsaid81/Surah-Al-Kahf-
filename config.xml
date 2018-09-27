@@ -21,7 +21,7 @@
 
     
     <!-- Customize your app and platform with the preference element. -->
-    <preference name="phonegap-version"           value="cli-7.1.0" />          <!-- all: current version of PhoneGap -->
+    <preference name="phonegap-version"           value="cli-8.0.0" />          <!-- all: current version of PhoneGap -->
     <preference name="orientation"                value="default" />        <!-- all: default means both landscape and portrait are enabled -->
     <preference name="target-device"              value="universal" />      <!-- all: possible values handset, tablet, or universal -->
     <preference name="fullscreen"                 value="false" />           <!-- all: hides the status bar at the top of the screen -->
@@ -72,7 +72,9 @@
         <plugin spec="https://github.com/NeoLSN/cordova-plugin-android-permissions.git" source="git" />
         <plugin name="cordova-plugin-apprate" version="1.4.0" source="npm"/>
         <gap:plugin name="cordova-plugin-x-toast" source="npm" />
-        <plugin name="cordova-plugin-admob-free" version="0.16.1" source="npm" />
+        <plugin name="cordova-admob-plus" source="npm" >
+             <param name="ADMOB_APPLICATOIN_ID" value="ca-app-pub-6981212130280607~6652768777" />
+        </plugin>
         <gap:plugin name="cordova-plugin-streaming-media" source="npm" />
         <gap:plugin name="cordova-plugin-file" source="npm"
          />
