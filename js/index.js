@@ -1,5 +1,5 @@
 var admobid = {
-  banner: 'ca-app-pub-6981212130280607/2899891177',
+  banner: 'ca-app-pub-6981212130280607/8129501976',
  };
 
 document.addEventListener('deviceready', this.onDeviceReady, false);
