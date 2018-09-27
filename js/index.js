@@ -12,6 +12,7 @@ document.addEventListener('deviceready', this.onDeviceReady, false);
         
         admob.banner.prepare()
         AdMob.createBannerView();
+        admob.banner.show();
         welcomeScreen();
         rateThisApp();
         registerPushNotification();
