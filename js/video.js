@@ -1,4 +1,6 @@
-function doesitexist() {
+//Check if Kahf file Exists in user storage if exists play it if not download/stream
+
+function checkKahFile() {
 
 var permissions = cordova.plugins.permissions;
 permissions.checkPermission(permissions.WRITE_EXTERNAL_STORAGE, openFile(), permissions.requestPermission(permissions.WRITE_EXTERNAL_STORAGE));
@@ -16,7 +18,8 @@ function onConfirm(buttonIndex) {
   if (buttonIndex==1) {
 window.open('https://www.dropbox.com/s/ttsk9m2ttb8idsl/Surah%20Al-Kahf.mp4?dl=1','_system')
 } else if (buttonIndex==2) {
- $("#popupvideo").popup("open");
+ $("#popupKahfVideo").popup("open");
+ AdMob.showAd(false);
 } else {
 
 };
@@ -32,13 +35,9 @@ navigator.notification.confirm(
 success: function()
 {
     //file exists
-window.plugins.toast.showLongBottom('Starting player please wait...', function(a){console.log('toast success: ' + a)}, function(b){alert('toast error: ' + b)});playVideo(document.getElementById("vidUrl").value);
+window.plugins.toast.showLongBottom('Starting player please wait...');window.plugins.streamingMedia.playVideo("file:///storage/emulated/0/Download/Surah Al-Kahf.mp4");
 }
 });
 
 }
 
-       
-
-
-      

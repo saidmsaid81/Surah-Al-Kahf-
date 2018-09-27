@@ -8,12 +8,11 @@ else {
   document.getElementById('friday-time').style.display = "none";
    cordova.plugins.notification.local.cancel(1, function() {
    window.plugins.toast.showLongTop("Successfully Disabled");
+   localStorage.removeItem("1");
 });
 
  }
- cordova.plugins.notification.local.on("click", function (notification, state) {
-   admob.banner.hide(); window.open('pages.html');
-}, this)
+ 
 
 });
   $("#checkboxii").change(function() {
@@ -24,6 +23,7 @@ else {
     document.getElementById('thurs-time').style.display = "none";
    cordova.plugins.notification.local.cancel(2, function() {
    window.plugins.toast.showLongTop("Successfully Disabled");
+    localStorage.removeItem("2");
 });
  }
   
@@ -46,6 +46,3 @@ $checkboxes.on("change", function(){
 $.each(checkboxValues, function(key, value) {
   $("#" + key).prop('checked', value);
 });
-
-
-
