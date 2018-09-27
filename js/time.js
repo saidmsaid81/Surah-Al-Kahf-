@@ -27,6 +27,7 @@ function setNotificationFriday() {
     every: "week"
         },
     icon: 'res://icon',
+    priority: 2,
     smallIcon: 'res://ic_popup_reminder',
     });window.plugins.toast.showLongTop("Successfully Enabled");
     localStorage.setItem("1", "set");
@@ -68,6 +69,7 @@ var thursday_in_night = new Date(night);
     every: "week"
         },
     icon: 'res://icon',
+    priority: 2,
     smallIcon: 'res://ic_popup_reminder',
     });window.plugins.toast.showLongTop("Successfully Enabled");
     localStorage.setItem("2", "set");
