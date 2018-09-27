@@ -39,6 +39,7 @@ document.addEventListener('deviceready', this.onDeviceReady, false);
     };
 
 //Display a remind others popup eery Thursday and Friday.
+    if(localStorage.getItem("tutorial") == 1) {
     var day= new Date();
 	var today= day.getDay();
 	switch(today) {
@@ -64,6 +65,7 @@ document.addEventListener('deviceready', this.onDeviceReady, false);
      sessionStorage.setItem("reminder", "displayed");
    }
     } 
+}
 
     function closepopup() {
 	    $('#Info-iii').popup('close');

@@ -4,14 +4,6 @@ var admobid = {
 
 document.addEventListener('deviceready', this.onDeviceReady, false);
      function onDeviceReady() {
-      var notificationOpenedCallback = function(jsonData) {
-    console.log('notificationOpenedCallback: ' + JSON.stringify(jsonData));
-  };
-
-  window.plugins.OneSignal
-    .startInit("b8354c06-8d64-43a3-a893-5da7a98ff689")
-    .handleNotificationOpened(notificationOpenedCallback)
-    .endInit();
         admob.banner.config({
         id: admobid.banner,
         isTesting: false,
@@ -22,9 +14,12 @@ document.addEventListener('deviceready', this.onDeviceReady, false);
         AdMob.createBannerView();
         welcomeScreen();
         rateThisApp();
+        registerPushNotification();
          
      }
 
+
+     //Shows a rate this app dialog
     function rateThisApp() {
       if (!localStorage.getItem("counter")) {
         localStorage.setItem("counter", 0);
@@ -85,5 +80,16 @@ document.addEventListener('deviceready', this.onDeviceReady, false);
     } else {
         navigator.app.exitApp(); // If user select a Yes, quit from the app.
     }
+    }
+
+    function registerPushNotification() {
+      var notificationOpenedCallback = function(jsonData) {
+    console.log('notificationOpenedCallback: ' + JSON.stringify(jsonData));
+  };
+
+  window.plugins.OneSignal
+    .startInit("b8354c06-8d64-43a3-a893-5da7a98ff689")
+    .handleNotificationOpened(notificationOpenedCallback)
+    .endInit();
     }
 
