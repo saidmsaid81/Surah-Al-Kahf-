@@ -15,7 +15,6 @@ document.addEventListener('deviceready', this.onDeviceReady, false);
         admob.banner.show();
         welcomeScreen();
         rateThisApp();
-        registerPushNotification();
          
      }
 
@@ -83,14 +82,5 @@ document.addEventListener('deviceready', this.onDeviceReady, false);
     }
     }
 
-    function registerPushNotification() {
-      var notificationOpenedCallback = function(jsonData) {
-    console.log('notificationOpenedCallback: ' + JSON.stringify(jsonData));
-  };
-
-  window.plugins.OneSignal
-    .startInit("b8354c06-8d64-43a3-a893-5da7a98ff689")
-    .handleNotificationOpened(notificationOpenedCallback)
-    .endInit();
-    }
+    
 
