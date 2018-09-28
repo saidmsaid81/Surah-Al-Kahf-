@@ -1,18 +1,18 @@
+var admobid = {
+  banner: 'ca-app-pub-6981212130280607/8129501976',
+ };
+
 document.addEventListener('deviceready', this.onDeviceReady, false);
      function onDeviceReady() {
-      document.addEventListener('admob.banner.load', () => {
-    document.addEventListener('deviceready', () => {
-      admob.banner.show({
-        id: {
-      // replace with your ad unit IDs
-      android: 'ca-app-pub-6981212130280607/8129501976',
-    },
-  })
-}, false)
-});
-      document.addEventListener('admob.banner.load_fail', () => {
-  alert("faild");
-});
+        admob.banner.config({
+        id: admobid.banner,
+        isTesting: false,
+        autoShow: true,
+          })
+        
+        admob.banner.prepare()
+        AdMob.createBannerView();
+        admob.banner.show();
         welcomeScreen();
         rateThisApp();
          
