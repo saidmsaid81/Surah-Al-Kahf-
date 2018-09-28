@@ -1,5 +1,5 @@
 var admobid = {
-  banner: 'ca-app-pub-6981212130280607/8129501976',
+  banner: 'ca-app-pub-6981212130280607/2899891177',
  };
 
 document.addEventListener('deviceready', this.onDeviceReady, false);
@@ -12,7 +12,7 @@ document.addEventListener('deviceready', this.onDeviceReady, false);
         
         admob.banner.prepare()
         AdMob.createBannerView();
-        admob.banner.show();
+      
         welcomeScreen();
         rateThisApp();
         registerPushNotification();
