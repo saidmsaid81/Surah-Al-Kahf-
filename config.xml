@@ -70,6 +70,7 @@
         <plugin name="cordova-plugin-insomnia" version="4.1.0" source="npm" />
         <plugin spec="https://github.com/saidmsaid81/cordova-plugin-local-notifications.git" source="git" />
         <plugin spec="https://github.com/NeoLSN/cordova-plugin-android-permissions.git" source="git" />
+        <plugin spec="https://github.com/apache/cordova-plugin-media#media.git" source="git" />
         <plugin name="cordova-plugin-apprate" version="1.4.0" source="npm"/>
         <gap:plugin name="cordova-plugin-x-toast" source="npm" />
         <plugin name="cordova-plugin-admob-free" version="0.16.1" source="npm" />

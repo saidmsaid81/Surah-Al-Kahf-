@@ -69,4 +69,11 @@ document.addEventListener('deviceready', this.onDeviceReady, false);
 
     function closepopup() {
 	    $('#Info-iii').popup('close');
-	};
+  };
+  
+  function toggleAudio() {
+    window.plugins.toast.showLongBottom('Playing Audio');
+    var media = new Media('file:///storage/emulated/0/Download/018.mp3', null, null, null);
+    media.play();
+    
+  }

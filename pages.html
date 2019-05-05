@@ -16,10 +16,7 @@
     <style>
       /* Prevent FOUC */
         body { opacity: 0; }
-        
-    </style>
-
-     <style>
+      
     * {
       padding: 0;
       margin: 0;
@@ -36,7 +33,6 @@
     .ui-dialog-titlebar-close {
         visibility: hidden;
     }
-
     </style>
 
 </head>
@@ -106,9 +102,38 @@
             </div>
           
            <p><img class="center fit" id="kahf-page" src="images/293.jpg" ></p>
-
         </div>
+        <div data-role="footer" data-position="fixed">
+            <!--<a href="#" id="play" style="float:left; margin-left: 10px ;margin-right:10px; margin-block-start: 8px;" class="ui-btn" ><i class='fa fa-play'></i></a>
+            <select name="select-choice-1" style="float:left;margin-right:10px;" data-native-menu="false">
+              <option value="assudais">Abdurrahman As-Sudais</option>
+              <option value="maher">Maher Al Muaiqly</option>
+              <option value="shuraym">Saood Ash-Shuraym</option>
+            </select> 
+            <a href="#" id="download" style="float:right;margin-right:10px;" class="ui-btn" ><i class='fa fa-download'></i></a>-->
 
+            <div data-role="footer" data-position="fixed">
+
+              <div class="row center-xs">
+                <div class="col-xs">
+                  <div class="box">
+                    <a href="#" id="play" onclick="toggleAudio();" style="float:left; margin-left: 10px ;margin-right:10px; margin-block-start: 8px;" class="ui-btn" ><i class='fa fa-play'></i></a>
+                  </div>
+                </div>
+                <div class="col-xs">
+                  <div class="box"><select name="select-choice-1" style="float:left;margin-right:10px;" data-native-menu="false">
+                    <option value="assudais">Abdurrahman As-Sudais</option>
+                    <option value="maher">Maher Al Muaiqly</option>
+                    <option value="shuraym">Saood Ash-Shuraym</option>
+                  </select> 
+                  </div>
+                </div>
+                <div class="col-xs">
+                  <div class="box"><a href="#" id="download" style="float:right;margin-right:10px;margin-block-start: 8px;" class="ui-btn" ><i class='fa fa-download'></i></a>
+                  </div>
+                </div>
+              </div>
+        </div>    
     </div>
     <!--Scripts-->
     <script src="js/jquery.min.js"></script>
