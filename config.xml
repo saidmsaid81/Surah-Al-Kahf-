@@ -81,19 +81,7 @@
         
     <!-- Define app icon for each platform. -->
     <platform name="android">
-        <!--
-            ldpi    : 36x36 px
-            mdpi    : 48x48 px
-            hdpi    : 72x72 px
-            xhdpi   : 96x96 px
-            xxhdpi  : 144x144 px
-            xxxhdpi : 192x192 px
-        -->
-        <icon src="res/android/drawable-mdpi/launcher.png" density="mdpi" />
-        <icon src="res/android/drawable-hdpi/launcher.png" density="hdpi" />
-        <icon src="res/android/drawable-xhdpi/launcher.png" density="xhdpi" />
-        <icon src="res/android/drawable-xxhdpi/launcher.png" density="xxhdpi" />
-        <icon src="res/android/drawable-xxxhdpi/launcher.png" density="xxxhdpi" />
+          <icon src="icon.png" />
     </platform>
     
     <!-- Define app splash screen for each platform. -->
