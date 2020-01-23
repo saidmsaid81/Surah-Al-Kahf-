@@ -73,7 +73,6 @@
         <plugin spec="https://github.com/NeoLSN/cordova-plugin-android-permissions.git" source="git" />
         <plugin name="cordova-plugin-apprate" version="1.4.0" source="npm"/>
         <gap:plugin name="cordova-plugin-x-toast" source="npm" />
-        <plugin name="cordova-plugin-admob-free" version="0.16.1" source="npm" />
         <gap:plugin name="cordova-plugin-streaming-media" source="npm" />
         <gap:plugin name="cordova-plugin-file" source="npm"
          />

@@ -1,18 +1,6 @@
-var admobid = {
-  banner: 'ca-app-pub-6981212130280607/2899891177',
- };
-
 document.addEventListener('deviceready', this.onDeviceReady, false);
      function onDeviceReady() {
-        admob.banner.config({
-        id: admobid.banner,
-        isTesting: false,
-        autoShow: true,
-          })
         
-        admob.banner.prepare()
-        AdMob.createBannerView();
-      
         welcomeScreen();
         rateThisApp();
         registerPushNotification();
@@ -44,7 +32,7 @@ document.addEventListener('deviceready', this.onDeviceReady, false);
         },
         callbacks: {
           handleNegativeFeedback: function(){
-            window.open('mailto:thesunnahrevival.tsr@gmail.com?&subject=Surah%20Al%20Kahf%20App&body=**Please%20write%20your%20feedback%20here%20in%20English**%0A%0ASent%20from%3A%0ASurah%20Al%20Kahf%20Android%20App%20Vesion%203.0.0','_system');
+            window.open('mailto:thesunnahrevival.tsr@gmail.com?&subject=Surah%20Al%20Kahf%20App&body=**Please%20write%20your%20feedback%20here%20in%20English**%0A%0ASent%20from%3A%0ASurah%20Al%20Kahf%20Android%20App%20Vesion%203.0.2','_system');
           },
           onRateDialogShow: function(callback){
             callback(1); // cause immediate click on 'Rate Now' button
