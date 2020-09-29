@@ -4,7 +4,7 @@
 <widget xmlns     = "http://www.w3.org/ns/widgets"
         xmlns:gap = "http://phonegap.com/ns/1.0"
         id        = "com.ihyausunnah.surahalkahf"
-        version   = "3.0.2"
+        version   = "3.0.3"
         versionCode = "30002">
         
      
@@ -67,7 +67,7 @@
     <!--
         <gap:plugin name="com.phonegap.plugins.barcodescanner" />
     -->
-<gap:plugin name="cordova-plugin-x-socialsharing" source="npm" />
+<gap:plugin name="cordova-plugin-x-socialsharing" version="5.4.0" source="npm" />
         <plugin name="cordova-plugin-insomnia" version="4.1.0" source="npm" />
         <plugin spec="https://github.com/saidmsaid81/cordova-plugin-local-notifications.git" source="git" />
         <plugin spec="https://github.com/NeoLSN/cordova-plugin-android-permissions.git" source="git" />
