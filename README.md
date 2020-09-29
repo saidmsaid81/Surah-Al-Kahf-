@@ -1,4 +1,8 @@
 # Surah Al Kahf Android App
+
+# Important
+**Support for this app has ended and a new and improved app will be released soon in shaa Allah. The Repo is now archived**
+
 An android app that helps you to read Suratul Kahf and learn more about the chapter. Link To App (Google Play Store):-
 https://play.google.com/store/apps/details?id=com.ihyausunnah.surahalkahf
 
